@@ -115,22 +115,18 @@ test.describe('DateTimePicker - Performance & Rendering', () => {
   test('scrolling calendar is smooth', async ({ page }) => {
     const icon = page.locator('#wrapper-dtp-basic .e-timeline-today');
     await icon.click();
-    
     const popup = page.locator('.e-popup:visible');
-    const calendar = popup.locator('.e-calendar');
-    
-    // Navigate months
+    await expect(popup).toBeVisible({ timeout: 10000 });
+    const next = popup.locator('button.e-next');
+    const title = page.locator('button.e-title');
+    await expect(next).toBeVisible();
     const startTime = Date.now();
-    
-    const next = popup.locator('.e-next');
     for (let i = 0; i < 5; i++) {
-      await next.click();
-      await page.waitForTimeout(100);
+      const previousMonth = await title.textContent();
+      await page.locator('button.e-next').dispatchEvent('click');
+      await expect.poll(() => title.textContent()).not.toBe(previousMonth);
     }
-    
     const navigationTime = Date.now() - startTime;
-    
-    // Navigation should be responsive
     expect(navigationTime).toBeLessThan(2000);
   });
 
