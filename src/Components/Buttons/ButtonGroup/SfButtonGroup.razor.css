@@ -95,7 +95,7 @@
     color: var(--color-sf-secondary-text-color);
 }
 
-.e-btn-group input + ::deep label.e-btn {
+.e-btn-group ::deep input + label.e-btn {
     margin-bottom: 0;
 }
 
@@ -134,27 +134,27 @@
     border-top-left-radius: 0;
 }
 
-.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper + ::deep .e-btn {
+.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper + .e-btn {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
 
-.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper:not(:first-child):not(:last-child) ::deep .e-btn:last-child {
+.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper:not(:first-child):not(:last-child) .e-btn:last-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper:not(:first-child):not(:last-child) ::deep .e-btn:first-child {
+.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper:not(:first-child):not(:last-child) .e-btn:first-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
 
-.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper:first-child ::deep .e-btn:last-child {
+.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper:first-child .e-btn:last-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper:last-child ::deep .e-btn:first-child {
+.e-btn-group:not(.e-rtl):not(.e-vertical) ::deep .e-split-btn-wrapper:last-child .e-btn:first-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -179,27 +179,27 @@
     border-top-right-radius: 0;
 }
 
-.e-btn-group.e-rtl ::deep .e-split-btn-wrapper + ::deep .e-btn {
+.e-btn-group.e-rtl ::deep .e-split-btn-wrapper + .e-btn {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-.e-btn-group.e-rtl ::deep .e-split-btn-wrapper:not(:first-child):not(:last-child) ::deep .e-btn:last-child {
+.e-btn-group.e-rtl ::deep .e-split-btn-wrapper:not(:first-child):not(:last-child) .e-btn:last-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
 
-.e-btn-group.e-rtl ::deep .e-split-btn-wrapper:not(:first-child):not(:last-child) ::deep .e-btn:first-child {
+.e-btn-group.e-rtl ::deep .e-split-btn-wrapper:not(:first-child):not(:last-child) .e-btn:first-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-.e-btn-group.e-rtl ::deep .e-split-btn-wrapper:first-child ::deep .e-btn:last-child {
+.e-btn-group.e-rtl ::deep .e-split-btn-wrapper:first-child .e-btn:last-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
 
-.e-btn-group.e-rtl ::deep .e-split-btn-wrapper:last-child ::deep .e-btn:first-child {
+.e-btn-group.e-rtl ::deep .e-split-btn-wrapper:last-child .e-btn:first-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
@@ -255,27 +255,27 @@
     border-top-right-radius: 0;
 }
 
-.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper + ::deep .e-btn {
+.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper + .e-btn {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
 
-.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper:first-child ::deep .e-btn:first-child {
+.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper:first-child .e-btn:first-child {
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
 }
 
-.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper:first-child ::deep .e-btn:last-child {
+.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper:first-child .e-btn:last-child {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 
-.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper:last-child ::deep .e-btn:first-child {
+.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper:last-child .e-btn:first-child {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
 
-.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper:last-child ::deep .e-btn:last-child {
+.e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) ::deep .e-split-btn-wrapper:last-child .e-btn:last-child {
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
@@ -323,19 +323,19 @@
 }
 
 .e-btn-group ::deep .e-btn:focus-visible,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn {
+.e-btn-group ::deep input:focus-visible + label.e-btn {
     /* stylelint-disable-next-line declaration-no-important */
     box-shadow: inset 0 0 0 1px var(--color-sf-shadow-color), inset 0 0 0 2px var(--color-sf-shadow-color1) !important;
 }
 
 /* Hover (Outline) */
 .e-btn-group ::deep .e-btn:hover,
-.e-btn-group ::deep input:hover + ::deep label.e-btn {
+.e-btn-group ::deep input:hover + label.e-btn {
     /* Will be overridden below for .e-outline buttons. */
 }
 
 .e-btn-group ::deep .e-btn:hover.e-outline,
-.e-btn-group ::deep input:hover + ::deep label.e-btn.e-outline {
+.e-btn-group ::deep input:hover + label.e-btn.e-outline {
     background: var(--color-sf-secondary-bg-color-hover);
     border-color: var(--color-sf-secondary-border-color-hover);
     color: var(--color-sf-content-text-color);
@@ -343,8 +343,8 @@
 
 /* Focus (Normal) */
 .e-btn-group ::deep .e-btn:focus,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn,
-.e-btn-group ::deep input:focus + ::deep label.e-btn {
+.e-btn-group ::deep input:focus-visible + label.e-btn,
+.e-btn-group ::deep input:focus + label.e-btn {
     background: var(--color-sf-secondary-bg-color-selected);
     border-color: var(--color-sf-secondary-border-color-selected);
     color: var(--color-sf-secondary-text-color-selected);
@@ -355,8 +355,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-primary,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-primary,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-primary {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-primary,
+.e-btn-group ::deep input:focus + label.e-btn.e-primary {
     background: var(--color-sf-primary-bg-color-selected);
     border-color: var(--color-sf-primary-border-color-selected);
     color: var(--color-sf-primary-text-selected);
@@ -367,8 +367,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-success,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-success,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-success {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-success,
+.e-btn-group ::deep input:focus + label.e-btn.e-success {
     background: var(--color-sf-success-bg-color-selected);
     border-color: var(--color-sf-success-border-color-selected);
     color: var(--color-sf-primary-text-color);
@@ -377,8 +377,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-info,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-info,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-info {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-info,
+.e-btn-group ::deep input:focus + label.e-btn.e-info {
     background: var(--color-sf-info-bg-color-selected);
     border-color: var(--color-sf-info-border-color-selected);
     color: var(--color-sf-content-text-color);
@@ -387,8 +387,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-warning,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-warning,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-warning {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-warning,
+.e-btn-group ::deep input:focus + label.e-btn.e-warning {
     background: var(--color-sf-warning-bg-color-selected);
     border-color: var(--color-sf-warning-border-color-selected);
     color: var(--color-sf-warning-text-hover);
@@ -397,8 +397,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-danger,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-danger,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-danger {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-danger,
+.e-btn-group ::deep input:focus + label.e-btn.e-danger {
     background: var(--color-sf-danger-bg-color-selected);
     border-color: var(--color-sf-success-border-color-selected);
     color: var(--color-sf-danger-text-hover);
@@ -407,8 +407,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-link,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-link,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-link {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-link,
+.e-btn-group ::deep input:focus + label.e-btn.e-link {
     border-radius: 0;
     text-decoration: underline;
     color: var(--color-sf-primary-bg-color-hover);
@@ -420,8 +420,8 @@
 
 /* Focus (Outline) */
 .e-btn-group ::deep .e-btn:focus.e-outline,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-outline,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-outline,
+.e-btn-group ::deep input:focus + label.e-btn.e-outline {
     /* stylelint-disable-next-line declaration-no-important */
     background: var(--color-sf-secondary-bg-color-selected) !important;
     /* stylelint-disable-next-line declaration-no-important */
@@ -432,8 +432,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-primary,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-outline.e-primary,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-primary {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-outline.e-primary,
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-primary {
     /* stylelint-disable-next-line declaration-no-important */
     background: var(--color-sf-primary-bg-color-pressed) !important;
     /* stylelint-disable-next-line declaration-no-important */
@@ -444,8 +444,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-success,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-outline.e-success,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-success {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-outline.e-success,
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-success {
     /* stylelint-disable-next-line declaration-no-important */
     background: var(--color-sf-success-bg-color-pressed) !important;
     /* stylelint-disable-next-line declaration-no-important */
@@ -456,8 +456,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-info,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-outline.e-info,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-info {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-outline.e-info,
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-info {
     /* stylelint-disable-next-line declaration-no-important */
     background: var(--color-sf-info-bg-color-pressed) !important;
     /* stylelint-disable-next-line declaration-no-important */
@@ -468,8 +468,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-warning,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-outline.e-warning,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-warning {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-outline.e-warning,
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-warning {
     /* stylelint-disable-next-line declaration-no-important */
     background: var(--color-sf-warning-bg-color-pressed) !important;
     /* stylelint-disable-next-line declaration-no-important */
@@ -480,8 +480,8 @@
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-danger,
-.e-btn-group ::deep input:focus-visible + ::deep label.e-btn.e-outline.e-danger,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-danger {
+.e-btn-group ::deep input:focus-visible + label.e-btn.e-outline.e-danger,
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-danger {
     /* stylelint-disable-next-line declaration-no-important */
     background: var(--color-sf-danger-bg-color-pressed) !important;
     /* stylelint-disable-next-line declaration-no-important */
@@ -493,14 +493,14 @@
 
 /* Active / Checked (Normal) */
 .e-btn-group ::deep .e-btn:active,
-.e-btn-group ::deep input:active + ::deep label.e-btn,
-.e-btn-group ::deep input:checked + ::deep label.e-btn {
+.e-btn-group ::deep input:active + label.e-btn,
+.e-btn-group ::deep input:checked + label.e-btn {
     /* variant-specific rules emitted below */
 }
 
 .e-btn-group ::deep .e-btn:active:not(.e-outline),
-.e-btn-group ::deep input:active + ::deep label.e-btn:not(.e-outline),
-.e-btn-group ::deep input:checked + ::deep label.e-btn:not(.e-outline) {
+.e-btn-group ::deep input:active + label.e-btn:not(.e-outline),
+.e-btn-group ::deep input:checked + label.e-btn:not(.e-outline) {
     background: var(--color-sf-secondary-bg-color-pressed);
     border-color: var(--color-sf-secondary-border-color-pressed);
     color: var(--color-sf-secondary-text-color-pressed);
@@ -509,8 +509,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active:not(.e-outline).e-primary,
-.e-btn-group ::deep input:active + ::deep label.e-btn:not(.e-outline).e-primary,
-.e-btn-group ::deep input:checked + ::deep label.e-btn:not(.e-outline).e-primary {
+.e-btn-group ::deep input:active + label.e-btn:not(.e-outline).e-primary,
+.e-btn-group ::deep input:checked + label.e-btn:not(.e-outline).e-primary {
     background: var(--color-sf-primary-bg-color-pressed);
     border-color: var(--color-sf-primary-border-color-pressed);
     color: var(--color-sf-primary-text-pressed);
@@ -519,8 +519,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active:not(.e-outline).e-success,
-.e-btn-group ::deep input:active + ::deep label.e-btn:not(.e-outline).e-success,
-.e-btn-group ::deep input:checked + ::deep label.e-btn:not(.e-outline).e-success {
+.e-btn-group ::deep input:active + label.e-btn:not(.e-outline).e-success,
+.e-btn-group ::deep input:checked + label.e-btn:not(.e-outline).e-success {
     background: var(--color-sf-success-bg-color-pressed);
     border-color: var(--color-sf-success-border-color-pressed);
     color: var(--color-sf-primary-text-color);
@@ -528,8 +528,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active:not(.e-outline).e-info,
-.e-btn-group ::deep input:active + ::deep label.e-btn:not(.e-outline).e-info,
-.e-btn-group ::deep input:checked + ::deep label.e-btn:not(.e-outline).e-info {
+.e-btn-group ::deep input:active + label.e-btn:not(.e-outline).e-info,
+.e-btn-group ::deep input:checked + label.e-btn:not(.e-outline).e-info {
     background: var(--color-sf-info-bg-color-pressed);
     border-color: var(--color-sf-info-border-color-pressed);
     color: var(--color-sf-info-text-pressed);
@@ -537,8 +537,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active:not(.e-outline).e-warning,
-.e-btn-group ::deep input:active + ::deep label.e-btn:not(.e-outline).e-warning,
-.e-btn-group ::deep input:checked + ::deep label.e-btn:not(.e-outline).e-warning {
+.e-btn-group ::deep input:active + label.e-btn:not(.e-outline).e-warning,
+.e-btn-group ::deep input:checked + label.e-btn:not(.e-outline).e-warning {
     background: var(--color-sf-warning-bg-color-pressed);
     border-color: var(--color-sf-warning-border-color-pressed);
     color: var(--color-sf-warning-text-pressed);
@@ -546,8 +546,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active:not(.e-outline).e-danger,
-.e-btn-group ::deep input:active + ::deep label.e-btn:not(.e-outline).e-danger,
-.e-btn-group ::deep input:checked + ::deep label.e-btn:not(.e-outline).e-danger {
+.e-btn-group ::deep input:active + label.e-btn:not(.e-outline).e-danger,
+.e-btn-group ::deep input:checked + label.e-btn:not(.e-outline).e-danger {
     background: var(--color-sf-danger-bg-color-pressed);
     border-color: var(--color-sf-danger-border-color-pressed);
     color: var(--color-sf-danger-text-pressed);
@@ -556,8 +556,8 @@
 
 /* Active / Checked (Outline) */
 .e-btn-group ::deep .e-btn:active.e-outline,
-.e-btn-group ::deep input:active + ::deep label.e-btn.e-outline,
-.e-btn-group ::deep input:checked + ::deep label.e-btn.e-outline {
+.e-btn-group ::deep input:active + label.e-btn.e-outline,
+.e-btn-group ::deep input:checked + label.e-btn.e-outline {
     background: var(--color-sf-secondary-bg-color-pressed);
     border-color: var(--color-sf-secondary-border-color-pressed);
     box-shadow: none;
@@ -565,8 +565,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active.e-outline.e-primary,
-.e-btn-group ::deep input:active + ::deep label.e-btn.e-outline.e-primary,
-.e-btn-group ::deep input:checked + ::deep label.e-btn.e-outline.e-primary {
+.e-btn-group ::deep input:active + label.e-btn.e-outline.e-primary,
+.e-btn-group ::deep input:checked + label.e-btn.e-outline.e-primary {
     background: var(--color-sf-primary-bg-color-pressed);
     border-color: var(--color-sf-primary-border-color-pressed);
     box-shadow: none;
@@ -574,8 +574,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active.e-outline.e-success,
-.e-btn-group ::deep input:active + ::deep label.e-btn.e-outline.e-success,
-.e-btn-group ::deep input:checked + ::deep label.e-btn.e-outline.e-success {
+.e-btn-group ::deep input:active + label.e-btn.e-outline.e-success,
+.e-btn-group ::deep input:checked + label.e-btn.e-outline.e-success {
     background: var(--color-sf-success-bg-color-pressed);
     border-color: var(--color-sf-success-border-color-pressed);
     box-shadow: none;
@@ -583,8 +583,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active.e-outline.e-info,
-.e-btn-group ::deep input:active + ::deep label.e-btn.e-outline.e-info,
-.e-btn-group ::deep input:checked + ::deep label.e-btn.e-outline.e-info {
+.e-btn-group ::deep input:active + label.e-btn.e-outline.e-info,
+.e-btn-group ::deep input:checked + label.e-btn.e-outline.e-info {
     background: var(--color-sf-info-bg-color-pressed);
     border-color: var(--color-sf-info-border-color-pressed);
     box-shadow: none;
@@ -592,8 +592,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active.e-outline.e-warning,
-.e-btn-group ::deep input:active + ::deep label.e-btn.e-outline.e-warning,
-.e-btn-group ::deep input:checked + ::deep label.e-btn.e-outline.e-warning {
+.e-btn-group ::deep input:active + label.e-btn.e-outline.e-warning,
+.e-btn-group ::deep input:checked + label.e-btn.e-outline.e-warning {
     background: var(--color-sf-warning-bg-color-pressed);
     border-color: var(--color-sf-warning-border-color-pressed);
     box-shadow: none;
@@ -601,8 +601,8 @@
 }
 
 .e-btn-group ::deep .e-btn:active.e-outline.e-danger,
-.e-btn-group ::deep input:active + ::deep label.e-btn.e-outline.e-danger,
-.e-btn-group ::deep input:checked + ::deep label.e-btn.e-outline.e-danger {
+.e-btn-group ::deep input:active + label.e-btn.e-outline.e-danger,
+.e-btn-group ::deep input:checked + label.e-btn.e-outline.e-danger {
     background: var(--color-sf-danger-bg-color-pressed);
     border-color: var(--color-sf-danger-border-color-pressed);
     box-shadow: none;
@@ -611,7 +611,7 @@
 
 /* Disabled (Normal) */
 .e-btn-group ::deep .e-btn:disabled,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn {
+.e-btn-group ::deep input:disabled + label.e-btn {
     background-color: var(--color-sf-secondary-bg-color-disabled);
     border-color: var(--color-sf-secondary-border-color-disabled);
     box-shadow: none;
@@ -620,7 +620,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-primary,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-primary {
+.e-btn-group ::deep input:disabled + label.e-btn.e-primary {
     background: var(--color-sf-primary-bg-color-disabled);
     border-color: var(--color-sf-primary-border-color-disabled);
     box-shadow: none;
@@ -629,7 +629,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-success,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-success {
+.e-btn-group ::deep input:disabled + label.e-btn.e-success {
     background: var(--color-sf-success-bg-color-disabled);
     border-color: var(--color-sf-secondary-border-color-disabled);
     box-shadow: none;
@@ -638,7 +638,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-info,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-info {
+.e-btn-group ::deep input:disabled + label.e-btn.e-info {
     background: var(--color-sf-info-bg-color-disabled);
     border-color: var(--color-sf-secondary-border-color-disabled);
     box-shadow: none;
@@ -647,7 +647,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-warning,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-warning {
+.e-btn-group ::deep input:disabled + label.e-btn.e-warning {
     background: var(--color-sf-warning-bg-color-disabled);
     border-color: var(--color-sf-secondary-border-color-disabled);
     box-shadow: none;
@@ -656,7 +656,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-danger,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-danger {
+.e-btn-group ::deep input:disabled + label.e-btn.e-danger {
     background: var(--color-sf-danger-bg-color-disabled);
     border-color: var(--color-sf-secondary-border-color-disabled);
     box-shadow: none;
@@ -665,7 +665,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-link,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-link {
+.e-btn-group ::deep input:disabled + label.e-btn.e-link {
     color: var(--color-sf-primary-text-disabled);
     background: transparent;
     box-shadow: none;
@@ -675,7 +675,7 @@
 
 /* Disabled (Outline) */
 .e-btn-group ::deep .e-btn:disabled.e-outline,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-outline {
+.e-btn-group ::deep input:disabled + label.e-btn.e-outline {
     background: transparent;
     border-color: var(--color-sf-secondary-border-color-disabled);
     color: var(--color-sf-secondary-text-color-disabled);
@@ -685,7 +685,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-outline.e-primary,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-outline.e-primary {
+.e-btn-group ::deep input:disabled + label.e-btn.e-outline.e-primary {
     background: transparent;
     border-color: rgba(15, 108, 189, .65);
     box-shadow: none;
@@ -694,7 +694,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-outline.e-success,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-outline.e-success {
+.e-btn-group ::deep input:disabled + label.e-btn.e-outline.e-success {
     background: transparent;
     border-color: rgba(15, 108, 189, .65);
     box-shadow: none;
@@ -703,7 +703,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-outline.e-info,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-outline.e-info {
+.e-btn-group ::deep input:disabled + label.e-btn.e-outline.e-info {
     background: transparent;
     border-color: rgba(15, 108, 189, .65);
     box-shadow: none;
@@ -712,7 +712,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-outline.e-warning,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-outline.e-warning {
+.e-btn-group ::deep input:disabled + label.e-btn.e-outline.e-warning {
     background: transparent;
     border-color: rgba(15, 108, 189, .65);
     box-shadow: none;
@@ -721,7 +721,7 @@
 }
 
 .e-btn-group ::deep .e-btn:disabled.e-outline.e-danger,
-.e-btn-group ::deep input:disabled + ::deep label.e-btn.e-outline.e-danger {
+.e-btn-group ::deep input:disabled + label.e-btn.e-outline.e-danger {
     background: transparent;
     border-color: rgba(15, 108, 189, .65);
     box-shadow: none;
@@ -731,88 +731,88 @@
 
 /* Horizontal outline border arrangement (LTR): collapse shared borders */
 .e-btn-group:not(.e-vertical):not(.e-rtl) ::deep .e-btn.e-outline:not(:first-of-type):not(:last-of-type),
-.e-btn-group:not(.e-vertical):not(.e-rtl) ::deep input + ::deep label.e-btn.e-outline:not(:first-of-type):not(:last-of-type) {
+.e-btn-group:not(.e-vertical):not(.e-rtl) ::deep input + label.e-btn.e-outline:not(:first-of-type):not(:last-of-type) {
     border-left: transparent;
     border-right: transparent;
 }
 
 .e-btn-group:not(.e-vertical):not(.e-rtl) ::deep .e-btn.e-outline:first-of-type,
-.e-btn-group:not(.e-vertical):not(.e-rtl) ::deep input + ::deep label.e-btn.e-outline:first-of-type {
+.e-btn-group:not(.e-vertical):not(.e-rtl) ::deep input + label.e-btn.e-outline:first-of-type {
     border-right: transparent;
 }
 
 .e-btn-group:not(.e-vertical):not(.e-rtl) ::deep .e-btn.e-outline:last-of-type,
-.e-btn-group:not(.e-vertical):not(.e-rtl) ::deep input + ::deep label.e-btn.e-outline:last-of-type {
+.e-btn-group:not(.e-vertical):not(.e-rtl) ::deep input + label.e-btn.e-outline:last-of-type {
     border-left: transparent;
 }
 
 /* Horizontal outline border arrangement (RTL) */
 .e-btn-group:not(.e-vertical).e-rtl ::deep .e-btn.e-outline:not(:first-of-type):not(:last-of-type),
-.e-btn-group:not(.e-vertical).e-rtl ::deep input + ::deep label.e-btn.e-outline:not(:first-of-type):not(:last-of-type) {
+.e-btn-group:not(.e-vertical).e-rtl ::deep input + label.e-btn.e-outline:not(:first-of-type):not(:last-of-type) {
     border-left: transparent;
     border-right: transparent;
 }
 
 .e-btn-group:not(.e-vertical).e-rtl ::deep .e-btn.e-outline:first-of-type,
-.e-btn-group:not(.e-vertical).e-rtl ::deep input + ::deep label.e-btn.e-outline:first-of-type {
+.e-btn-group:not(.e-vertical).e-rtl ::deep input + label.e-btn.e-outline:first-of-type {
     border-left: transparent;
 }
 
 .e-btn-group:not(.e-vertical).e-rtl ::deep .e-btn.e-outline:last-of-type,
-.e-btn-group:not(.e-vertical).e-rtl ::deep input + ::deep label.e-btn.e-outline:last-of-type {
+.e-btn-group:not(.e-vertical).e-rtl ::deep input + label.e-btn.e-outline:last-of-type {
     border-right: transparent;
 }
 
 /* Vertical outline border arrangement */
 .e-btn-group.e-vertical ::deep .e-btn.e-outline:not(:first-of-type):not(:last-of-type),
-.e-btn-group.e-vertical ::deep input + ::deep label.e-btn.e-outline:not(:first-of-type):not(:last-of-type) {
+.e-btn-group.e-vertical ::deep input + label.e-btn.e-outline:not(:first-of-type):not(:last-of-type) {
     border-bottom: transparent;
     border-top: transparent;
 }
 
 .e-btn-group.e-vertical ::deep .e-btn.e-outline:first-of-type,
-.e-btn-group.e-vertical ::deep input + ::deep label.e-btn.e-outline:first-of-type {
+.e-btn-group.e-vertical ::deep input + label.e-btn.e-outline:first-of-type {
     border-bottom: transparent;
 }
 
 .e-btn-group.e-vertical ::deep .e-btn.e-outline:last-of-type,
-.e-btn-group.e-vertical ::deep input + ::deep label.e-btn.e-outline:last-of-type {
+.e-btn-group.e-vertical ::deep input + label.e-btn.e-outline:last-of-type {
     border-top: transparent;
 }
 
 /* Outline focus variant border colour overrides (mirrors @include different-states) */
 .e-btn-group ::deep .e-btn:focus.e-outline,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline {
+.e-btn-group ::deep input:focus + label.e-btn.e-outline {
     border-color: var(--color-sf-secondary-border-color);
     outline-color: inherit;
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-primary,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-primary {
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-primary {
     border-color: var(--color-sf-primary-bg-color);
     outline-color: inherit;
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-success,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-success {
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-success {
     border-color: var(--color-sf-success-border-color-selected);
     outline-color: inherit;
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-info,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-info {
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-info {
     border-color: var(--color-sf-info-border-color-selected);
     outline-color: inherit;
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-warning,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-warning {
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-warning {
     border-color: var(--color-sf-warning-border-color-selected);
     outline-color: inherit;
 }
 
 .e-btn-group ::deep .e-btn:focus.e-outline.e-danger,
-.e-btn-group ::deep input:focus + ::deep label.e-btn.e-outline.e-danger {
+.e-btn-group ::deep input:focus + label.e-btn.e-outline.e-danger {
     border-color: var(--color-sf-danger-border-color-selected);
     outline-color: inherit;
 }

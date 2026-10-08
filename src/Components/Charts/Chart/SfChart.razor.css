@@ -78,27 +78,27 @@
   outline-offset: 0px;
 }
 
-::deep path[class*=_ej2_chart_selection_series]:focus-visible,
-::deep path[id*=_Point_]:focus-visible,
-::deep text[id*=_ChartTitle]:focus-visible,
-::deep text[id*=_ChartSubTitle]:focus-visible {
+.e-chart ::deep path[class*=_ej2_chart_selection_series]:focus-visible,
+.e-chart ::deep path[id*=_Point_]:focus-visible,
+.e-chart ::deep text[id*=_ChartTitle]:focus-visible,
+.e-chart ::deep text[id*=_ChartSubTitle]:focus-visible {
   outline: 1.5px #424242 solid;
   outline-offset: 0px;
 }
 
-::deep g.e-chart-focused:focus-visible,
-::deep .e-legend-pointer.e-chart-focused:focus-visible,
-::deep g[id*=_chart_legend_g_].e-chart-focused:focus-visible {
+.e-chart ::deep g.e-chart-focused:focus-visible,
+.e-chart ::deep .e-legend-pointer.e-chart-focused:focus-visible,
+.e-chart ::deep g[id*=_chart_legend_g_].e-chart-focused:focus-visible {
   outline: 1.5px #424242 solid;
   outline-offset: 2px;   /* a little offset helps on small legend items */
 }
 
-::deep path.e-chart-focused:focus-visible,
-::deep .e-trendline-outline.e-chart-focused:focus-visible,
-::deep .e-trendspline-outline.e-chart-focused:focus-visible,
-::deep path[id*=_TrendLine]:focus-visible,
-::deep path[id*=_Trendline]:focus-visible,
-::deep path[id*=_trendline]:focus-visible {
+.e-chart ::deep path.e-chart-focused:focus-visible,
+.e-chart ::deep .e-trendline-outline.e-chart-focused:focus-visible,
+.e-chart ::deep .e-trendspline-outline.e-chart-focused:focus-visible,
+.e-chart ::deep path[id*=_TrendLine]:focus-visible,
+.e-chart ::deep path[id*=_Trendline]:focus-visible,
+.e-chart ::deep path[id*=_trendline]:focus-visible {
   outline: 1.5px #424242 solid;
   outline-offset: 2px;
 }
@@ -147,33 +147,31 @@
 
 @media (forced-colors: active) {
 
-  .e-chart {
-
-    ::deep rect[id$='_ChartBorder'][fill='#FFFFFF'],
-    ::deep rect[id$='_ChartBorder'][fill='#1c1b1f'],
-    ::deep rect[id$='_ChartBorder'][fill='#000000'] {
+  .e-chart ::deep rect[id$='_ChartBorder'][fill='#FFFFFF'],
+  .e-chart ::deep rect[id$='_ChartBorder'][fill='#1c1b1f'],
+  .e-chart ::deep rect[id$='_ChartBorder'][fill='#000000'] {
       fill: Canvas;
       stroke: CanvasText;
     }
 
-    ::deep path[id$='_path'] {
+  .e-chart ::deep path[id$='_path'] {
       fill: Canvas;
       stroke: CanvasText;
       filter: none !important;
     }
 
-    ::deep filter[id$='_shadow'] {
+  .e-chart ::deep filter[id$='_shadow'] {
       display: none;
     }
 
-    ::deep div[id*='_tooltip'].ejSVGTooltip,
-    ::deep div[id*='_tooltip'].e-tooltip {
+  .e-chart ::deep div[id*='_tooltip'].ejSVGTooltip,
+  .e-chart ::deep div[id*='_tooltip'].e-tooltip {
       background-color: transparent !important;
       background: none !important;
       forced-color-adjust: none !important;
     }
 
-    ::deep div[id*='_tooltip'][style*='visibility: hidden'],
+  .e-chart ::deep div[id*='_tooltip'][style*='visibility: hidden'],
     ::deep div[id*='_tooltip'][style*='visibility:hidden'],
     ::deep svg[id*='_tooltip_svg'][style*='visibility: hidden'],
     ::deep svg[id*='_tooltip_svg'][style*='visibility:hidden'] {
