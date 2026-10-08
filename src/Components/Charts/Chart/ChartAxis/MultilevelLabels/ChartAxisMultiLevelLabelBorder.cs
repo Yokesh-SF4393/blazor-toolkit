@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using Microsoft.AspNetCore.Components;
 
-namespace Syncfusion.Blazor.Toolkit.Charts
+namespace Syncfusion.Blazor.Toolkit
 {
     /// <summary>
     /// Provides options to customize the multilevel label border for a chart axis, including color, border type, and width.

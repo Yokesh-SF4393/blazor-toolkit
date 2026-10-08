@@ -1,7 +1,7 @@
-﻿﻿using System.ComponentModel;
+﻿using System.ComponentModel;
 using Microsoft.AspNetCore.Components;
 
-namespace Syncfusion.Blazor.Toolkit.Charts
+namespace Syncfusion.Blazor.Toolkit
 {
     /// <summary>
     /// Provides the options to customize the empty point of the chart.

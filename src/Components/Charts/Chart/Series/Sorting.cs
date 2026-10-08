@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor.Toolkit.Data;
 
-namespace Syncfusion.Blazor.Toolkit.Charts
+namespace Syncfusion.Blazor.Toolkit
 {
     /// <summary>
     /// Configures the sorting option for the chart.

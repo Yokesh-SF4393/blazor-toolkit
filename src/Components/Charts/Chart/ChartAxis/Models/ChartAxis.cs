@@ -1,9 +1,9 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor.Toolkit.Charts.Internal;
 using Syncfusion.Blazor.Toolkit.Internal;
 
-namespace Syncfusion.Blazor.Toolkit.Charts
+namespace Syncfusion.Blazor.Toolkit
 {
     /// <summary>
     /// Represents an axis within a chart, providing customization options for the axis's appearance and behavior.

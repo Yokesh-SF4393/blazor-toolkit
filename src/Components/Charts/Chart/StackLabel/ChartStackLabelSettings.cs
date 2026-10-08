@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor.Toolkit.Charts.Internal;
 using System.ComponentModel;
 
-namespace Syncfusion.Blazor.Toolkit.Charts
+namespace Syncfusion.Blazor.Toolkit
 {
     /// <summary>
     /// Configures the options to customize the stack labels in the chart.

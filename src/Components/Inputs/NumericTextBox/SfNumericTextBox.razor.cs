@@ -2,13 +2,14 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
+using Syncfusion.Blazor.Toolkit.Inputs;
 using Syncfusion.Blazor.Toolkit.Internal;
 using System.Globalization;
 using System.Text;
 using Microsoft.Extensions.Logging;
 using System.Text.RegularExpressions;
 
-namespace Syncfusion.Blazor.Toolkit.Inputs
+namespace Syncfusion.Blazor.Toolkit
 {
     /// <summary>
     /// The NumericTextBox is used to get the number inputs from the user. The input values can be incremented or decremented by a predefined step value.
@@ -926,7 +927,7 @@ namespace Syncfusion.Blazor.Toolkit.Inputs
         /// This method is called when the input element receives focus. It triggers client-side focus handling only if the component is enabled, not readonly, and the focus handler hasn't been triggered yet. The focus handler manages input formatting and user interaction states.
         /// </remarks>
         /// <exclude/>
-        protected override async Task FocusHandlerAsync(FocusEventArgs args)
+        protected override async Task FocusHandlerAsync(Microsoft.AspNetCore.Components.Web.FocusEventArgs args)
         {
             if (IsTriggerFocusHandler && !Disabled && !Readonly)
             {
@@ -1004,7 +1005,7 @@ namespace Syncfusion.Blazor.Toolkit.Inputs
         /// The method prevents recursive calls and ensures proper value conversion based on the data type (double or decimal).
         /// </remarks>
         /// <exclude/>
-        protected override async Task FocusOutHandlerAsync(FocusEventArgs args)
+        protected override async Task FocusOutHandlerAsync(Microsoft.AspNetCore.Components.Web.FocusEventArgs args)
         {
             if (OnBlur.HasDelegate && !IsClearIconClick)
             {
@@ -1094,7 +1095,7 @@ namespace Syncfusion.Blazor.Toolkit.Inputs
             {
                 NumericFocusEventArgs<TValue> eventArgs = new()
                 {
-                    Event = new FocusEventArgs { Type = "focus" },
+                    Event = new Microsoft.AspNetCore.Components.Web.FocusEventArgs { Type = "focus" },
                     Value = Value,
                     Name = "Focus",
                 };
@@ -1546,7 +1547,7 @@ namespace Syncfusion.Blazor.Toolkit.Inputs
                 PrevValue = InputTextValue;
                 if (ValueChange.HasDelegate && !(Disabled || Readonly))
                 {
-                    ChangeEventArgs<TValue> eventArgs = new()
+                    Syncfusion.Blazor.Toolkit.Inputs.ChangeEventArgs<TValue> eventArgs = new()
                     {
                         Value = InputTextValue,
                         PreviousValue = previousValue,

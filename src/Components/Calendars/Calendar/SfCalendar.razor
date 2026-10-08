@@ -2,7 +2,7 @@
 @using Syncfusion.Blazor.Toolkit.Calendars.Internal
 @typeparam TValue
 @inherits CalendarBase<TValue>
-@namespace Syncfusion.Blazor.Toolkit.Calendars
+@namespace Syncfusion.Blazor.Toolkit
 
 <div id="@ID" @ref="Element" class="@RootClass" role="grid" aria-label="@(string.IsNullOrWhiteSpace(AriaLabel) ? Localizer?["Calendar"]?.Value ?? "Calendar" : AriaLabel)" @attributes="_containerAttr" tabindex="@this.TabIndex">
     <CascadingValue Value="@this">
