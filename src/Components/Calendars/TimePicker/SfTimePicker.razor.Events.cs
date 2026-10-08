@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components;
 
-namespace Syncfusion.Blazor.Toolkit.Calendars
+namespace Syncfusion.Blazor.Toolkit
 {
     /// <summary>
     /// Configures the event handlers for the <see cref="SfTimePicker{TValue}"/> component, allowing you to respond to various user interactions and component lifecycle events.
@@ -206,7 +206,7 @@ namespace Syncfusion.Blazor.Toolkit.Calendars
         /// <code><![CDATA[
         /// <SfTimePicker TValue="DateTime?" OnFocus="@OnFocus"></SfTimePicker>
         /// @code{
-        /// private void OnFocus(Syncfusion.Blazor.Toolkit.Calendars.FocusEventArgs args)
+        /// private void OnFocus(Syncfusion.Blazor.Toolkit.FocusEventArgs args)
         /// {
         /// // Your logic here
         /// }

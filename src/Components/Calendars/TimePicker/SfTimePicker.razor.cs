@@ -2,14 +2,14 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
-using Syncfusion.Blazor.Toolkit.Calendars.Interfaces;
+using Syncfusion.Blazor.Toolkit.Interfaces;
 using Syncfusion.Blazor.Toolkit.Calendars.Internal;
-using Syncfusion.Blazor.Toolkit.Inputs;
+using Syncfusion.Blazor.Toolkit;
 using Syncfusion.Blazor.Toolkit.Internal;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace Syncfusion.Blazor.Toolkit.Calendars
+namespace Syncfusion.Blazor.Toolkit
 {
     /// <summary>
     /// The TimePicker is an intuitive component that provides options to select a time value from a popup list or to set a desired time value.

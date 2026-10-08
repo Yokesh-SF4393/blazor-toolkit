@@ -262,7 +262,7 @@ namespace Syncfusion.Blazor.Toolkit.Charts.Internal
         /// <returns>The measured character size.</returns>
         private static Size GetCharSize(object chart, char character, ChartFontOptions font)
         {
-            var sfChart = chart as Charts.SfChart;
+            var sfChart = chart as SfChart;
             if (sfChart is null)
                 return GetCharSize(character, font);
 
@@ -1345,7 +1345,7 @@ namespace Syncfusion.Blazor.Toolkit.Charts.Internal
             if (IsRTLText(text))
             {
                 string key = text + Constants.Underscore + font.FontWeight + Constants.Underscore + font.FontStyle + Constants.Underscore + font.FontFamily;
-                var sfChart = chart as Charts.SfChart;
+                var sfChart = chart as SfChart;
                 if (sfChart is not null && sfChart._fontSizeCache.TryGetValue(key, out Size? value))
                 {
                     charSize = value;

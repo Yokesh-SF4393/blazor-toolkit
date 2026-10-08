@@ -1,9 +1,12 @@
-﻿@page "/chart-axis-crossing"
+@page "/chart-axis-crossing"
 
 @using Syncfusion.Blazor.Toolkit
-@using Syncfusion.Blazor.Toolkit.Charts
-@using Syncfusion.Blazor.Toolkit.Buttons
-@using Syncfusion.Blazor.Toolkit.Inputs
+@using Syncfusion.Blazor.Toolkit;
+
+@using Syncfusion.Blazor.Toolkit;
+
+@using Syncfusion.Blazor.Toolkit;
+
 
 @inject NavigationManager NavigationManager
 
@@ -169,7 +172,7 @@
     }
 
     private void ChangeCrossValue(
-        Syncfusion.Blazor.Toolkit.Inputs.ChangeEventArgs<int?> args)
+        Syncfusion.Blazor.Toolkit.ChangeEventArgs<int?> args)
     {
         if (args.Value == null)
             return;

@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
@@ -13,7 +13,7 @@ using Syncfusion.Blazor.Toolkit.Charts.Internal;
 using Syncfusion.Blazor.Toolkit.Data;
 
 [assembly: InternalsVisibleTo("Syncfusion.Blazor.Toolkit.BUnitTest")]
-namespace Syncfusion.Blazor.Toolkit.Charts
+namespace Syncfusion.Blazor.Toolkit
 {
     internal interface ISubcomponentTracker
     {

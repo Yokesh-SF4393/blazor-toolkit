@@ -202,12 +202,49 @@ namespace Syncfusion.Blazor.Toolkit
             // new IJSRuntime context is created (Server → WebAssembly).
             if (JSRuntime is not null && !_stylesInjected)
             {
+                // Ensure the base.js module is loaded before attempting any
+                // JavaScript interop. This is critical for WebAssembly mode
+                // where the module is loaded asynchronously. Without this,
+                // calling sfBlazorToolkit.themeRoot.* would fail with
+                // "'sfBlazorToolkit' was undefined".
+                if (_baseJsModule is null && _baseJsInProcessModule is null)
+                {
+                    await ImportComponentModuleAsync().ConfigureAwait(true);
+                }
+
                 // Detect context changes (e.g., Server → WebAssembly upgrade in
                 // Auto mode). If the browser's context marker doesn't match
                 // our instance ID, invalidate the cache so styles are
                 // re-injected for the new context.
                 var contextId = GetContextId();
-                if (await SfThemeRoot.IsContextChangedAsync(JSRuntime, contextId).ConfigureAwait(true))
+                bool contextChanged = false;
+                try
+                {
+                    // Use the imported module reference if available, otherwise
+                    // fall back to global invocation. This is critical for
+                    // WebAssembly mode where modules must be imported before
+                    // their functions can be called.
+                    if (_baseJsModule is not null)
+                    {
+                        var currentContextId = await _baseJsModule.InvokeAsync<string>(
+                            "getContext").ConfigureAwait(true);
+                        contextChanged = currentContextId != contextId;
+                    }
+                    else if (_baseJsInProcessModule is not null)
+                    {
+                        var currentContextId = _baseJsInProcessModule.Invoke<string>(
+                            "getContext");
+                        contextChanged = currentContextId != contextId;
+                    }
+                }
+                catch
+                {
+                    // If context detection fails, assume changed so styles
+                    // are re-injected for the new context.
+                    contextChanged = true;
+                }
+
+                if (contextChanged)
                 {
                     SfThemeRoot.Invalidate(JSRuntime);
                     _stylesInjected = false; // Reset to allow re-injection for new context
