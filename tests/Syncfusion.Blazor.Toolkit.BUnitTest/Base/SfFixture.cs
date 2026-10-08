@@ -22,6 +22,7 @@ namespace Syncfusion.Blazor.Toolkit.Tests
             SyncfusionBlazorToolkitService serv = new SyncfusionBlazorToolkitService(options);
             serv.GetType().GetProperty("IsScriptRendered", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(serv, true);
             Services.AddScoped((IServiceProvider provider) => serv);
+            ComponentFactories.AddStub<SfThemeRoot>();
         }
     }
 }
