@@ -2,6 +2,8 @@
 @namespace Syncfusion.Blazor.Toolkit
 @inherits SfInputBase<string>
 
+@* Shared theme emitter: render-time, sibling placed BEFORE the root element. *@
+<SfThemeRoot />
 <SfInputBase>
 	<div @ref="@ContainerElement" class="@ContainerClass?.Trim()" @attributes="@ContainerAttribute">
 		<textarea @ref="@InputElement" id="@ID" value="@(FormatValueAsString(InputTextValue))"

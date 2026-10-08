@@ -5,6 +5,8 @@
 @namespace Syncfusion.Blazor.Toolkit
 @inject IStringLocalizer Localizer
 
+@* Shared theme emitter: render-time, unconditional (the provider can be idle with no dialog rendered). *@
+<SfThemeRoot />
 @if (DialogOptions is not null)
 {
     <SfDialog @bind-Visible="IsVisible" ShowCloseIcon="DialogOptions.ShowCloseIcon" Width="@DialogOptions.Width" Height="@DialogOptions.Height" IsModal="true" AllowDragging="DialogOptions.AllowDragging" CloseOnEscape="DialogOptions.CloseOnEscape" CssClass="@DialogOptions.CssClass" ZIndex="DialogOptions.ZIndex" Closed="OnDialogClose">

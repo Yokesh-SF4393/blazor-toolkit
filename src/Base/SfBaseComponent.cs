@@ -188,74 +188,17 @@ namespace Syncfusion.Blazor.Toolkit
                 IsRendered = firstRender;
 
                 await ImportComponentModuleAsync().ConfigureAwait(true);
-            }
 
-            // One-shot injector for the shared theme-root payload (:root tokens,
-            // icon font, keyframes, high-contrast). Idempotent — only the first
-            // SfBaseComponent in the app writes the <style> tag.
-            //
-            // This check runs on EVERY render (not just firstRender) to handle
-            // WebAssembly mode, where the IJSRuntime is not available during
-            // the prerender or static render phase. The _stylesInjected flag
-            // ensures the injection happens exactly once per context, and the
-            // IsContextChangedAsync check handles Auto mode upgrades where a
-            // new IJSRuntime context is created (Server → WebAssembly).
-            if (JSRuntime is not null && !_stylesInjected)
-            {
-                // Ensure the base.js module is loaded before attempting any
-                // JavaScript interop. This is critical for WebAssembly mode
-                // where the module is loaded asynchronously. Without this,
-                // calling sfBlazorToolkit.themeRoot.* would fail with
-                // "'sfBlazorToolkit' was undefined".
-                if (_baseJsModule is null && _baseJsInProcessModule is null)
+                // The shared theme (:root tokens, icon font, keyframes, high-contrast, ...) is delivered
+                // at render time by <SfThemeRoot /> (see SfThemeRoot.cs), NOT from here. This call is a
+                // safety net for a derived component that forgot to render <SfThemeRoot />: it is a
+                // no-op whenever the renderer already has an emitter, so it never races with or
+                // duplicates the render-time style element.
+                if (JSRuntime is not null)
                 {
-                    await ImportComponentModuleAsync().ConfigureAwait(true);
+                    await SfThemeRoot.EnsureFallbackAsync(JSRuntime).ConfigureAwait(true);
                 }
 
-                // Detect context changes (e.g., Server → WebAssembly upgrade in
-                // Auto mode). If the browser's context marker doesn't match
-                // our instance ID, invalidate the cache so styles are
-                // re-injected for the new context.
-                var contextId = GetContextId();
-                bool contextChanged = false;
-                try
-                {
-                    // Use the imported module reference if available, otherwise
-                    // fall back to global invocation. This is critical for
-                    // WebAssembly mode where modules must be imported before
-                    // their functions can be called.
-                    if (_baseJsModule is not null)
-                    {
-                        var currentContextId = await _baseJsModule.InvokeAsync<string>(
-                            "getContext").ConfigureAwait(true);
-                        contextChanged = currentContextId != contextId;
-                    }
-                    else if (_baseJsInProcessModule is not null)
-                    {
-                        var currentContextId = _baseJsInProcessModule.Invoke<string>(
-                            "getContext");
-                        contextChanged = currentContextId != contextId;
-                    }
-                }
-                catch
-                {
-                    // If context detection fails, assume changed so styles
-                    // are re-injected for the new context.
-                    contextChanged = true;
-                }
-
-                if (contextChanged)
-                {
-                    SfThemeRoot.Invalidate(JSRuntime);
-                    _stylesInjected = false; // Reset to allow re-injection for new context
-                }
-
-                await SfThemeRoot.EnsureEmittedAsync(JSRuntime, contextId).ConfigureAwait(true);
-                _stylesInjected = true;
-            }
-
-            if (firstRender)
-            {
                 // Notify the component that the required scripts have been loaded.
                 await OnAfterScriptRenderedAsync().ConfigureAwait(true);
             }
