@@ -22,6 +22,42 @@ public sealed class SfThemeRoot : ComponentBase
 {
     internal const string StyleElementId = "sf-theme-root";
 
+    /// <summary>
+    /// The IJSRuntime instance injected by Blazor. May be <c>null</c> during
+    /// prerendering or static SSR phases.
+    /// </summary>
+    [Inject]
+    internal IJSRuntime? JSRuntime { get; set; }
+
+    /// <summary>
+    /// Optional explicit context ID. If not provided, a new GUID is generated
+    /// per component instance. Setting this to a stable value across renders
+    /// allows the same marker to be reused, which is useful when a consumer
+    /// wants to control when styles are re-injected.
+    /// </summary>
+    [Parameter]
+    public string? ContextId { get; set; }
+
+    /// <summary>
+    /// Lifecycle hook that triggers the theme-root style injection when the
+    /// component first renders and a JSRuntime is available. When used as a
+    /// component in <c>App.razor</c> or a layout, this ensures styles are
+    /// available before any toolkit component renders.
+    /// </summary>
+    /// <param name="firstRender">
+    /// <c>true</c> on the first render of this component instance.
+    /// </param>
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender && JSRuntime is not null)
+        {
+            // Fire-and-forget the style injection. The EnsureEmittedAsync
+            // method is idempotent and thread-safe, so this will not
+            // duplicate work if SfBaseComponent also triggers injection.
+            _ = EnsureEmittedAsync(JSRuntime, ContextId);
+        }
+    }
+
     internal static readonly string Payload = @":root {
 
 --color-sf-primary: #0f6cbd;
@@ -1886,7 +1922,15 @@ font-family: ""e-toolkit-icons"";
     /// upgrade). Concurrent first-renders within the same context await a
     /// single shared in-flight Task instead of issuing parallel interop calls.
     /// </summary>
-    internal static ValueTask EnsureEmittedAsync(IJSRuntime js)
+    /// <param name="js">The IJSRuntime instance for the current render context.</param>
+    /// <param name="contextId">
+    /// Optional unique identifier for the render context. When provided, the
+    /// JavaScript side uses it to mark the injected style with a
+    /// <c>data-sf-context</c> attribute, enabling detection of context changes
+    /// (e.g., Server → WebAssembly upgrade in Auto mode). If <c>null</c>, a
+    /// new GUID is generated.
+    /// </param>
+    internal static ValueTask EnsureEmittedAsync(IJSRuntime js, string contextId = null)
     {
         if (js is null) return ValueTask.CompletedTask;
 
@@ -1909,7 +1953,7 @@ font-family: ""e-toolkit-icons"";
                                                     // weak key keeps the runtime
                                                     // tracked while we work
                 }
-                task = EmitCoreAsync(js);
+                task = EmitCoreAsync(js, contextId);
                 _emitTasks.Add(js, task);
                 isFirstCaller = true;
             }
@@ -1929,14 +1973,16 @@ font-family: ""e-toolkit-icons"";
         return AwaitSafelyAsync(task);
     }
 
-    private static async Task EmitCoreAsync(IJSRuntime js)
+    private static async Task EmitCoreAsync(IJSRuntime js, string contextId)
     {
         try
         {
+            var effectiveContextId = contextId ?? Guid.NewGuid().ToString("N");
             await js.InvokeVoidAsync(
                 "sfBlazorToolkit.themeRoot.ensure",
                 StyleElementId,
-                Payload).ConfigureAwait(false);
+                Payload,
+                effectiveContextId).ConfigureAwait(false);
         }
         catch (JSDisconnectedException)
         {
@@ -1948,7 +1994,63 @@ font-family: ""e-toolkit-icons"";
         }
     }
 
-    private static void Invalidate(IJSRuntime js)
+    /// <summary>
+    /// Manually invalidates the cached emit task for the given IJSRuntime and
+    /// re-injects the theme-root styles. Useful when the render context has
+    /// changed (e.g., after a Server → WebAssembly upgrade in Auto mode) and
+    /// automatic detection has failed, or when consumers want to force a
+    /// fresh style injection.
+    /// </summary>
+    /// <param name="js">The IJSRuntime instance to refresh.</param>
+    /// <returns>A task that completes when the style injection has finished.</returns>
+    public static async Task RefreshAsync(IJSRuntime js)
+    {
+        if (js is null) return;
+        Invalidate(js);
+        await EnsureEmittedAsync(js).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Asynchronously checks whether the browser's current context marker
+    /// matches the expected context ID. Returns <c>true</c> if the marker is
+    /// missing or has a different value, indicating a context change that
+    /// may require re-injection of styles.
+    /// </summary>
+    /// <param name="js">The IJSRuntime instance to query.</param>
+    /// <param name="expectedContextId">The context ID to compare against.</param>
+    /// <returns>
+    /// <c>true</c> if the context has changed (or detection failed);
+    /// <c>false</c> if the current marker matches the expected ID.
+    /// </returns>
+    internal static async ValueTask<bool> IsContextChangedAsync(IJSRuntime js, string expectedContextId)
+    {
+        if (js is null || string.IsNullOrEmpty(expectedContextId))
+            return false;
+
+        try
+        {
+            var currentContextId = await js.InvokeAsync<string>(
+                "sfBlazorToolkit.themeRoot.getContext").ConfigureAwait(false);
+            return currentContextId != expectedContextId;
+        }
+        catch (JSDisconnectedException)
+        {
+            return true; // Assume changed if detection fails
+        }
+        catch (InvalidOperationException)
+        {
+            return true; // Assume changed if detection fails
+        }
+    }
+
+    /// <summary>
+    /// Removes the cached emit task for the given IJSRuntime, forcing the
+    /// next <see cref="EnsureEmittedAsync"/> call to perform a fresh
+    /// injection. Used internally on JS errors and externally by
+    /// <see cref="RefreshAsync"/> and context-change detection.
+    /// </summary>
+    /// <param name="js">The IJSRuntime instance to invalidate.</param>
+    internal static void Invalidate(IJSRuntime js)
     {
         lock (_tableLock)
         {
