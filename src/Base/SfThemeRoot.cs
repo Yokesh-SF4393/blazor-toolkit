@@ -274,18 +274,154 @@ public sealed class SfThemeRoot : ComponentBase
 
 }
 
-@media (prefers-color-scheme: dark) {
-
 .e-dark-mode {
-
-/* Dark-mode overrides for tokens defined on light :root above.
-   Reference the same custom-property names; values are intentionally distinct
-   from the light defaults. */
-  --e-radius: 1rem;
-  --e-border: 1rem;
-
-}
-
+  --color-sf-black: #000;
+  --color-sf-content-bg-color: #1f1f1f;
+  --color-sf-content-bg-color-alt1: #292929;
+  --color-sf-content-bg-color-alt2: #141414;
+  --color-sf-content-bg-color-alt3: #333;
+  --color-sf-content-bg-color-alt4: #0a0a0a;
+  --color-sf-content-bg-color-hover: var(--color-sf-content-bg-color-alt3);
+  --color-sf-content-bg-color-pressed: var(--color-sf-content-bg-color-alt2);
+  --color-sf-content-bg-color-focus: var(--color-sf-content-bg-color-hover);
+  --color-sf-content-bg-color-selected: #2e2e2e;
+  --color-sf-flyout-bg-color: var(--color-sf-content-bg-color-alt1);
+  --color-sf-flyout-bg-color-hover: #3d3d3d;
+  --color-sf-flyout-bg-color-pressed: var(--color-sf-black);
+  --color-sf-flyout-bg-color-selected: #383838;
+  --color-sf-flyout-bg-color-focus: var(--color-sf-flyout-bg-color-hover);
+  --color-sf-overlay-bg-color: rgba(0, 0, 0, .4);
+  --color-sf-content-text-color: #fff;
+  --color-sf-content-text-color-alt1: #d6d6d6;
+  --color-sf-content-text-color-alt2: #adadad;
+  --color-sf-content-text-color-alt3: #999;
+  --color-sf-content-text-color-hover: var(--color-sf-content-text-color);
+  --color-sf-content-text-color-selected: var(--color-sf-content-text-color);
+  --color-sf-content-text-color-disabled: #5c5c5c;
+  --color-sf-placeholder-text-color: var(--color-sf-content-text-color-alt3);
+  --color-sf-flyout-text-color-selected: var(--color-sf-content-text-color);
+  --color-sf-flyout-text-color-focus: var(--color-sf-content-text-color);
+  --color-sf-flyout-text-color-disabled: var(--color-sf-content-text-color-disabled);
+  --color-sf-icon-color: #d6d6d6;
+  --color-sf-icon-color-hover: var(--color-sf-content-text-color);
+  --color-sf-icon-color-pressed: var(--color-sf-content-text-color);
+  --color-sf-icon-color-disabled: var(--color-sf-content-text-color-disabled);
+  --color-sf-border-light: #525252;
+  --color-sf-border: #666;
+  --color-sf-border-alt: #adadad;
+  --color-sf-border-dark: #757575;
+  --color-sf-border-hover: #757575;
+  --color-sf-border-pressed: #4d4d4d;
+  --color-sf-border-disabled: #424242;
+  --color-sf-border-warning: #bc4b09;
+  --color-sf-border-error: #dc626d;
+  --color-sf-border-success: #9fd89f;
+  --color-sf-flyout-border: #525252;
+  --color-sf-primary: #115ea3;
+  --color-sf-primary-text-color: #fff;
+  --color-sf-primary-light: #0e4775;
+  --color-sf-primary-lighter: #082338;
+  --color-sf-primary-dark: #62abf5;
+  --color-sf-success: #107c10;
+  --color-sf-info: #0099bc;
+  --color-sf-warning: #faa06b;
+  --color-sf-danger: #dc626d;
+  --color-sf-primary-bg-color: var(--color-sf-primary);
+  --color-sf-primary-border-color: var(--color-sf-primary);
+  --color-sf-primary-text: var(--color-sf-primary-text-color);
+  --color-sf-primary-bg-color-hover: #0f6cbd;
+  --color-sf-primary-border-color-hover: var(--color-sf-primary-bg-color-hover);
+  --color-sf-primary-text-hover: var(--color-sf-primary-text-color);
+  --color-sf-primary-bg-color-pressed: #0c3b5e;
+  --color-sf-primary-border-color-pressed: var(--color-sf-primary-bg-color-pressed);
+  --color-sf-primary-text-pressed: var(--color-sf-primary-text-color);
+  --color-sf-primary-bg-color-focus: var(--color-sf-primary-bg-color-hover);
+  --color-sf-primary-border-color-focus: var(--color-sf-primary-bg-color-focus);
+  --color-sf-primary-text-focus: var(--color-sf-primary-text-color);
+  --color-sf-primary-bg-color-disabled: #141414;
+  --color-sf-primary-border-color-disabled: var(--color-sf-primary-bg-color-disabled);
+  --color-sf-primary-text-disabled: var(--color-sf-content-text-color-disabled);
+  --color-sf-primary-bg-color-selected: #0f548c;
+  --color-sf-primary-border-color-selected: var(--color-sf-primary-bg-color-selected);
+  --color-sf-primary-text-selected: var(--color-sf-primary-text-color);
+  --color-sf-secondary-bg-color: #292929;
+  --color-sf-secondary-border-color: var(--color-sf-border);
+  --color-sf-secondary-text-color: var(--color-sf-content-text-color);
+  --color-sf-secondary-bg-color-hover: #3d3d3d;
+  --color-sf-secondary-border-color-hover: #757575;
+  --color-sf-secondary-text-color-hover: var(--color-sf-content-text-color);
+  --color-sf-secondary-bg-color-pressed: var(--color-sf-black);
+  --color-sf-secondary-border-color-pressed: #6b6b6b;
+  --color-sf-secondary-text-color-pressed: var(--color-sf-content-text-color);
+  --color-sf-secondary-bg-color-focus: #383838;
+  --color-sf-secondary-border-color-focus: #fff;
+  --color-sf-secondary-text-color-focus: var(--color-sf-content-text-color);
+  --color-sf-secondary-bg-color-disabled: var(--color-sf-primary-bg-color-disabled);
+  --color-sf-secondary-border-color-disabled: var(--color-sf-secondary-bg-color-disabled);
+  --color-sf-secondary-text-color-disabled: var(--color-sf-content-text-color-disabled);
+  --color-sf-secondary-bg-color-selected: #383838;
+  --color-sf-secondary-border-color-selected: #707070;
+  --color-sf-secondary-text-color-selected: var(--color-sf-content-text-color);
+  --color-sf-success-bg-color: #218c21;
+  --color-sf-success-border-color: var(--color-sf-success-bg-color);
+  --color-sf-success-text: var(--color-sf-primary-text-color);
+  --color-sf-success-bg-color-hover: #0e700e;
+  --color-sf-success-border-color-hover: var(--color-sf-success-bg-color-hover);
+  --color-sf-success-text-hover: var(--color-sf-primary-text-color);
+  --color-sf-success-bg-color-pressed: #052505;
+  --color-sf-success-border-color-pressed: var(--color-sf-success-bg-color-pressed);
+  --color-sf-success-text-pressed: var(--color-sf-primary-text-color);
+  --color-sf-success-bg-color-focus: var(--color-sf-success-bg-color);
+  --color-sf-success-border-color-focus: var(--color-sf-success-bg-color-focus);
+  --color-sf-success-text-focus: var(--color-sf-primary-text-color);
+  --color-sf-success-bg-color-disabled: var(--color-sf-primary-bg-color-disabled);
+  --color-sf-success-border-color-disabled: var(--color-sf-success-bg-color-disabled);
+  --color-sf-success-text-disabled: var(--color-sf-content-text-color-disabled);
+  --color-sf-success-bg-color-selected: #094509;
+  --color-sf-success-border-color-selected: var(--color-sf-success-bg-color-selected);
+  --color-sf-success-text-selected: var(--color-sf-primary-text-color);
+  --color-sf-success-border-color-hover: var(--color-sf-success-bg-color-hover);
+  --color-sf-success-text-hover: var(--color-sf-primary-text-color);
+  --color-sf-success-bg-color-pressed: #052505;
+  --color-sf-success-border-color-pressed: var(--color-sf-success-bg-color-pressed);
+  --color-sf-success-text-pressed: var(--color-sf-primary-text-color);
+  --color-sf-success-text-disabled: var(--color-sf-content-text-color-disabled);
+  --color-sf-warning-bg-color: #f87528;
+  --color-sf-warning-border-color: var(--color-sf-warning-bg-color);
+  --color-sf-warning-text: #242424;
+  --color-sf-warning-bg-color-hover: #de590b;
+  --color-sf-warning-border-color-hover: var(--color-sf-warning-bg-color-hover);
+  --color-sf-warning-text-hover: var(--color-sf-primary-text-color);
+  --color-sf-warning-bg-color-pressed: #4a1e04;
+  --color-sf-warning-border-color-pressed: var(--color-sf-warning-bg-color-pressed);
+  --color-sf-warning-text-pressed: var(--color-sf-primary-text-color);
+  --color-sf-danger-bg-color: #cc2635;
+  --color-sf-danger-border-color: var(--color-sf-danger-bg-color);
+  --color-sf-danger-text: var(--color-sf-primary-text-color);
+  --color-sf-danger-bg-color-pressed: #3b0509;
+  --color-sf-tooltip-bg-color: var(--color-sf-content-bg-color-alt1);
+  --color-sf-tooltip-border: var(--color-sf-tooltip-bg-color);
+  --color-sf-tooltip-text-color: var(--color-sf-content-text-color);
+  --color-sf-rating-selected-color: #fff;
+  --color-sf-rating-unrated-color: var(--color-sf-content-text-color);
+  --color-sf-rating-selected-disabled-color: #575757;
+  --color-sf-rating-unrated-disabled-color: #4d4d4d;
+  --color-sf-rating-selected-hover-color: #2886de;
+  --color-sf-shadow-color: #fff;
+  --color-sf-shadow-color1: #000;
+  --color-sf-secondary-outline-button-text-color-hover: #fff;
+  --color-sf-secondary-outline-button-text-color-pressed: #fff;
+  --color-sf-secondary-outline-button-text-color-selected: #fff;
+  --color-sf-secondary-outline-button-text-color-focus: #fff;
+  --color-sf-slider-shadow1: #000;
+  --color-sf-slider-shadow2: #666;
+  --color-sf-slider-border-color: #ffffff00;
+  --color-sf-slider-bg-disabled: #525252;
+  --color-sf-toggle-switch-border-disabled: #141414;
+  --color-sf-calendar-icon-color: #1153a3;
+  --color-sf-calendar-header-text-color-pressed: #62abf5;
+  --color-sf-dialog-border: #1f1f1f;
+  --color-sf-skeleton-bg-color: #575757;
 }
 
 /* base-core (shared .e-* utility classes) */
