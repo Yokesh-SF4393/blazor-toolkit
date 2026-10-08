@@ -91,6 +91,33 @@ function disposeWindowsInstance(id) {
 }
 
 /**
+ * Inject the shared theme-root <style> element into document.head. Idempotent:
+ * if an element with the given id already exists, this is a no-op. Called from
+ * .NET once per application lifetime via SfThemeRoot.EnsureEmittedAsync.
+ * @param {string} id - The id to assign to the <style> element (sf-theme-root).
+ * @param {string} payload - The full CSS payload (root tokens, icon font, keyframes, HC).
+ * @returns {boolean} True when a new style element was appended; false on no-op.
+ */
+function ensureThemeRoot(id, payload) {
+    if (!id || typeof document === 'undefined') return false;
+    if (document.getElementById(id)) return false;
+    var style = document.createElement('style');
+    style.id = id;
+    style.setAttribute('data-sf-theme-root', 'true');
+    style.appendChild(document.createTextNode(payload));
+    (document.head || document.documentElement).appendChild(style);
+    return true;
+}
+
+// Expose on the global window object so IJSRuntime.InvokeVoidAsync can
+// resolve it without going through the ES module namespace (base.js is
+// loaded as a classic <script>, not via ES import).
+window.sfBlazorToolkit = window.sfBlazorToolkit || {};
+window.sfBlazorToolkit.themeRoot = { ensure: ensureThemeRoot };
+
+exports.ensureThemeRoot = ensureThemeRoot;
+
+/**
  * Null/undefined guard.
  * @param {*} value
  * @returns {boolean}

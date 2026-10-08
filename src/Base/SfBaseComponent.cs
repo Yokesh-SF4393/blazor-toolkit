@@ -173,6 +173,14 @@ namespace Syncfusion.Blazor.Toolkit
 
                 await ImportComponentModuleAsync().ConfigureAwait(true);
 
+                // One-shot injector for the shared theme-root payload (:root tokens,
+                // icon font, keyframes, high-contrast). Idempotent — only the first
+                // SfBaseComponent in the app writes the <style> tag.
+                if (JSRuntime is not null)
+                {
+                    await SfThemeRoot.EnsureEmittedAsync(JSRuntime).ConfigureAwait(true);
+                }
+
                 // Notify the component that the required scripts have been loaded.
                 await OnAfterScriptRenderedAsync().ConfigureAwait(true);
             }
