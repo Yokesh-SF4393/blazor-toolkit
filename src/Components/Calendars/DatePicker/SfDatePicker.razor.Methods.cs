@@ -84,6 +84,26 @@ namespace Syncfusion.Blazor.Toolkit.Calendars
         }
 
         /// <summary>
+        /// Returns the DOM element id that the input's <c>aria-owns</c> attribute should point to
+        /// while a popup is open. The base implementation always returns the calendar popup id
+        /// (matching the popup rendered by <see cref="SfDatePicker{TValue}"/>).
+        /// Derived components that render additional popups (for example,
+        /// <see cref="SfDateTimePicker{TValue}"/>, which also renders a time-list popup)
+        /// override this to return the id of the popup that is currently in the accessibility tree.
+        /// </summary>
+        /// <returns>The element id that <c>aria-owns</c> should reference.</returns>
+        /// <remarks>
+        /// Called from <see cref="ShowPopupAsync(EventArgs?)"/> immediately after the popup has
+        /// been opened. The returned value is written verbatim into the
+        /// <c>aria-owns</c> attribute on the input element so axe-core can resolve it to a
+        /// node that exists in the accessibility tree.
+        /// </remarks>
+        protected virtual string GetAriaOwnsTarget()
+        {
+            return ID + POPUPS;
+        }
+
+        /// <summary>
         /// Opens the popup calendar associated with the <see cref="SfDatePicker{TValue}"/> component.
         /// </summary>
         /// <param name="args">The event arguments that trigger the popup. Optional.</param>
@@ -139,7 +159,7 @@ namespace Syncfusion.Blazor.Toolkit.Calendars
                         SetPopupVisibility(true);
                     }
                     _ = SfBaseUtils.UpdateDictionary(ARIAEXPANDED, TRUE, InputHtmlAttributes);
-                    _ = SfBaseUtils.UpdateDictionary(ARIA_OWN, ID + POPUPS, InputHtmlAttributes);
+                    _ = SfBaseUtils.UpdateDictionary(ARIA_OWN, GetAriaOwnsTarget(), InputHtmlAttributes);
                 }
                 await InvokeAsync(StateHasChanged).ConfigureAwait(false);
             }

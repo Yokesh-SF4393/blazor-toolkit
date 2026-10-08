@@ -391,7 +391,14 @@ namespace Syncfusion.Blazor.Toolkit.Popups
                     // cause double-disposal due to the async void fire-and-forget execution order.
                     if (_tooltipJsModule != null)
                     {
-                        await _tooltipJsModule.DisposeAsync().ConfigureAwait(true);
+                        try
+                        {
+                            await _tooltipJsModule.DisposeAsync().ConfigureAwait(true);
+                        }
+                        catch (JSDisconnectedException)
+                        {
+                            // Ignore during application shutdown/navigation.
+                        }
                         _tooltipJsModule = null;
                     }
 

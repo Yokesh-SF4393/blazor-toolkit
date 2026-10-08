@@ -55,6 +55,18 @@ namespace Syncfusion.Blazor.Toolkit.Buttons
 
         #endregion
 
+        #region Helper Methods
+
+        /// <exclude />
+        private string GetSelectionCssClass()
+        {
+            string activeClass = _selected ? " e-active" : string.Empty;
+            string cssClass = CssClass.Replace("e - primary", "e-primary", StringComparison.Ordinal);
+            return string.IsNullOrEmpty(cssClass) ? "e-btn" + activeClass : "e-btn " + cssClass + activeClass;
+        }
+
+        #endregion
+
         #region Event Handlers
 
         /// <exclude />
