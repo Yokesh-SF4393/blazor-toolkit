@@ -96,9 +96,13 @@ function disposeWindowsInstance(id) {
  * .NET once per application lifetime via SfThemeRoot.EnsureEmittedAsync.
  * @param {string} id - The id to assign to the <style> element (sf-theme-root).
  * @param {string} payload - The full CSS payload (root tokens, icon font, keyframes, HC).
+ * @param {string} [contextId] - Optional context identifier. When provided, a
+ *     <meta> marker element is created in document.head with this value,
+ *     enabling detection of context changes (e.g., Server → WebAssembly
+ *     upgrade in Auto mode).
  * @returns {boolean} True when a new style element was appended; false on no-op.
  */
-function ensureThemeRoot(id, payload) {
+function ensureThemeRoot(id, payload, contextId) {
     if (!id || typeof document === 'undefined') return false;
     if (document.getElementById(id)) return false;
     var style = document.createElement('style');
@@ -106,16 +110,44 @@ function ensureThemeRoot(id, payload) {
     style.setAttribute('data-sf-theme-root', 'true');
     style.appendChild(document.createTextNode(payload));
     (document.head || document.documentElement).appendChild(style);
+
+    // If a contextId is provided, set a marker on the style element and create
+    // a <meta> element in document.head so the .NET side can detect when the
+    // render context has changed (e.g., after a Server → WebAssembly upgrade).
+    if (contextId) {
+        style.setAttribute('data-sf-context', contextId);
+        var existingMarker = document.querySelector('meta[data-sf-context]');
+        if (existingMarker) {
+            existingMarker.setAttribute('data-sf-context', contextId);
+        } else {
+            var marker = document.createElement('meta');
+            marker.setAttribute('data-sf-context', contextId);
+            document.head.appendChild(marker);
+        }
+    }
     return true;
+}
+
+/**
+ * Retrieve the current context marker value from document.head. Used by the
+ * .NET side to detect whether the render context has changed since the last
+ * style injection.
+ * @returns {string|null} The current context ID, or null if no marker exists.
+ */
+function getContextMarker() {
+    if (typeof document === 'undefined') return null;
+    var marker = document.querySelector('meta[data-sf-context]');
+    return marker ? marker.getAttribute('data-sf-context') : null;
 }
 
 // Expose on the global window object so IJSRuntime.InvokeVoidAsync can
 // resolve it without going through the ES module namespace (base.js is
 // loaded as a classic <script>, not via ES import).
 window.sfBlazorToolkit = window.sfBlazorToolkit || {};
-window.sfBlazorToolkit.themeRoot = { ensure: ensureThemeRoot };
+window.sfBlazorToolkit.themeRoot = { ensure: ensureThemeRoot, getContext: getContextMarker };
 
 exports.ensureThemeRoot = ensureThemeRoot;
+exports.getContextMarker = getContextMarker;
 
 /**
  * Null/undefined guard.

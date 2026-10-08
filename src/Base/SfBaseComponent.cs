@@ -124,6 +124,22 @@ namespace Syncfusion.Blazor.Toolkit
         internal Dictionary<string, object>? PropertyChanges { get; set; }
 
         /// <summary>
+        /// Tracks whether the shared theme-root styles have been injected for the
+        /// current IJSRuntime context. This flag is reset to <c>false</c> when a
+        /// context change is detected (e.g., Server → WebAssembly upgrade in
+        /// Auto mode), allowing the styles to be re-injected for the new context.
+        /// </summary>
+        /// <remarks>
+        /// This flag is necessary because in WebAssembly mode, the IJSRuntime
+        /// is not available during the prerender or static render phase. The
+        /// style injection must therefore be deferred until JSRuntime becomes
+        /// available, which may happen on a render where <c>firstRender</c> is
+        /// <c>false</c>. Without this flag, styles would either be skipped
+        /// (in WASM mode) or injected multiple times (if checked on every render).
+        /// </remarks>
+        private bool _stylesInjected = false;
+
+        /// <summary>
         /// A bridge reference passed to JavaScript so the client can invoke .NET instance methods on this component.
         /// </summary>
         /// <remarks>
@@ -172,19 +188,52 @@ namespace Syncfusion.Blazor.Toolkit
                 IsRendered = firstRender;
 
                 await ImportComponentModuleAsync().ConfigureAwait(true);
+            }
 
-                // One-shot injector for the shared theme-root payload (:root tokens,
-                // icon font, keyframes, high-contrast). Idempotent — only the first
-                // SfBaseComponent in the app writes the <style> tag.
-                if (JSRuntime is not null)
+            // One-shot injector for the shared theme-root payload (:root tokens,
+            // icon font, keyframes, high-contrast). Idempotent — only the first
+            // SfBaseComponent in the app writes the <style> tag.
+            //
+            // This check runs on EVERY render (not just firstRender) to handle
+            // WebAssembly mode, where the IJSRuntime is not available during
+            // the prerender or static render phase. The _stylesInjected flag
+            // ensures the injection happens exactly once per context, and the
+            // IsContextChangedAsync check handles Auto mode upgrades where a
+            // new IJSRuntime context is created (Server → WebAssembly).
+            if (JSRuntime is not null && !_stylesInjected)
+            {
+                // Detect context changes (e.g., Server → WebAssembly upgrade in
+                // Auto mode). If the browser's context marker doesn't match
+                // our instance ID, invalidate the cache so styles are
+                // re-injected for the new context.
+                var contextId = GetContextId();
+                if (await SfThemeRoot.IsContextChangedAsync(JSRuntime, contextId).ConfigureAwait(true))
                 {
-                    await SfThemeRoot.EnsureEmittedAsync(JSRuntime).ConfigureAwait(true);
+                    SfThemeRoot.Invalidate(JSRuntime);
+                    _stylesInjected = false; // Reset to allow re-injection for new context
                 }
 
+                await SfThemeRoot.EnsureEmittedAsync(JSRuntime, contextId).ConfigureAwait(true);
+                _stylesInjected = true;
+            }
+
+            if (firstRender)
+            {
                 // Notify the component that the required scripts have been loaded.
                 await OnAfterScriptRenderedAsync().ConfigureAwait(true);
             }
             PropertyChanges?.Clear();
+        }
+
+        /// <summary>
+        /// Returns a stable identifier for this component instance, used to
+        /// track the render context for CSS injection. Derived components may
+        /// override this to provide a custom context ID.
+        /// </summary>
+        /// <returns>A unique string identifying this render context.</returns>
+        protected virtual string GetContextId()
+        {
+            return GetHashCode().ToString("X");
         }
 
         /// <summary>
