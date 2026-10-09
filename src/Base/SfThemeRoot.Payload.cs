@@ -1625,8 +1625,9 @@ font-family: ""e-toolkit-icons"";
       border-color: Highlight !important;
       color: Highlight !important;
       background-color: HighlightText !important;
+      box-shadow: none !important;
       forced-color-adjust: none;
-    }
+  }
 
   .e-calendar .e-content .e-week-number span {
     color: ButtonText !important;
@@ -1634,6 +1635,12 @@ font-family: ""e-toolkit-icons"";
 
   .e-calendar .e-content td.e-week-number:hover {
     border-radius: 0 !important;
+  }
+
+  .e-calendar .e-content td.e-focused-date:not(.e-today) span.e-day {
+    outline: 2px solid CanvasText !important;
+    outline-offset: 0 !important;
+    forced-color-adjust: none;
   }
 
   .e-calendar .e-content td.e-week-number {

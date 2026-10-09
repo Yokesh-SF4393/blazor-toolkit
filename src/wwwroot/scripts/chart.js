@@ -2333,6 +2333,19 @@ export function redrawSelection(dataId) {
         chart.selectedDataIndexes = [];
         removeSelectedElements(dataId);
     }
+    // MS-4.10 — `removeSelectedElements` only walks `getSeriesElements(i, chart)`,
+    // which deliberately excludes the legend shape DOM. That left the legend
+    // shape's `unSelected` / selection class stuck on the element whenever the
+    // user toggled a series selection (selection → deselect), because
+    // `redrawSelection` only re-evaluates the series, never the legend. Clear
+    // the legend shape classes here so the legend reflects the new selection
+    // state. Mirrors the loop at the end of `removeSelectionStyles`.
+    for (let i = 0; i < chart.seriesTypes.length; i++) {
+        const legendShapeElement = findDOMElement(chart.element.id + '_chart_legend_shape_' + i);
+        if (legendShapeElement) {
+            removeSvgClass(legendShapeElement, legendShapeElement.getAttribute('class'));
+        }
+    }
     blurEffect(chart.element.id, chart);
     selectDataIndex(chart.dataId, chartSelectedDatas);
 }

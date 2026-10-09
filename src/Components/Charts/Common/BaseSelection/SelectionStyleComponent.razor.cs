@@ -35,7 +35,7 @@ namespace Syncfusion.Blazor.Toolkit
         {
             if (data is not null && data.Count > 0)
             {
-                GivenPattern = data;
+                GivenPattern = new List<PatternOptions>(data);
                 _ = InvokeAsync(StateHasChanged);
             }
         }
