@@ -4772,8 +4772,8 @@ ejs-calendar {
   background: none;
   width: initial;
 }
-.e-calendar ::deep .e-content td:hover {
-  border-radius: calc(var(--e-radius) * 0.125);
+.e-calendar ::deep .e-content.e-month td:hover {
+  border-radius: 999px;
   background: var(--color-sf-primary-lighter);
 }
 .e-calendar ::deep .e-content table {
@@ -5034,7 +5034,9 @@ ejs-calendar {
   color: var(--color-sf-content-text-color-disabled);
 }
 .e-calendar ::deep .e-content.e-year td:hover span.e-day,  .e-calendar ::deep .e-content.e-decade td:hover span.e-day {
+  background-color: var(--color-sf-primary-lighter);
   background: var(--color-sf-primary-lighter);
+  border-radius: 999px;
 }
 .e-calendar ::deep .e-content.e-year td.e-selected:hover span.e-day,  .e-calendar ::deep .e-content.e-decade td.e-selected:hover span.e-day {
   background: var(--color-sf-primary-light);
@@ -5047,14 +5049,14 @@ ejs-calendar {
 }
 .e-calendar ::deep .e-content td.e-focused-date span.e-day,  .e-calendar ::deep .e-content td.e-focused-date:hover span.e-day,  .e-calendar ::deep .e-content td.e-focused-date:focus span.e-day {
   border: none;
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
   box-shadow: none;
   font-weight: 600;
 }
 .e-calendar ::deep .e-content td.e-focused-date:hover span.e-day {
   background: var(--color-sf-primary-lighter);
   border: var(--color-sf-primary-lighter);
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
   color: var(--color-sf-content-text-color-alt1);
 }
 .e-calendar ::deep .e-content td.e-today span.e-day,  .e-calendar ::deep .e-content td.e-focused-date.e-today span.e-day {
@@ -5120,14 +5122,14 @@ ejs-calendar {
 .e-calendar ::deep .e-content td:hover span.e-day,  .e-calendar ::deep .e-content td:focus span.e-day {
   background: var(--color-sf-primary-lighter);
   border: var(--color-sf-primary-lighter);
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
   color: var(--color-sf-content-text-color-hover);
 }
 .e-calendar ::deep .e-content td:focus span.e-day {
   background: var(--color-sf-content-bg-color-hover);
   color: rgba(var(--color-sf-primary-text-color));
   border: none;
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
 }
 .e-calendar ::deep .e-content td.e-disabled span.e-day,  .e-calendar ::deep .e-content td.e-disabled:hover span.e-day,  .e-calendar ::deep .e-content td.e-disabled:focus span.e-day {
   background: none;
@@ -5138,7 +5140,7 @@ ejs-calendar {
   background: var(--color-sf-primary-light);
   color: var(--color-sf-content-text-color-selected);
   border: none;
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
 }
 .e-calendar ::deep .e-content td.e-selected:not(.e-focused-date) span.e-day {
   box-shadow: none;
@@ -5153,24 +5155,24 @@ ejs-calendar {
 }
 .e-calendar ::deep .e-content td.e-today.e-selected.e-focused-date {
   background-color: var(--color-sf-primary-light);
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
   box-shadow: none;
 }
 .e-calendar ::deep .e-content td.e-today.e-selected {
   background-color: var(--color-sf-primary-light);
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
   box-shadow: none;
 }
 .e-calendar ::deep .e-content td.e-selected:hover span.e-day {
   background-color: var(--color-sf-primary-light);
   border: none;
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
   color: var(--color-sf-content-text-color-selected);
 }
 .e-calendar ::deep .e-content td.e-selected.e-focused-date span.e-day {
   background-color: var(--color-sf-primary-light);
   border: none;
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
   color: var(--color-sf-content-text-color-selected);
 }
 .e-calendar ::deep .e-content.e-month td.e-today span.e-day {
@@ -5179,25 +5181,31 @@ ejs-calendar {
 .e-calendar ::deep .e-content.e-month td.e-disabled.e-today span.e-day {
   color: var(--color-sf-secondary-text-color-disabled);
 }
-.e-calendar ::deep .e-content.e-year td.e-selected > span.e-day,  .e-calendar ::deep .e-content.e-decade td.e-selected > span.e-day,  .e-calendar ::deep .e-content.e-year td.e-selected:hover > span.e-day,  .e-calendar ::deep .e-content.e-decade td.e-selected:hover > span.e-day {
+.e-calendar ::deep .e-content.e-year td.e-selected > span.e-day,
+.e-calendar ::deep .e-content.e-decade td.e-selected > span.e-day {
+  background-color: var(--color-sf-primary-light);
+  color: var(--color-sf-content-text-color-selected);
+}
+.e-calendar ::deep .e-content.e-year td.e-selected:hover > span.e-day,
+.e-calendar ::deep .e-content.e-decade td.e-selected:hover > span.e-day {
   background-color: var(--color-sf-primary-lighter);
   color: var(--color-sf-content-text-color-selected);
 }
 .e-calendar ::deep .e-content.e-year td.e-focused-date > span.e-day,  .e-calendar ::deep .e-content.e-decade td.e-focused-date > span.e-day {
   background: none;
-  border-radius: 0;
+  border-radius: 999px;
   box-shadow: none;
 }
 .e-calendar ::deep .e-content td.e-focused-date.e-today {
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
   box-shadow: none;
 }
 .e-calendar ::deep .e-content td.e-focused-date:hover span.e-day {
-  border-radius: calc(var(--e-radius) * 0.125);
+  border-radius: 999px;
 }
 .e-calendar ::deep .e-content.e-year td.e-focused-date:hover > span.e-day,  .e-calendar ::deep .e-content.e-decade td.e-focused-date:hover > span.e-day {
   background: var(--color-sf-primary-lighter);
-  border-radius: 0;
+  border-radius: 999px;
   box-shadow: none;
 }
 
@@ -5254,6 +5262,11 @@ ejs-calendar {
 .e-calendar ::deep .e-calendar-content-table .e-cell.e-focused-cell span.e-day {
   box-shadow: 0 0 0 1px var(--color-sf-content-text-color-alt3);
   border-radius: calc(var(--e-radius) * 0.125);
+}
+
+.e-calendar ::deep .e-content td.e-focused-date:not(.e-today):not(.e-selected) span.e-day {
+  outline: 2px solid var(--color-sf-content-text-color-selected);
+  outline-offset: 0;
 }
 
 .e-calendar ::deep .e-footer-container .e-btn,

@@ -6,6 +6,8 @@
 @typeparam TValue
 @inherits SfDatePicker<TValue>
 
+@* Shared theme emitter: render-time, sibling placed BEFORE the root element. *@
+<SfThemeRoot />
 <SfInputBase>
     <CascadingValue Value="this">
         @if (this.FloatLabelType == FloatLabelType.Auto || this.FloatLabelType == FloatLabelType.Always)

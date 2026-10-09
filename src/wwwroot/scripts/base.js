@@ -91,9 +91,14 @@ function disposeWindowsInstance(id) {
 }
 
 /**
- * Inject the shared theme-root <style> element into document.head. Idempotent:
- * if an element with the given id already exists, this is a no-op. Called from
- * .NET once per application lifetime via SfThemeRoot.EnsureEmittedAsync.
+ * FALLBACK ONLY. The shared theme is delivered at render time as a
+ * <style id="sf-theme-root"> element emitted by the <SfThemeRoot /> component
+ * (present in static SSR / prerendered HTML, with no JavaScript). This function
+ * is only reached from SfThemeRoot.EnsureFallbackAsync when a renderer has NO
+ * SfThemeRoot owner (a derived component that forgot to render the emitter).
+ * Idempotent: if an element with the given id already exists (rendered by
+ * Blazor, or injected earlier), this is a no-op, so it can never duplicate or
+ * race the render-time element. Never removes or mutates Blazor-owned DOM.
  * @param {string} id - The id to assign to the <style> element (sf-theme-root).
  * @param {string} payload - The full CSS payload (root tokens, icon font, keyframes, HC).
  * @param {string} [contextId] - Optional context identifier. When provided, a

@@ -4,6 +4,8 @@
 @inherits SfSelectionBase<TChecked>
 @typeparam TChecked
 
+@* Shared theme emitter: render-time, sibling placed BEFORE the root element. *@
+<SfThemeRoot />
 <div @ref="_container"
      class="@_rootClass"
      @onmousedown="OnMouseDownHandler"
