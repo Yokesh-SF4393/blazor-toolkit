@@ -1801,6 +1801,15 @@ ejs-calendar {
   animation: animatezoom 0.3s;
 }
 
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .e-calendar .e-btn.e-today.e-flat.e-primary,
 .e-calendar ::deep .e-css.e-btn.e-today.e-flat.e-primary {
   color: var(--color-sf-secondary-text-color);
