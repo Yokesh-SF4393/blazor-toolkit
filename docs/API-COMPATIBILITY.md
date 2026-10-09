@@ -5,12 +5,12 @@
 ## Fixed baseline and enforcement
 
 - Released baseline: **NuGet Syncfusion.Blazor.Toolkit 1.0.2**, SHA-256 `06934c512f9c42497fb37464f36d1b0cd7b987624bf2dab01c77b8a80865705d`.
-- [R03a evidence](evidence/2026-10-06-r03a-1922761/index.md) verified the downloaded package signature. Its embedded commit differs from the local release tag; source/provenance reconciliation remains R18 work. The installed package, not an assumed equivalent tag, is the API baseline.
-- [Exact diagnostic inventory](API-BREAK-INVENTORY.md): **194 named diagnostic/target pairs** approved for 2.0, not wildcard exclusions. The original 195th diagnostic, assembly version regression CP0003, is **not suppressed**; the authorized version change resolves it.
+- Embedded commit differs from the local release tag; source/provenance reconciliation remains R18 work. The installed package, not an assumed equivalent tag, is the API baseline.
+- Exact diagnostic inventory: **194 named diagnostic/target pairs** approved for 2.0, not wildcard exclusions. The original 195th diagnostic, assembly version regression CP0003, is **not suppressed**; the authorized version change resolves it.
 - `tools/api-compat/gate.py` verifies baseline hash/signature/identity, pins APICompat **10.0.401**, requires all three TFMs, runs the released comparison with the exact exceptions, then compares the current public/protected surface and representative contracts with independently frozen reviewed manifests.
 - The second layer prevents an existing exception from hiding another change to that same member. It records implemented interfaces, generic type/method constraints, signatures, defaults, public/protected fields, nullable/contract attributes, Razor parameters, callbacks, assembly identity and representative JSON fixtures. It excludes only named compiler/debug implementation attributes; it does not disable nullable or contract analysis.
 - All manifest differences, including additions, require review. There is deliberately **no update/rebaseline option** in the gate. Review exact diffs and migrations before manually replacing snapshots; never regenerate exceptions to make CI green.
-- `api-compatibility` in `.github/workflows/ci.yml` is required by pack and the failing summary. Remote execution and required-check repository settings are not verified by local success. CI logs retain for 14 days; release owners must retain release evidence separately.
+- Remote execution and required-check repository settings are not verified by local success. CI logs retain for 14 days; release owners must retain release evidence separately.
 
 ## Approved major changes and migration
 
@@ -44,7 +44,7 @@ At the R03 comparison, twenty of 21 released script files matched source after l
 
 The user selected the recommended correction: preserve original selected filenames rather than rewriting them to numeric HTML entities when `EnableHtmlSanitizer` validation flags a difference. Callback/file metadata and ordinary Razor templates now receive the original name. Default name/extension/status displays use text independently of that option. The optional validation comparison and invalid status code remain; it is not a guarantee that every markup-looking name is rejected. Validation parsing uses an inert document and does not attach parsed nodes.
 
-Applications must not rely on the old entity-encoded identity or insert callback names into HTML or storage paths. Use ordinary Razor interpolation/text APIs; application templates remain a separate trust boundary. No parameter, callback signature or JSON property shape changed, and no new API exception was added. The [R05 source evidence](evidence/2026-10-06-r05-1922761/index.md) is not released-package remediation or private security-owner approval. Existing missing invalid-name localization and Razor invalid-status remapping remain separate quality findings.
+Applications must not rely on the old entity-encoded identity or insert callback names into HTML or storage paths. Use ordinary Razor interpolation/text APIs; application templates remain a separate trust boundary. No parameter, callback signature or JSON property shape changed, and no new API exception was added. R05 source evidence is not released-package remediation or private security-owner approval. Existing missing invalid-name localization and Razor invalid-status remapping remain separate quality findings.
 
 ## CSS-isolation direction
 
@@ -56,4 +56,4 @@ Build the library and `tools/ApiContractProbe/ApiContractProbe.csproj` in one co
 
 Run verifier tests with `python3 -m unittest discover -s tools/api-compat -p test_gate.py`. Frozen manifests are gzip JSON for compact storage; inspect with any gzip/JSON reader. Source paths, timestamps and MVIDs are not part of the contract snapshots. Diagnostic logs and actual inventories are retained on failure.
 
-Evidence and boundaries: [R03 implementation record](evidence/2026-10-06-r03-1922761/index.md). A passing source gate establishes this reviewed contract only; package validation, signatures/provenance of the final candidate, CSS changes, security, accessibility and performance remain independent release requirements.
+Evidence and boundaries: A passing source gate establishes this reviewed contract only; package validation, signatures/provenance of the final candidate, CSS changes, security, accessibility and performance remain independent release requirements.
