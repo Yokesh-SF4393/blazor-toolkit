@@ -3188,4 +3188,18 @@
   background: none;
 }
 
+.e-input-group button.e-toolkit-icons.e-close.e-clear-icon-hide,
+.e-float-input button.e-toolkit-icons.e-close.e-clear-icon-hide,
+.e-input-group.e-control-wrapper button.e-toolkit-icons.e-close.e-clear-icon-hide,
+.e-float-input.e-control-wrapper button.e-toolkit-icons.e-close.e-clear-icon-hide {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+}
+
 /* stylelint-disable-line no-empty-source */
