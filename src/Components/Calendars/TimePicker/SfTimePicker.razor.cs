@@ -2337,7 +2337,17 @@ namespace Syncfusion.Blazor.Toolkit
             IsValideValue = false;
             if (OnInput.HasDelegate)
             {
-                await OnInput.InvokeAsync(args).ConfigureAwait(true);
+                // Blazor's framework-level ChangeEventArgs (Microsoft.AspNetCore.Components.ChangeEventArgs)
+                // carries a string Value; the toolkit's OnInput callback is typed over TValue, so we adapt
+                // by projecting into the toolkit's generic ChangeEventArgs<TValue>.
+                var toolkitArgs = new ChangeEventArgs<TValue>
+                {
+                    Event = args?.Value,
+                    IsInteracted = true,
+                    Text = args?.Value?.ToString() ?? string.Empty,
+                    Value = default
+                };
+                await OnInput.InvokeAsync(toolkitArgs).ConfigureAwait(true);
             }
             if (!EnableMask)
             {
