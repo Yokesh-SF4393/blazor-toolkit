@@ -75,7 +75,7 @@ namespace Syncfusion.Blazor.Toolkit
         /// </example>
         [Parameter]
         public override double Y { get; set; }
-		
+
         #endregion
 
         #region Lifecycle Methods

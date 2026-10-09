@@ -14,7 +14,7 @@ namespace Syncfusion.Blazor.Toolkit
         private string _color = string.Empty;
         private string _fontFamily = string.Empty;
         private string _fontWeight = string.Empty;
-        private bool _isPropertyChanged;
+        private new bool _isPropertyChanged;
         #endregion
 
         #region Properties
