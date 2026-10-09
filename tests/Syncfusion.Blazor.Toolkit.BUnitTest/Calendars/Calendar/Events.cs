@@ -271,7 +271,7 @@ namespace Syncfusion.Blazor.Toolkit.Tests.Calendars.Calendar
         public void FocusEventArgs()
         {
             var eventObject = new object();
-            var model = new Blazor.Toolkit.Calendars.FocusEventArgs
+            var model = new Blazor.Toolkit.FocusEventArgs
             {
                 Model = eventObject
             };
@@ -282,7 +282,7 @@ namespace Syncfusion.Blazor.Toolkit.Tests.Calendars.Calendar
         public void BlurEventArgs()
         {
             var eventObject = new object();
-            var model = new Blazor.Toolkit.Calendars.BlurEventArgs
+            var model = new Blazor.Toolkit.BlurEventArgs
             {
                 Model = eventObject
             };

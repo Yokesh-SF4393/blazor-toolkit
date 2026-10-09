@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
-using Syncfusion.Blazor.Toolkit.Inputs;
 using Syncfusion.Blazor.Toolkit.Internal;
 using System.Globalization;
 using System.Text;
@@ -1547,7 +1546,7 @@ namespace Syncfusion.Blazor.Toolkit
                 PrevValue = InputTextValue;
                 if (ValueChange.HasDelegate && !(Disabled || Readonly))
                 {
-                    Syncfusion.Blazor.Toolkit.Inputs.ChangeEventArgs<TValue> eventArgs = new()
+                    NumericTextBoxChangeEventArgs<TValue> eventArgs = new()
                     {
                         Value = InputTextValue,
                         PreviousValue = previousValue,

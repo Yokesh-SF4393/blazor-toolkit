@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Bunit;
 using Syncfusion.Blazor.Toolkit;
-using Syncfusion.Blazor.Toolkit.Inputs.Internal;
+using Syncfusion.Blazor.Toolkit;
 using Syncfusion.Blazor.Toolkit.Tests;
 using Microsoft.AspNetCore.Components;
 using FileInfo = Syncfusion.Blazor.Toolkit.FileInfo;

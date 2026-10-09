@@ -456,7 +456,7 @@ namespace Syncfusion.Blazor.Toolkit.Tests.Inputs.NumericTextBox
             double prevValue = 0;
             double value = 0;
             var numeric = RenderComponent<SfNumericTextBox<double>>(param => param.Add(p => p.Value, 123)
-            .Add(p => p.ValueChange, (ChangeEventArgs<double> args) =>
+            .Add(p => p.ValueChange, (NumericTextBoxChangeEventArgs<double> args) =>
             {
                 count++;
                 isInteracted = args.IsInteracted;

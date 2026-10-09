@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Components;
-using Syncfusion.Blazor.Toolkit.Inputs;
 
 namespace Syncfusion.Blazor.Toolkit
 {
@@ -10,7 +9,7 @@ namespace Syncfusion.Blazor.Toolkit
         /// Gets or sets an event callback that is invoked when the value of the <see cref="SfNumericTextBox{TValue}"/> component changes.
         /// </summary>
         /// <value>
-        /// An <see cref="EventCallback"/> that receives a <see cref="Syncfusion.Blazor.Toolkit.Inputs.ChangeEventArgs{TValue}"/> containing the previous and current values when the component's value changes.
+        /// An <see cref="EventCallback"/> that receives a <see cref="NumericTextBoxChangeEventArgs{TValue}"/> containing the previous and current values when the component's value changes.
         /// </value>
         /// <remarks>
         /// The ValueChange event is triggered whenever the user modifies the numeric value in the TextBox, either by typing, using the spin buttons, or through programmatic changes.
@@ -23,7 +22,7 @@ namespace Syncfusion.Blazor.Toolkit
         /// </SfNumericTextBox>
         ///
         /// @code {
-        ///     private void OnValueChange(Syncfusion.Blazor.Toolkit.Inputs.ChangeEventArgs<int?> args)
+        ///     private void OnValueChange(NumericTextBoxChangeEventArgs<int?> args)
         ///     {
         ///         var previousValue = args.PreviousValue;
         ///         var currentValue = args.Value;
@@ -33,7 +32,7 @@ namespace Syncfusion.Blazor.Toolkit
         /// ]]></code>
         /// </example>
         [Parameter]
-        public EventCallback<Syncfusion.Blazor.Toolkit.Inputs.ChangeEventArgs<TValue>> ValueChange { get; set; }
+        public EventCallback<NumericTextBoxChangeEventArgs<TValue>> ValueChange { get; set; }
 
 
         /// <summary>
