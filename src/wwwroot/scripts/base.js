@@ -1355,7 +1355,7 @@ function setImmediate(handler) {
         }
     };
     window.addEventListener('message', messageHandler, false);
-    window.postMessage(secret, '*');
+    window.postMessage(secret, window.location.origin);
     return unbind = function () {
         window.removeEventListener('message', messageHandler);
         handler = messageHandler = secret = undefined;
@@ -2129,8 +2129,8 @@ var blazorCultureFormats = {
 (function (IntlBase) {
     /* eslint-disable */
     // tslint:disable-next-line:max-line-length.
-    IntlBase.negativeDataRegex = /^(('[^']+'|''|[^*#@0,.E])*)(\*.)?((([#,]*[0,]*0+)(\.0*[0-9]*#*)?)|([#,]*@+#*))(E\+?0+)?(('[^']+'|''|[^*#@0,.E])*)$/;
-    IntlBase.customRegex = /^(('[^']+'|''|[^*#@0,.])*)(\*.)?((([0#,]*[0,]*[0#]*[0#\ ]*)(\.[0#]*)?)|([#,]*@+#*))(E\+?0+)?(('[^']+'|''|[^*#@0,.E])*)$/;
+    IntlBase.negativeDataRegex = /^((?:''|'[^']+'|[^*#@0,.E])*)(\*.)?((([#,]*[0]*0+)(\.0*[0-9]*#*)?)|([#,]*@+#?))(E\+?0+)?((?:''|'[^']+'|[^*#@0,.E])*)$/;
+    IntlBase.customRegex = /^((?:''|'[^']+'|[^*#@0,.])*)(\*.)?((([0#,]*[0]*[0#\ ]*)(\.[0#]*)?)|([#,]*@+#?))(E\+?0+)?((?:''|'[^']+'|[^*#@0,.E])*)$/;
     IntlBase.latnParseRegex = /0|1|2|3|4|5|6|7|8|9/g;
     var fractionRegex = /[0-9]/g;
     IntlBase.defaultCurrency = '$';

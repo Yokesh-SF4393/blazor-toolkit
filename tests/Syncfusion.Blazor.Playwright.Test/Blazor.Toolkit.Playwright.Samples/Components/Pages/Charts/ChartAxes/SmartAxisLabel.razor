@@ -124,8 +124,8 @@
                                   Value="@Width"
                                   Min="1"
                                   Max="120"
-                                  Step="1">
-                    <NumericTextBoxEvents TValue="int?" ValueChange="OnLabelWidthChanged" />
+                                  Step="1"
+                                  ValueChange="@((args) => OnLabelWidthChanged(args))">
                 </SfNumericTextBox>
             </td>
         </tr>
@@ -172,7 +172,7 @@
         => IsTrim = EnableTrim = value;
 
     private void OnLabelWidthChanged(
-        Syncfusion.Blazor.Toolkit.Inputs.ChangeEventArgs<int?> args)
+        Syncfusion.Blazor.Toolkit.NumericTextBoxChangeEventArgs<int?> args)
     {
         if (args.Value.HasValue)
             LabelWidth = Width = args.Value.Value;

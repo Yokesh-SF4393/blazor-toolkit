@@ -4659,7 +4659,7 @@ export function highlightPoint(chart, highlight, point) {
         elements.forEach((element1) => {
             const elementId = element1.id;
             const isPointPattern = elementId.indexOf(pointPrefix) === 0 && /_Point_\d+$/.test(elementId);
-            const isBoxPathPattern = elementId.indexOf(pointPrefix) === 0 && elementId.lastIndexOf(boxPathSuffix) === elementId.length - boxPathSuffix.length;
+            const isBoxPathPattern = elementId.indexOf(pointPrefix) === 0 && elementId.lastIndexOf(boxPathSuffix) !== -1 && elementId.lastIndexOf(boxPathSuffix) === elementId.length - boxPathSuffix.length;
             const isSeriesPattern = elementId.indexOf(pointPrefix) === 0;
             if ((isPointPattern || isBoxPathPattern || isSeriesPattern) &&
                 (elementId.indexOf(targetSeries) === -1)) {
