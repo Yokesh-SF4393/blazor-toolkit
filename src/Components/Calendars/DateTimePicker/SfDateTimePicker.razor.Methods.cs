@@ -8,7 +8,7 @@ namespace Syncfusion.Blazor.Toolkit
     public partial class SfDateTimePicker<TValue>
     {
         /// <summary>
-        /// Suffix appended to the component <see cref="CalendarBase{TValue}.ID"/> to form the DOM
+        /// Suffix appended to the component <see cref="SfInputBase{TValue}.ID"/> to form the DOM
         /// id of the time-list popup rendered by the <see cref="SfDateTimePicker{TValue}"/>.
         /// Kept in sync with the <c>ID="@(ID + &quot;_timepopup&quot;)"</c> declaration on the
         /// <c>&lt;SfPopup @ref=&quot;_timePopupRef&quot;&gt;</c> element in
