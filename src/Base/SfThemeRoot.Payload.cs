@@ -1702,6 +1702,11 @@ font-family: ""e-toolkit-icons"";
     color: Highlight !important;
     outline: 1px solid Highlight !important;
     border-radius: 50% !important;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 1px;
   }
 
   .e-calendar .e-header .e-title {

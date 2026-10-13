@@ -446,15 +446,6 @@
     flex-shrink: 0;
     background: transparent;
 }
-.sf-playground-card {
-    position: relative;
-    background: var(--sf-sidebar-card-bg);
-    border: 1px solid var(--sf-sidebar-card-border);
-    border-radius: 10px;
-    padding: 14px 14px 12px 14px;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
-    overflow: hidden;
-}
 .sf-playground-glow {
     position: absolute;
     top: -40px;
@@ -595,13 +586,6 @@ span.me-2.e-toolkit-icons.e-chevron-left {
     .sf-sidebar-footer {
         border-top: 1px solid ButtonText !important;
         background: transparent !important;
-    }
-
-    .sf-playground-card {
-        background-color: Canvas !important;
-        border: 1px solid ButtonText !important;
-        box-shadow: none !important;
-        color: CanvasText !important;
     }
 
     .sf-playground-glow {
@@ -769,46 +753,6 @@ span.me-2.e-toolkit-icons.e-chevron-left {
     -webkit-text-fill-color: var(--sf-contrast-hover-fg) !important;
     background-color: transparent !important;
     fill: var(--sf-contrast-hover-fg) !important;
-}
-
-/* ---------- 4b. HELP / "Need help?" / Playground EXCLUSION ---------- */
-/* These elements must NEVER receive the contrast hover/active bar or
-   inverted text in normal/dark/highcontrast CSS-themes (Aquatic, Desert,
-   Dusk, Night sky). They keep their neutral styling there.
-
-   The rule is wrapped in a NOT-forced-colors guard so the dedicated
-   `@media (forced-colors: active)` block above can repaint the
-   Playground card and button with OS system-colours (CanvasText /
-   ButtonFace / ButtonText / Highlight). Without this guard the forced-
-   colors declarations lose the `!important` specificity war and the
-   title + subtitle + button disappear. */
-@media not (forced-colors: active) {
-    .sf-sidebar .sf-sidebar-footer,
-    .sf-sidebar .sf-playground-card,
-    .sf-sidebar .sf-playground-card *,
-    .sf-sidebar .sf-playground-btn {
-        /* background-color: transparent !important;
-        color: inherit !important; */
-        -webkit-text-fill-color: inherit !important;
-        fill: inherit !important;
-    }
-    .sf-sidebar .sf-sidebar-footer:hover,
-    .sf-sidebar .sf-sidebar-footer:focus,
-    .sf-sidebar .sf-sidebar-footer:focus-within,
-    .sf-sidebar .sf-playground-card:hover,
-    .sf-sidebar .sf-playground-card:focus,
-    .sf-sidebar .sf-playground-card:focus-within,
-    .sf-sidebar .sf-playground-btn:hover,
-    .sf-sidebar .sf-playground-btn:focus,
-    .sf-sidebar .sf-playground-btn:focus-visible,
-    .sf-sidebar .sf-playground-btn:active,
-    .sf-sidebar .sf-playground-card .sf-playground-title,
-    .sf-sidebar .sf-playground-card .sf-playground-sub {
-        background-color: transparent !important;
-        color: inherit !important;
-        -webkit-text-fill-color: inherit !important;
-        fill: inherit !important;
-    }
 }
 
 /* ---------- 5. Focus ring (sidebar links only - playground excluded) ---------- */
