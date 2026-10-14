@@ -45,12 +45,7 @@ In `Program.cs`, register calendar services:
 builder.Services.AddSyncfusionBlazorToolkit();
 ```
 
-### 4. Include Styles
-Add the calendar CSS to your `index.html`:
-
-```html
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />
-```
+> **Note** — Separate CSS links are no longer required. The necessary styles are automatically included through the NuGet package.
 
 ## Component Types
 

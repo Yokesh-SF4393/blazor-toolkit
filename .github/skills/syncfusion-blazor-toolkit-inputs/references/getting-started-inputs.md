@@ -29,7 +29,7 @@ In your `Program.cs` (Blazor Server or WebAssembly), register Syncfusion service
 
 ```csharp
 // Program.cs
-using Syncfusion.Blazor;
+using Syncfusion.Blazor.Toolkit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,38 +54,11 @@ builder.Services.AddSyncfusionBlazorToolkit();
 
 ## CSS Imports and Theming
 
-### Required CSS Files
-
-Add Syncfusion CSS files to your HTML head. In `_Layout.cshtml` (Blazor Server) or `index.html` (Blazor WebAssembly):
-
-```html
-<!-- Syncfusion Blazor Fluent Theme CSS -->
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />
-
-<!-- Alternative Themes Available -->
-<!-- Bootstrap Theme -->
-<!-- <link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/bootstrap5.css" rel="stylesheet"> -->
-
-<!-- Material Theme -->
-<!-- <link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/material.css" rel="stylesheet"> -->
-
-<!-- Tailwind Theme -->
-<!-- <link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/tailwind.css" rel="stylesheet"> -->
-```
-
-### Available Themes
-
-| Theme | Use Case |
-|-------|----------|
-| **fluent.css** | Modern, minimal design (default) |
-| **bootstrap5.css** | Bootstrap-compatible styling |
-| **material.css** | Material Design principles |
-| **tailwind.css** | Tailwind CSS integration |
-| **highcontrast.css** | Accessibility-focused |
+> **Note** — Separate CSS links are no longer required. The necessary styles are automatically included through the NuGet package.
 
 ### Custom Theming
 
-Override Syncfusion CSS variables in your custom CSS file:
+Override the toolkit's CSS variables (exposed on `:root`) in your app stylesheet:
 
 ```css
 /* app.css */
@@ -102,10 +75,9 @@ body {
 }
 ```
 
-Reference this file after the Syncfusion CSS:
+Reference this file from your layout (Blazor Server `_Host.cshtml` / `_Layout.cshtml`, Blazor WebAssembly `wwwroot/index.html`) so it loads after the bundled styles:
 
 ```html
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />
 <link href="app.css" rel="stylesheet">
 ```
 
