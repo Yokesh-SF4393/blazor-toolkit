@@ -69,13 +69,7 @@ SfTooltip is a lightweight component that displays contextual help text or infor
 </div>
 ```
 
-### CSS Import
-
-Ensure Syncfusion CSS is included in `_Host.cshtml` or `App.razor`:
-
-```html
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet">
-```
+> **Note** — Separate CSS links are no longer required. The necessary styles are automatically included through the NuGet package.
 
 ---
 

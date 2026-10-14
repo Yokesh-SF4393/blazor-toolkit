@@ -37,6 +37,8 @@ SfDialog is a versatile modal or modeless dialog component from Syncfusion Blazo
 
 ## Installation and Setup
 
+> **Note** — Separate CSS links are no longer required. The necessary styles are automatically included through the NuGet package.
+
 ### 1. Import the Component
 In your Razor component or `_Imports.razor`:
 
@@ -51,13 +53,6 @@ In `Program.cs`:
 using Syncfusion.Blazor.Toolkit;
 
 builder.Services.AddSyncfusionBlazorToolkit();
-```
-
-### 3. Include CSS
-In `_Host.cshtml` or `App.razor`:
-
-```html
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet">
 ```
 
 ---
