@@ -1564,14 +1564,6 @@ font-family: ""e-toolkit-icons"";
     outline: 2px solid Highlight !important;
     outline-offset: 2px !important;
   }
-
-  .e-switch-wrapper.e-switch-disabled .e-switch-handle {
-    background-color: GrayText !important;
-  }
-
-  .e-switch-wrapper.e-switch-disabled .e-switch-inner {
-    background-color: transparent !important;
-  }
  
   .e-switch-wrapper:hover .e-switch-inner,
   .e-switch-wrapper.e-hover .e-switch-inner {
@@ -1621,6 +1613,23 @@ font-family: ""e-toolkit-icons"";
   .e-switch-wrapper:hover .e-switch-on {
         background-color: HighlightText !important;
         color: Highlight !important;
+  }
+
+  .e-switch-wrapper.e-switch-disabled .e-switch-inner,
+  .e-switch-wrapper.e-switch-disabled .e-switch-inner.e-switch-active,
+  .e-switch-wrapper.e-switch-disabled .e-switch-on,
+  .e-switch-wrapper.e-switch-disabled .e-switch-off {
+    background-color: Canvas !important;
+    border-color: GrayText !important;
+    color: GrayText !important;
+    forced-color-adjust: none !important;
+  }
+
+  .e-switch-wrapper.e-switch-disabled .e-switch-handle,
+  .e-switch-wrapper.e-switch-disabled .e-switch-handle.e-switch-active {
+    background-color: GrayText !important;
+    border-color: GrayText !important;
+    forced-color-adjust: none !important;
   }
 
   .e-radio+label:hover::before{
@@ -2015,6 +2024,29 @@ font-family: ""e-toolkit-icons"";
     border-color: Highlight !important;
     color: Highlight !important;
     forced-color-adjust: none;
+  }
+
+  .e-btn:disabled,
+  .e-btn[disabled],
+  .e-btn[aria-disabled=""true""],
+  .e-btn.e-primary:disabled,
+  .e-btn.e-success:disabled,
+  .e-btn.e-warning:disabled,
+  .e-btn.e-danger:disabled,
+  .e-btn.e-info:disabled,
+  .e-btn.e-outline:disabled,
+  .e-btn.e-flat:disabled,
+  .e-btn-group .e-btn:disabled,
+  .e-btn-group .e-btn[disabled],
+  .e-btn-group .e-btn[aria-disabled=""true""],
+  .e-btn-group input:disabled + label.e-btn,
+  .e-btn-group label.e-btn.e-disabled {
+    background-color: Canvas !important;
+    border-color: GrayText !important;
+    color: GrayText !important;
+    -webkit-text-fill-color: GrayText !important;
+    opacity: 1 !important;
+    forced-color-adjust: none !important;
   }
 
   .e-input-base-wrapper .e-input-group .e-chevron-down::before,
