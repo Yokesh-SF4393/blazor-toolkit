@@ -69,9 +69,7 @@ SfTooltip is a lightweight component that displays contextual help text or infor
 </div>
 ```
 
-### Theme (auto-emitted)
-
-No manual CSS link is required. Every consumer-facing toolkit component renders `<SfThemeRoot />` as the previous sibling of its root element, which emits the shared theme layer (`:root` design tokens, base/utility styles, icon font, dark / high-contrast / forced-colors rules) as a single `<style id="sf-theme-root">` element. If your render tree contains no toolkit component at all, place `<SfThemeRoot />` explicitly anywhere in the tree.
+> **Note** — Separate CSS links are no longer required. The necessary styles are automatically included through the NuGet package.
 
 ---
 

@@ -54,9 +54,7 @@ builder.Services.AddSyncfusionBlazorToolkit();
 
 ## CSS Imports and Theming
 
-The shared theme layer (`:root` design tokens, base/utility styles, icon font, dark / high-contrast / forced-colors rules) is auto-emitted at render time by `SfThemeRoot`. Every consumer-facing toolkit component renders `<SfThemeRoot />` as the previous sibling of its root element, so no manual CSS link is required.
-
-If your render tree contains no toolkit component at all, place `<SfThemeRoot />` explicitly anywhere in the tree so the theme is still emitted in static SSR, interactive, and transition scenarios.
+> **Note** — Separate CSS links are no longer required. The necessary styles are automatically included through the NuGet package.
 
 ### Custom Theming
 
@@ -77,7 +75,7 @@ body {
 }
 ```
 
-Reference this file from your layout (Blazor Server `_Host.cshtml` / `_Layout.cshtml`, Blazor WebAssembly `wwwroot/index.html`); it loads after `SfThemeRoot` has emitted the base styles:
+Reference this file from your layout (Blazor Server `_Host.cshtml` / `_Layout.cshtml`, Blazor WebAssembly `wwwroot/index.html`) so it loads after the bundled styles:
 
 ```html
 <link href="app.css" rel="stylesheet">

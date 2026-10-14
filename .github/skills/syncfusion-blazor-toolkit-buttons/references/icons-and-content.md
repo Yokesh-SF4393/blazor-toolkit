@@ -115,9 +115,9 @@ Renders: Icon below text
 ## Syncfusion Icon Library
 
 ### Icon Library Integration
-The Syncfusion icon library is included with the auto-emitted theme (the icon font is part of the `SfThemeRoot` payload). To use icons:
+The Syncfusion icon library is included through the NuGet package. To use icons:
 
-1. Ensure a toolkit component (or `<SfThemeRoot />` if no toolkit component is in the tree) is present so the theme — including the icon font — is emitted
+1. Install the toolkit NuGet package (the icon font is included automatically)
 2. Use the appropriate icon class on the component
 3. Icons render as font-based glyphs (scalable)
 
@@ -355,16 +355,7 @@ Always include `title` attribute for accessibility with icon-only buttons.
 <SfButton IconCss="e-icons e-plus" />
 ```
 
-### Gotcha 2: Icon Library Must Be Loaded
-```razor
-<!-- Won't work: Icon library not emitted (no toolkit component / SfThemeRoot in the tree) -->
-<SfButton IconCss="e-icons e-plus" />
-
-<!-- Solution: Place an explicit <SfThemeRoot /> in the tree to emit the shared theme layer -->
-<SfThemeRoot />
-```
-
-### Gotcha 3: ChildContent Replaces Content
+### Gotcha 2: ChildContent Replaces Content
 ```razor
 <!-- Icon position doesn't apply with ChildContent -->
 <SfButton IconCss="e-icons e-edit" 

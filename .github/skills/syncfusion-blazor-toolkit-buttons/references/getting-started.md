@@ -17,7 +17,7 @@ The Syncfusion Blazor Toolkit button components are part of the main toolkit pac
 - **.NET SDK:** .NET 8 or later
 - **Blazor Project:** WebAssembly or Server-side
 - **NuGet Package:** `Syncfusion.Blazor.Toolkit` latest version
-- **Theming:** No manual CSS link required — the shared theme layer is auto-emitted at render time by `SfThemeRoot`.
+- **Theming:** Separate CSS links are no longer required; the necessary styles are automatically included through the NuGet package.
 
 ## Adding to Your Project
 
@@ -222,14 +222,12 @@ The application starts at `https://localhost:7145` (or similar port).
 **Solution:** 
 - Verify `@using` statement includes `Syncfusion.Blazor.Toolkit`
 - Check that services are registered in `Program.cs`
-- Confirm a toolkit component (or `<SfThemeRoot />` if no toolkit component is in the tree) is present so the theme is emitted
 
 ### Issue 2: Styling Looks Wrong
 **Symptom:** Button appears unstyled or broken
 **Solution:**
-- Verify the `<style id="sf-theme-root">` element is present in the rendered output (`SfThemeRoot` auto-emits it as the previous sibling of every toolkit component root)
-- If your tree has no toolkit component, place `<SfThemeRoot />` explicitly somewhere in the tree
-- Inspect the rendered `<style>` content (and any cascaded app-level overrides) for unexpected overrides
+- Verify the toolkit's bundled styles are loaded (they are automatically included through the NuGet package)
+- Inspect your app stylesheet for selectors that may be overriding the toolkit's styles
 
 ### Issue 3: Click Handler Not Firing
 **Symptom:** Button clicks don't trigger handler

@@ -56,11 +56,7 @@ services.AddSyncfusionBlazorToolkit();
 builder.Services.AddSyncfusionBlazorToolkit();
 ```
 
-### Step 3: Theme (auto-emitted)
-
-No manual CSS link is required. Every consumer-facing toolkit component renders `<SfThemeRoot />` as the previous sibling of its root element, which emits the shared theme layer (`:root` design tokens, base/utility styles, icon font, dark / high-contrast / forced-colors rules) as a single `<style id="sf-theme-root">` element. If your render tree contains no toolkit component at all, place `<SfThemeRoot />` explicitly anywhere in the tree.
-
-### Step 4: Add Global Imports
+### Step 3: Add Global Imports
 
 Add the Syncfusion namespace to your `_Imports.razor`:
 
@@ -74,7 +70,9 @@ For Spinner-specific types in your Razor pages, add individual namespaces:
 @using Syncfusion.Blazor.Toolkit
 ```
 
-### Step 5: Basic Spinner Component
+> **Note** — Separate CSS links are no longer required. The necessary styles are automatically included through the NuGet package.
+
+### Step 4: Basic Spinner Component
 
 The simplest spinner shows the loading indicator with default styling:
 
@@ -698,7 +696,7 @@ The Spinner inherits colors from the current Syncfusion theme:
 ```
 
 ### Theme Variations
-Theme selection is no longer driven by a manual CSS link — `SfThemeRoot` emits the shared theme layer at render time (see [Step 3](#step-3-theme-auto-emitted)). Color overrides can be applied through the `--sf-*` CSS custom properties on `:root` in your app stylesheet.
+Color overrides can be applied through the `--sf-*` CSS custom properties on `:root` in your app stylesheet.
 
 ---
 

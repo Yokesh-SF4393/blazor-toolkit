@@ -192,7 +192,7 @@ For a full list of template options (interactive render mode, global interactivi
 
 Use this option when you want to add the Syncfusion Blazor Toolkit to an existing Blazor application. The setup has four steps: install the NuGet package, register the toolkit services, add the namespace import, and try a usage example.
 
-> **Note on themes** — The shared theme layer (design tokens, base/utility styles, icon font, dark / high-contrast / forced-colors rules) is auto-emitted at render time by `SfThemeRoot`. Every consumer-facing toolkit component renders `<SfThemeRoot />` as a sibling of its root element, so no manual CSS link is required. Placing `<SfThemeRoot />` explicitly is **optional** and only needed when the render tree contains no toolkit component.
+> **Note** — Separate CSS links are no longer required. The necessary styles are automatically included through the NuGet package.
 
 #### 1. Install the package
 

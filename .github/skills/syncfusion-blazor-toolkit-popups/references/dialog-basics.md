@@ -37,7 +37,7 @@ SfDialog is a versatile modal or modeless dialog component from Syncfusion Blazo
 
 ## Installation and Setup
 
-> **Note on themes** — No manual CSS link is required. The shared theme layer is auto-emitted at render time by `SfThemeRoot`, which every consumer-facing toolkit component renders as a sibling of its root element. Placing `<SfThemeRoot />` explicitly is **optional** and only needed when the render tree contains no toolkit component.
+> **Note** — Separate CSS links are no longer required. The necessary styles are automatically included through the NuGet package.
 
 ### 1. Import the Component
 In your Razor component or `_Imports.razor`:
