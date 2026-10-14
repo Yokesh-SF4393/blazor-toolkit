@@ -4432,7 +4432,6 @@
   width: auto;
   z-index: 1000;
   -webkit-flex-direction: column;
-  border: 1px solid var(--color-sf-dialog-border);
   border-radius: calc(var(--e-radius) * 0.5);
   flex-direction: column;
   box-sizing: border-box;
