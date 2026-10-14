@@ -56,21 +56,9 @@ services.AddSyncfusionBlazorToolkit();
 builder.Services.AddSyncfusionBlazorToolkit();
 ```
 
-### Step 3: Add Theme CSS
+### Step 3: Theme (auto-emitted)
 
-Add the Syncfusion theme CSS to your HTML head. In `_Host.cshtml` (Blazor Server) or `index.html` (Blazor WebAssembly):
-
-```html
-<!-- Syncfusion Blazor Fluent Theme CSS -->
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />
-
-<!-- Alternative Themes Available -->
-<!-- Bootstrap Theme -->
-<!-- <link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/bootstrap5.min.css" rel="stylesheet"> -->
-
-<!-- Material Theme -->
-<!-- <link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/material.min.css" rel="stylesheet"> -->
-```
+No manual CSS link is required. Every consumer-facing toolkit component renders `<SfThemeRoot />` as the previous sibling of its root element, which emits the shared theme layer (`:root` design tokens, base/utility styles, icon font, dark / high-contrast / forced-colors rules) as a single `<style id="sf-theme-root">` element. If your render tree contains no toolkit component at all, place `<SfThemeRoot />` explicitly anywhere in the tree.
 
 ### Step 4: Add Global Imports
 
@@ -710,18 +698,7 @@ The Spinner inherits colors from the current Syncfusion theme:
 ```
 
 ### Theme Variations
-Different themes available through CSS:
-
-```html
-<!-- Bootstrap theme -->
-<link href="_content/Syncfusion.Blazor.Toolkit/styles/bootstrap.min.css" rel="stylesheet" />
-
-<!-- Fluent theme -->
-<link href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />
-
-<!-- Material theme -->
-<link href="_content/Syncfusion.Blazor.Toolkit/styles/material.min.css" rel="stylesheet" />
-```
+Theme selection is no longer driven by a manual CSS link — `SfThemeRoot` emits the shared theme layer at render time (see [Step 3](#step-3-theme-auto-emitted)). Color overrides can be applied through the `--sf-*` CSS custom properties on `:root` in your app stylesheet.
 
 ---
 

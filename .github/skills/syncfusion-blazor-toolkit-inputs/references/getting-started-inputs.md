@@ -29,7 +29,7 @@ In your `Program.cs` (Blazor Server or WebAssembly), register Syncfusion service
 
 ```csharp
 // Program.cs
-using Syncfusion.Blazor;
+using Syncfusion.Blazor.Toolkit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,38 +54,13 @@ builder.Services.AddSyncfusionBlazorToolkit();
 
 ## CSS Imports and Theming
 
-### Required CSS Files
+The shared theme layer (`:root` design tokens, base/utility styles, icon font, dark / high-contrast / forced-colors rules) is auto-emitted at render time by `SfThemeRoot`. Every consumer-facing toolkit component renders `<SfThemeRoot />` as the previous sibling of its root element, so no manual CSS link is required.
 
-Add Syncfusion CSS files to your HTML head. In `_Layout.cshtml` (Blazor Server) or `index.html` (Blazor WebAssembly):
-
-```html
-<!-- Syncfusion Blazor Fluent Theme CSS -->
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />
-
-<!-- Alternative Themes Available -->
-<!-- Bootstrap Theme -->
-<!-- <link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/bootstrap5.css" rel="stylesheet"> -->
-
-<!-- Material Theme -->
-<!-- <link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/material.css" rel="stylesheet"> -->
-
-<!-- Tailwind Theme -->
-<!-- <link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/tailwind.css" rel="stylesheet"> -->
-```
-
-### Available Themes
-
-| Theme | Use Case |
-|-------|----------|
-| **fluent.css** | Modern, minimal design (default) |
-| **bootstrap5.css** | Bootstrap-compatible styling |
-| **material.css** | Material Design principles |
-| **tailwind.css** | Tailwind CSS integration |
-| **highcontrast.css** | Accessibility-focused |
+If your render tree contains no toolkit component at all, place `<SfThemeRoot />` explicitly anywhere in the tree so the theme is still emitted in static SSR, interactive, and transition scenarios.
 
 ### Custom Theming
 
-Override Syncfusion CSS variables in your custom CSS file:
+Override the toolkit's CSS variables (exposed on `:root`) in your app stylesheet:
 
 ```css
 /* app.css */
@@ -102,10 +77,9 @@ body {
 }
 ```
 
-Reference this file after the Syncfusion CSS:
+Reference this file from your layout (Blazor Server `_Host.cshtml` / `_Layout.cshtml`, Blazor WebAssembly `wwwroot/index.html`); it loads after `SfThemeRoot` has emitted the base styles:
 
 ```html
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />
 <link href="app.css" rel="stylesheet">
 ```
 

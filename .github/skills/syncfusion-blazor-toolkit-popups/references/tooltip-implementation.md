@@ -69,13 +69,9 @@ SfTooltip is a lightweight component that displays contextual help text or infor
 </div>
 ```
 
-### CSS Import
+### Theme (auto-emitted)
 
-Ensure Syncfusion CSS is included in `_Host.cshtml` or `App.razor`:
-
-```html
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet">
-```
+No manual CSS link is required. Every consumer-facing toolkit component renders `<SfThemeRoot />` as the previous sibling of its root element, which emits the shared theme layer (`:root` design tokens, base/utility styles, icon font, dark / high-contrast / forced-colors rules) as a single `<style id="sf-theme-root">` element. If your render tree contains no toolkit component at all, place `<SfThemeRoot />` explicitly anywhere in the tree.
 
 ---
 

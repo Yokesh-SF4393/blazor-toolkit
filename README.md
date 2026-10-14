@@ -155,7 +155,7 @@ There are two ways to get started with the Syncfusion Blazor Toolkit. Pick the o
 | Option | When to use it | Get started |
 |--------|----------------|-------------|
 | 🚀 **[Using Templates](#using-templates-recommended)** | Starting a new Blazor project. Pre-configured with the toolkit, theming, and project structure so you can build immediately. | [Install templates →](#using-templates-recommended) |
-| 🔧 **[Manual Integration](#manual-integration)** | Adding the toolkit to an existing Blazor application. Five steps: install the package, register services, add the namespace import, link the theme CSS, and try a usage example. | [Manual setup →](#manual-integration) |
+| 🔧 **[Manual Integration](#manual-integration)** | Adding the toolkit to an existing Blazor application. Four steps: install the package, register services, add the namespace import, and try a usage example. | [Manual setup →](#manual-integration) |
 
 **Prerequisites**
 
@@ -190,7 +190,9 @@ For a full list of template options (interactive render mode, global interactivi
 
 ### Manual Integration
 
-Use this option when you want to add the Syncfusion Blazor Toolkit to an existing Blazor application. The setup has five steps: install the NuGet package, register the toolkit services, add the namespace import, link the theme CSS, and try a usage example.
+Use this option when you want to add the Syncfusion Blazor Toolkit to an existing Blazor application. The setup has four steps: install the NuGet package, register the toolkit services, add the namespace import, and try a usage example.
+
+> **Note on themes** — The shared theme layer (design tokens, base/utility styles, icon font, dark / high-contrast / forced-colors rules) is auto-emitted at render time by `SfThemeRoot`. Every consumer-facing toolkit component renders `<SfThemeRoot />` as a sibling of its root element, so no manual CSS link is required. Placing `<SfThemeRoot />` explicitly is **optional** and only needed when the render tree contains no toolkit component.
 
 #### 1. Install the package
 
@@ -236,16 +238,7 @@ Add the following imports to your `_Imports.razor` file:
 @using Syncfusion.Blazor.Toolkit
 ```
 
-#### 4. Add CSS to your `App.razor`
-
-Add the Syncfusion Blazor Toolkit styles to the `<head>` section of your `App.razor` file:
-
-```html
-@* Add syncfusion blazor toolkit style reference *@
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />
-```
-
-#### 5. Try a usage example
+#### 4. Try a usage example
 
 Here's a quick example to get you started with one of the controls, such as the Chart:
 

@@ -17,7 +17,7 @@ The Syncfusion Blazor Toolkit button components are part of the main toolkit pac
 - **.NET SDK:** .NET 8 or later
 - **Blazor Project:** WebAssembly or Server-side
 - **NuGet Package:** `Syncfusion.Blazor.Toolkit` latest version
-- **CSS Files:** Theme CSS imported in your layout
+- **Theming:** No manual CSS link required — the shared theme layer is auto-emitted at render time by `SfThemeRoot`.
 
 ## Adding to Your Project
 
@@ -36,13 +36,8 @@ Or for Blazor WebAssembly:
 builder.Services.AddSyncfusionBlazorToolkit();
 ```
 
-### 3. Add Theme CSS in Layout
-In `_Host.cshtml` or `index.html`, add the theme stylesheet:
-```html
-<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />
-```
+### 3. Add Global Imports
 
-### 4. Add Global Imports
 In `_Imports.razor`, add:
 ```razor
 @using Syncfusion.Blazor.Toolkit
@@ -227,14 +222,14 @@ The application starts at `https://localhost:7145` (or similar port).
 **Solution:** 
 - Verify `@using` statement includes `Syncfusion.Blazor.Toolkit`
 - Check that services are registered in `Program.cs`
-- Ensure CSS file is imported in layout
+- Confirm a toolkit component (or `<SfThemeRoot />` if no toolkit component is in the tree) is present so the theme is emitted
 
 ### Issue 2: Styling Looks Wrong
 **Symptom:** Button appears unstyled or broken
 **Solution:**
-- Verify theme CSS is loaded: Check browser DevTools Network tab
-- Confirm correct theme CSS path: `<link id="syncfusion-theme" href="_content/Syncfusion.Blazor.Toolkit/styles/fluent.min.css" rel="stylesheet" />` Replace fluent.min.css with the relevant stylesheet (bootstrap.min.css, material.min.css, tailwind.min.css, etc.) depending on the theme you’re using.
-- Ensure theme matches your layout expectations
+- Verify the `<style id="sf-theme-root">` element is present in the rendered output (`SfThemeRoot` auto-emits it as the previous sibling of every toolkit component root)
+- If your tree has no toolkit component, place `<SfThemeRoot />` explicitly somewhere in the tree
+- Inspect the rendered `<style>` content (and any cascaded app-level overrides) for unexpected overrides
 
 ### Issue 3: Click Handler Not Firing
 **Symptom:** Button clicks don't trigger handler
