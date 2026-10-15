@@ -1473,6 +1473,7 @@ font-family: ""e-toolkit-icons"";
     box-shadow: 0 0 0 1px ButtonText !important;
     -webkit-text-fill-color: ButtonText;
     forced-color-adjust: none;
+    z-index: 1;
   }
     
   .e-btn.e-control.e-btn-icon:not(:disabled):is(:hover,:active):focus-visible, .e-btn.e-control.e-lib.toggle-btn.e-outline:focus-visible:is(:hover,:active), .e-btn.e-control.e-lib:focus-visible:is(:hover,:active), .e-btn.e-control.e-outline:not(:disabled):is(:hover,:active):focus-visible, .e-btn.toggle-icon-only.e-outline:is(:hover,:active):focus-visible {
@@ -1495,6 +1496,7 @@ font-family: ""e-toolkit-icons"";
     border-color: Highlight !important;
     color: Highlight !important;
     outline: 2px solid Highlight !important;
+    z-index: 1;
   }
 
   .e-btn-group input:hover + label.e-btn,
