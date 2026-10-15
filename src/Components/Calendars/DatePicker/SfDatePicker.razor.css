@@ -497,7 +497,7 @@
   line-height: 1;
   min-height: 18px;
   min-width: 20px;
-  padding: 5px 8px 5px 4px;
+  padding: 5px 5px 5px 5px;
   text-align: center;
   border-radius: calc(var(--e-radius) * 1);
 }
@@ -5721,7 +5721,6 @@ ejs-calendar {
   min-height: 28px;
   min-width: 28px;
   border-radius: calc(var(--e-radius) * 1);
-  outline: none;
 }
 .e-input-group-icon.e-timeline-today:focus,
 *.e-control-wrapper .e-input-group-icon.e-timeline-today:focus {

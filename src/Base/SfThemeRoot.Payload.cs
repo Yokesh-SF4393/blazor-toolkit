@@ -1563,7 +1563,7 @@ font-family: ""e-toolkit-icons"";
 
   .e-switch-wrapper:focus-within,
   .e-switch-wrapper.e-focus {
-    outline: 2px solid Highlight !important;
+    outline: 2px solid CanvasText !important;
     outline-offset: 2px !important;
   }
  
@@ -1610,11 +1610,20 @@ font-family: ""e-toolkit-icons"";
     
   .e-css.e-switch-wrapper .e-switch-on, .e-switch-wrapper .e-switch-on {
     background-color: Highlight !important;
+    color: HighlightText !important;
+  }
+
+  .e-css.e-switch-wrapper .e-switch-off, .e-switch-wrapper .e-switch-off {
+    color: ButtonText !important;
   }
   
   .e-switch-wrapper:hover .e-switch-on {
-        background-color: HighlightText !important;
-        color: Highlight !important;
+    background-color: HighlightText !important;
+    color: ButtonText !important;
+  }
+
+  .e-switch-wrapper:hover .e-switch-off {
+    color: Highlight !important;
   }
 
   .e-switch-wrapper.e-switch-disabled .e-switch-inner,
