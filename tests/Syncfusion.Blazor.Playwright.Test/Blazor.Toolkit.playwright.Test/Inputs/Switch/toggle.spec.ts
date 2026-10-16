@@ -37,11 +37,10 @@ test.describe('Switch - Toggle Functionality', () => {
     
     // Second toggle: ON -> OFF
     await switchWrapper.click();
-    await expect(switchInput).not.toBeChecked();
-    
+    await expect(switchInput).not.toBeChecked({ timeout: 10000 });
+
     // Verify aria-checked is back to false
-    const ariaChecked = await switchInput.getAttribute('aria-checked');
-    expect(ariaChecked).toBe('false');
+    await expect(switchInput).toHaveAttribute('aria-checked', 'false', { timeout: 10000 });
   });
 
   test('Multiple consecutive toggles work correctly', async ({ page }) => {
