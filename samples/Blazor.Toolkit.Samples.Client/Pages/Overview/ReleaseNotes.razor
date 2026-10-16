@@ -12,8 +12,7 @@
    RELEASE NOTES - Sidebar (versions) + Main panel (notes)
    Mirrors https://github.com/syncfusion/blazor-toolkit/releases
    using the GitHub Releases API (/repos/syncfusion/blazor-toolkit/releases),
-   with an in-memory + sessionStorage cache and a static JSON fallback
-   if the API is unreachable.
+   with an in-memory + sessionStorage cache.
    =========================================================== *@
 <div class="rn-shell">
     @* ---------------------------------------------------------
@@ -286,7 +285,7 @@
     }
 
     // ----------------------------------------------------------------
-    //  Release list loading (GitHub Releases API + cache + fallback)
+    //  Release list loading (GitHub Releases API + cache)
     // ----------------------------------------------------------------
     private async Task LoadReleasesAsync()
     {
@@ -300,7 +299,7 @@
 
         try
         {
-            var releases = await GetReleasesWithFallbackAsync().ConfigureAwait(true);
+            var releases = await GetReleasesAsync().ConfigureAwait(true);
             Releases = releases;
             Logger.LogInformation("Loaded {Count} releases: [{List}]",
                 releases.Count, string.Join(", ", releases.Select(r => r.TagName)));
@@ -309,9 +308,7 @@
         {
             Logger.LogError(ex, "Failed to load releases");
             ErrorMessage = ex.Message;
-            // Even on total failure, surface a minimal fallback so the
-            // page remains functional in offline / blocked environments.
-            Releases = ProjectFallback(StaticFallbackReleases.GetAll());
+            Releases = new List<GitHubRelease>();
         }
         finally
         {
@@ -319,7 +316,7 @@
         }
     }
 
-    private async Task<List<GitHubRelease>> GetReleasesWithFallbackAsync()
+     private async Task<List<GitHubRelease>> GetReleasesAsync()
     {
         // 1) In-memory cache
         lock (_cacheLock)
@@ -396,9 +393,8 @@
         }
         catch (Exception ex)
         {
-            Logger.LogWarning(ex, "GitHub Releases API failed; falling back to static JSON.");
-            ErrorMessage = "Could not reach the GitHub Releases API - showing bundled release notes.";
-            return ProjectFallback(StaticFallbackReleases.GetAll());
+            Logger.LogWarning(ex, "GitHub Releases API failed.");
+            throw;
         }
     }
 
@@ -1133,11 +1129,22 @@
     // ----------------------------------------------------------------
     public sealed class GitHubReleaseDto
     {
+        [System.Text.Json.Serialization.JsonPropertyName("tag_name")]
         public string? TagName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("body")]
         public string? Body { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("html_url")]
         public string? HtmlUrl { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("published_at")]
         public DateTimeOffset? PublishedAt { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("prerelease")]
         public bool PreRelease { get; set; }
     }
 
@@ -1156,51 +1163,6 @@
                 : PublishedAt.Value.ToLocalTime().ToString("MMMM d, yyyy");
     }
 
-    /// <summary>
-    /// Public entry point used by the static fallback service to
-    /// project its bundled entries into the page's internal model.
-    /// </summary>
-    public sealed class FallbackReleaseEntry
-    {
-        public string TagName { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;
-        public string Body { get; set; } = string.Empty;
-        public string HtmlUrl { get; set; } = string.Empty;
-        public DateTimeOffset? PublishedAt { get; set; }
-        public bool IsLatest { get; set; }
-
-        public GitHubRelease ToGitHubRelease() => new()
-        {
-            TagName = TagName,
-            Name = Name,
-            Body = Body,
-            HtmlUrl = HtmlUrl,
-            PublishedAt = PublishedAt,
-            IsLatest = IsLatest
-        };
-    }
-
-    /// <summary>
-    /// Converts the bundled fallback entries into the page's model
-    /// so the page can render them when the GitHub API is unreachable.
-    /// </summary>
-    public static List<GitHubRelease> ProjectFallback(IEnumerable<FallbackReleaseEntry> entries)
-    {
-        var list = new List<GitHubRelease>();
-        if (entries is null)
-        {
-            return list;
-        }
-        foreach (var entry in entries)
-        {
-            if (entry is null || string.IsNullOrEmpty(entry.TagName))
-            {
-                continue;
-            }
-            list.Add(entry.ToGitHubRelease());
-        }
-        return list;
-    }
 }
 
 <style>

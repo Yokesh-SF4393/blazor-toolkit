@@ -68,14 +68,11 @@
         width: 48px;
         height: 48px;
         border-radius: 50%;
-        background: var(--panel-bg, #f9fafb);
+        background-color: var(--panel-bg, #f9fafb);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         overflow: hidden;
-    }
-    .cg-avatar img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
     .cg-meta {
         flex: 1 1 auto;
@@ -184,14 +181,6 @@
         font-size: 0.85rem;
         color: var(--text-color-secondary, #6b7280);
     }
-    .cg-avatar {
-    flex: 0 0 auto;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: var(--panel-bg, #f9fafb); /* fallback while image loads */
-    overflow: hidden;
-}
 </style>
 
 <Description>
@@ -218,7 +207,10 @@ else if (!string.IsNullOrEmpty(ErrorMessage) && ContributorsList.Count == 0)
     <div class="cg-error" role="alert">
         <p><strong>Could not load the live contributors list.</strong></p>
         <p>@ErrorMessage</p>
-        <p>Showing the most recent snapshot bundled with the documentation. The snapshot is updated manually when the project is released.</p>
+        <p>
+            <a href="https://github.com/syncfusion/blazor-toolkit/graphs/contributors"
+               target="_blank" rel="noreferrer noopener">View on GitHub</a>
+        </p>
         <button type="button" @onclick="RetryAsync">Retry</button>
     </div>
 }
@@ -238,9 +230,9 @@ else if (ContributorsList.Count == 0)
             <a class="cg-card" role="listitem"
                 href="@c.HtmlUrl" target="_blank" rel="noreferrer noopener"
                 aria-label="@c.Login (@c.Contributions contributions)"
-                @key="c.Login">                                          
+                @key="c.Login">
                     <span class="cg-avatar" aria-hidden="true"
-                        style="background-image: url('@c.AvatarUrl'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                        style="@(string.IsNullOrEmpty(c.AvatarUrl) ? null : $"background-image: url('{c.AvatarUrl}')")">
                     </span>
                     <span class="cg-meta">
                         <span class="cg-name">@DisplayName(c)</span>
@@ -261,9 +253,9 @@ else if (ContributorsList.Count == 0)
             <a class="cg-card" role="listitem"
                href="@c.HtmlUrl" target="_blank" rel="noreferrer noopener"
                aria-label="@c.Login (@c.Contributions contributions)"
-               @key="c.Login">       
+               @key="c.Login">
                 <span class="cg-avatar" aria-hidden="true"
-                    style="background-image: url('@c.AvatarUrl'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                    style="@(string.IsNullOrEmpty(c.AvatarUrl) ? null : $"background-image: url('{c.AvatarUrl}')")">
                 </span>
                 <span class="cg-meta">
                     <span class="cg-name">@DisplayName(c)<span class="cg-tag">Bot</span></span>
@@ -278,8 +270,7 @@ else if (ContributorsList.Count == 0)
 <p class="cg-source-note">
     Data: <a href="https://github.com/syncfusion/blazor-toolkit/graphs/contributors" target="_blank" rel="noreferrer noopener">GitHub Contributors graph</a>.
     The page fetches live data from the GitHub API on first load and caches it in
-    <code>sessionStorage</code> for the rest of the session; if the network is unavailable, a
-    bundled snapshot is rendered instead.
+    <code>sessionStorage</code> for the rest of the session.
 </p>
 
 @code {
@@ -303,9 +294,9 @@ else if (ContributorsList.Count == 0)
     //
     //  Multiple GitHub logins that should be displayed as a single
     //  contributor. Each entry maps an alias login to a canonical
-    //  primary login. After the API response (or static fallback) is
-    //  deserialised, we walk the list and merge every alias into its
-    //  primary. The merge rules are:
+    //  primary login. After the API response is deserialised, we walk
+    //  the list and merge every alias into its primary. The merge rules
+    //  are:
     //
     //    - login     -> primary login from the map
     //    - html_url  -> "https://github.com/" + primary login
@@ -339,9 +330,6 @@ else if (ContributorsList.Count == 0)
             return new List<ContributorEntry>();
         }
 
-        // Group entries by their resolved (primary) login so every
-        // alias is folded into the same bucket. Logins that are not
-        // aliases resolve to themselves.
         var buckets = new Dictionary<string, ContributorEntry>(StringComparer.Ordinal);
         var order = new List<string>();
 
@@ -358,8 +346,6 @@ else if (ContributorsList.Count == 0)
 
             if (!buckets.TryGetValue(primaryLogin, out var merged))
             {
-                // First time we see this primary: clone the entry so
-                // later mutations do not affect the caller's list.
                 merged = new ContributorEntry
                 {
                     Login = primaryLogin,
@@ -370,9 +356,6 @@ else if (ContributorsList.Count == 0)
                     Contributions = 0,
                 };
 
-                // If the first entry we see is already the primary,
-                // keep its original id / avatar so we don't overwrite
-                // them with values from a later alias entry.
                 if (string.Equals(entry.Login, primaryLogin, StringComparison.Ordinal))
                 {
                     merged.Id = entry.Id;
@@ -383,12 +366,8 @@ else if (ContributorsList.Count == 0)
                 order.Add(primaryLogin);
             }
 
-            // Sum contributions across every merged entry.
             merged.Contributions += entry.Contributions;
 
-            // Prefer the primary entry's id / avatar when it is
-            // present in the source list. This matches the rule
-            // "keep from the primary account when available".
             if (string.Equals(entry.Login, primaryLogin, StringComparison.Ordinal))
             {
                 merged.Id = entry.Id;
@@ -400,8 +379,6 @@ else if (ContributorsList.Count == 0)
             else if (string.IsNullOrEmpty(merged.AvatarUrl) &&
                      !string.IsNullOrEmpty(entry.AvatarUrl))
             {
-                // Fall back to the alias avatar only when the primary
-                // entry did not provide one.
                 merged.AvatarUrl = entry.AvatarUrl;
             }
         }
@@ -445,8 +422,6 @@ else if (ContributorsList.Count == 0)
         if (firstRender && !_initialLoadStarted)
         {
             _initialLoadStarted = true;
-            // Fire-and-forget; the page renders progressively from caches
-            // and then re-renders when the network response lands.
             _ = LoadAsync();
         }
     }
@@ -467,7 +442,7 @@ else if (ContributorsList.Count == 0)
 
         try
         {
-            var list = await GetContributorsWithFallbackAsync();
+            var list = await GetContributorsAsync();
             _contributors.Clear();
             _contributors.AddRange(list);
             Logger.LogInformation("Loaded {Count} contributors", list.Count);
@@ -477,7 +452,6 @@ else if (ContributorsList.Count == 0)
             Logger.LogError(ex, "Failed to load contributors");
             ErrorMessage = ex.Message;
             _contributors.Clear();
-            _contributors.AddRange(ProjectFallback(StaticFallbackContributors.GetAll()));
         }
         finally
         {
@@ -488,7 +462,6 @@ else if (ContributorsList.Count == 0)
 
     public async Task RetryAsync()
     {
-        // Invalidate caches so the retry actually re-fetches.
         lock (_cacheLock)
         {
             _memoryCache = null;
@@ -505,13 +478,12 @@ else if (ContributorsList.Count == 0)
 
         try
         {
-            var list = await GetContributorsWithFallbackAsync();
+            var list = await GetContributorsAsync();
             _contributors.AddRange(list);
         }
         catch (Exception ex)
         {
             ErrorMessage = ex.Message;
-            _contributors.AddRange(ProjectFallback(StaticFallbackContributors.GetAll()));
         }
         finally
         {
@@ -521,9 +493,9 @@ else if (ContributorsList.Count == 0)
     }
 
     // ----------------------------------------------------------------
-    //  Caching & fallback
+    //  Caching & GitHub API
     // ----------------------------------------------------------------
-    private async Task<List<ContributorEntry>> GetContributorsWithFallbackAsync()
+    private async Task<List<ContributorEntry>> GetContributorsAsync()
     {
         // 1) In-memory cache
         lock (_cacheLock)
@@ -535,7 +507,7 @@ else if (ContributorsList.Count == 0)
             }
         }
 
-        // 2) sessionStorage cache
+        // 2) sessionStorage cache (ContributorEntry / PascalCase shape)
         try
         {
             var cachedJson = await JS.InvokeAsync<string?>("sessionStorage.getItem", SessionCacheKey);
@@ -545,7 +517,7 @@ else if (ContributorsList.Count == 0)
                 DateTimeOffset.TryParse(cachedTs, out var ts) &&
                 DateTimeOffset.UtcNow - ts < SessionCacheTtl)
             {
-                var cached = TryDeserialize(cachedJson);
+                var cached = TryDeserializeCached(cachedJson);
                 if (cached is { Count: > 0 })
                 {
                     lock (_cacheLock)
@@ -571,9 +543,6 @@ else if (ContributorsList.Count == 0)
                 throw new InvalidOperationException("GitHub API returned an empty contributors list.");
             }
 
-            // Persist the merged list to caches. We serialise the
-            // normalised list (not the raw page JSON) so the next read
-            // does not have to merge pages again.
             try
             {
                 var mergedJson = JsonSerializer.Serialize(list, JsonOpts);
@@ -594,28 +563,11 @@ else if (ContributorsList.Count == 0)
         }
         catch (Exception ex)
         {
-            Logger.LogWarning(ex, "GitHub Contributors API failed; falling back to static snapshot.");
-            ErrorMessage = "Could not reach the GitHub Contributors API - showing the bundled snapshot.";
-            return ProjectFallback(StaticFallbackContributors.GetAll());
+            Logger.LogWarning(ex, "GitHub Contributors API failed.");
+            throw;
         }
     }
 
-    /// <summary>
-    /// Walks every page of the GitHub Contributors API and returns the
-    /// merged, alias-resolved list. GitHub paginates with a
-    /// <c>Link: &lt;...&gt;; rel="next"</c> response header; we follow
-    /// <c>rel="next"</c> until the header is absent or the next page is
-    /// empty. The first URL is <see cref="GitHubApiUrl"/>, which already
-    /// requests <c>per_page=100</c>.
-    ///
-    /// <para>
-    /// A safety cap of <see cref="MaxPaginationPages"/> pages (each
-    /// holding up to 100 contributors) protects the page from a runaway
-    /// response. 100 pages × 100 = 10&nbsp;000 contributors, which is
-    /// many orders of magnitude above the current 9 and comfortably
-    /// accommodates any plausible future growth of the repository.
-    /// </para>
-    /// </summary>
     private const int MaxPaginationPages = 100;
 
     private async Task<List<ContributorEntry>> FetchAllContributorsPagesAsync()
@@ -635,32 +587,19 @@ else if (ContributorsList.Count == 0)
 
             var json = await response.Content.ReadAsStringAsync().ConfigureAwait(true);
 
-            var pageList = TryDeserialize(json) ?? new List<ContributorEntry>();
+            var pageList = TryDeserializeApi(json) ?? new List<ContributorEntry>();
             if (pageList.Count == 0)
             {
-                // Empty page = end of results.
                 break;
             }
 
             all.AddRange(pageList);
-
-            // Follow the Link: rel="next" header if present.
             nextUrl = ExtractNextPageUrl(response);
         }
 
-        // Merge aliases across every contributor from every page so the
-        // same Yokesh alias logic that runs on a single page also runs
-        // across the whole repo.
         return MergeAliases(all);
     }
 
-    /// <summary>
-    /// Parses the <c>Link</c> response header (RFC 5988) and returns the
-    /// URL of the entry whose <c>rel="next"</c>, or <c>null</c> if there
-    /// is no next page. The header looks like:
-    /// <code>&lt;https://api.github.com/...&amp;page=2&gt;; rel="next",
-    /// &lt;https://api.github.com/...&amp;page=42&gt;; rel="last"</code>
-    /// </summary>
     private static string? ExtractNextPageUrl(HttpResponseMessage response)
     {
         if (!response.Headers.TryGetValues("Link", out var values))
@@ -670,7 +609,6 @@ else if (ContributorsList.Count == 0)
 
         foreach (var header in values)
         {
-            // Split on commas that are NOT inside angle brackets.
             var parts = SplitLinkHeader(header);
             foreach (var part in parts)
             {
@@ -719,7 +657,35 @@ else if (ContributorsList.Count == 0)
         }
     }
 
-    private static List<ContributorEntry>? TryDeserialize(string json)
+    /// <summary>
+    /// Deserializes the sessionStorage payload written as
+    /// <see cref="ContributorEntry"/> (PascalCase property names).
+    /// Do not use the GitHub API DTO path here — that would drop
+    /// AvatarUrl / HtmlUrl because of snake_case JsonPropertyName.
+    /// </summary>
+    private static List<ContributorEntry>? TryDeserializeCached(string json)
+    {
+        try
+        {
+            var list = JsonSerializer.Deserialize<List<ContributorEntry>>(json, JsonOpts);
+            if (list is null || list.Count == 0)
+            {
+                return null;
+            }
+
+            list.RemoveAll(c => c is null || string.IsNullOrWhiteSpace(c.Login));
+            return list.Count == 0 ? null : MergeAliases(list);
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// Deserializes a raw GitHub Contributors API page (snake_case).
+    /// </summary>
+    private static List<ContributorEntry>? TryDeserializeApi(string json)
     {
         try
         {
@@ -729,8 +695,6 @@ else if (ContributorsList.Count == 0)
                 return null;
             }
 
-            // GitHub already returns contributors sorted by count desc;
-            // we re-sort defensively in case the API order changes.
             var list = new List<ContributorEntry>(raw.Count);
             foreach (var r in raw)
             {
@@ -754,60 +718,6 @@ else if (ContributorsList.Count == 0)
         {
             return null;
         }
-    }
-
-    // The static fallback file stores the data as a list of
-    // Dictionary<string, object?> so it can be re-serialised and
-    // round-tripped through the same code path as a live API
-    // response. This avoids a second deserialisation layer.
-    private static List<ContributorEntry> ProjectFallback(
-        IReadOnlyList<Dictionary<string, object?>> rows)
-    {
-        var list = new List<ContributorEntry>(rows.Count);
-        foreach (var row in rows)
-        {
-            var login = AsString(row, "login");
-            if (string.IsNullOrWhiteSpace(login))
-            {
-                continue;
-            }
-            list.Add(new ContributorEntry
-            {
-                Login = login,
-                Id = (int)AsLong(row, "id"),
-                AvatarUrl = AsString(row, "avatar_url") ?? string.Empty,
-                HtmlUrl = AsString(row, "html_url") ?? string.Empty,
-                Type = AsString(row, "type") ?? "User",
-                Contributions = (int)AsLong(row, "contributions"),
-            });
-        }
-        return MergeAliases(list);
-    }
-
-    private static string? AsString(IDictionary<string, object?> row, string key)
-    {
-        if (!row.TryGetValue(key, out var v) || v is null)
-        {
-            return null;
-        }
-        return v as string ?? v.ToString();
-    }
-
-    private static long AsLong(IDictionary<string, object?> row, string key)
-    {
-        if (!row.TryGetValue(key, out var v) || v is null)
-        {
-            return 0;
-        }
-        return v switch
-        {
-            long l => l,
-            int i => i,
-            double d => (long)d,
-            JsonElement je when je.ValueKind == JsonValueKind.Number => je.GetInt64(),
-            JsonElement je when je.ValueKind == JsonValueKind.String => long.TryParse(je.GetString(), out var p) ? p : 0,
-            _ => 0,
-        };
     }
 
     private static string DisplayName(ContributorEntry c) =>
