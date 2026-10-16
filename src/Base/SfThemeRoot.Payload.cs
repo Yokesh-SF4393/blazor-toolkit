@@ -1643,6 +1643,23 @@ font-family: ""e-toolkit-icons"";
     forced-color-adjust: none !important;
   }
 
+  .e-switch-wrapper.e-switch-disabled .e-switch-inner,
+  .e-switch-wrapper.e-switch-disabled .e-switch-inner.e-switch-active,
+  .e-switch-wrapper.e-switch-disabled .e-switch-on,
+  .e-switch-wrapper.e-switch-disabled .e-switch-off {
+    background-color: Canvas !important;
+    border-color: GrayText !important;
+    color: GrayText !important;
+    forced-color-adjust: none !important;
+  }
+
+  .e-switch-wrapper.e-switch-disabled .e-switch-handle,
+  .e-switch-wrapper.e-switch-disabled .e-switch-handle.e-switch-active {
+    background-color: GrayText !important;
+    border-color: GrayText !important;
+    forced-color-adjust: none !important;
+  }
+
   .e-radio+label:hover::before{
       border-color: Highlight !important;
   }      
