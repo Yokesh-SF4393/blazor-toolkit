@@ -52,7 +52,7 @@ jobs:
       # 3. Restore
       # -------------------------------------------------
       - name: Restore
-        run: dotnet restore ./Syncfusion.Blazor.Toolkit.slnx
+        run: dotnet restore ./src/Syncfusion.Blazor.Toolkit.slnx
 
       # -------------------------------------------------
       # 4. Vulnerability scan (fail on High / Critical)
@@ -112,7 +112,9 @@ jobs:
             echo "No embedded CycloneDX found – generating one"
             dotnet tool install --global CycloneDX || true
             export PATH="$PATH:$HOME/.dotnet/tools"
-            dotnet CycloneDX ./src/Syncfusion.Blazor.Toolkit.csproj -o "${{ env.SBOM_DIR }}" -j
+            dotnet-CycloneDX ./src/Syncfusion.Blazor.Toolkit.csproj \
+            --output "${{ env.SBOM_DIR }}" \
+            --filename bom.json
           fi
 
           echo "CycloneDX files:"
@@ -124,11 +126,12 @@ jobs:
       - name: Generate SPDX SBOM
         run: |
           set -euo pipefail
-          # Install Microsoft's sbom-tool
-          dotnet tool install --global Microsoft.Sbom.Tool || true
+
+          # Install the correct .NET tool
+          dotnet tool install --global Microsoft.Sbom.DotNetTool || true
           export PATH="$PATH:$HOME/.dotnet/tools"
 
-          # Generate SPDX 2.2 JSON for the project
+          # Generate SPDX SBOM
           sbom-tool generate \
             -b "${{ env.NUGET_PACKAGES_DIR }}" \
             -bc ./src \

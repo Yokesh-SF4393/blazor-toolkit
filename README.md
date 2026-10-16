@@ -205,7 +205,7 @@ dotnet add package Syncfusion.Blazor.Toolkit
 Alternatively, add it directly in your `.csproj` file:
 
 ```xml
-<PackageReference Include="Syncfusion.Blazor.Toolkit" Version="2.0.0" />
+<PackageReference Include="Syncfusion.Blazor.Toolkit" Version="2.0.1" />
 ```
 
 #### 2. Register services in `Program.cs`

@@ -90,7 +90,7 @@ The short version of the policy is:
 
 Until the project ships a `1.0.0` release, the minor digit may
 include breaking changes per SemVer §4. The current source declares
-`2.0.0` in `src/Syncfusion.Blazor.Toolkit.csproj`; the most recent
+`2.0.1` in `src/Syncfusion.Blazor.Toolkit.csproj`; the most recent
 published release on the GitHub releases page is `v1.0.2`.
 
 APIs marked `[Obsolete]` are retained for at least **two minor

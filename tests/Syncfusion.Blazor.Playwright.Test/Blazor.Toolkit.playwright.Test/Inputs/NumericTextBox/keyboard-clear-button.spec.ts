@@ -11,17 +11,19 @@ test.describe('NumericTextBox — keyboard clear button (#82)', () => {
 
   test('Tab from the input lands on the clear button, not the document body', async ({ page }) => {
     const input = page.locator('#accessNumeric');
+    const clearButton = page.locator('button.e-close');
+    await expect(input).toBeVisible();
+    await expect(input).toHaveValue(/5/);
     await input.focus();
-
-    const clearButton = page.locator('#accessNumeric').locator('..').locator('button.e-close');
-    await expect(clearButton).toBeVisible({ timeout: 10000 });
+    await expect(clearButton).toBeVisible({ timeout: 5000 });
     await expect(clearButton).toHaveAttribute('type', 'button');
-    await expect(clearButton).not.toHaveAttribute('tabindex', '-1');
-
+    await expect(clearButton).not.toHaveAttribute('tabindex', '-1', { timeout: 5000 });
+    await page.waitForFunction(() => {
+      const btn = document.querySelector('button.e-close');
+      return btn && btn.getAttribute('tabindex') !== '-1';
+    });
     await page.keyboard.press('Tab');
-
-    await expect(clearButton).toBeFocused({ timeout: 10000 });
-
+    await expect(clearButton).toBeFocused({ timeout: 5000 });
     const active = await page.evaluate(() => ({
       tag: document.activeElement?.tagName ?? '',
       className: document.activeElement?.className ?? '',
