@@ -98,19 +98,32 @@
                 <div class="theme-heading">
                     <span class="theme-heading-icon" aria-hidden="true">◉</span>
                     <div><h2 id="theme-title">Theme Preview</h2><p>Experience accessible UI in different themes.</p>
-                        <div class="theme-chips" aria-label="Available theme previews"><span>Light</span><span>Dark</span><span>High Contrast</span></div>
+                        <div class="theme-chips" role="group" aria-label="Select a theme preview">
+                            <button type="button" class="@(SelectedTheme == "Light" ? "is-selected" : null)" aria-pressed="@(SelectedTheme == "Light")" @onclick='() => SelectTheme("Light")'>Light</button>
+                            <button type="button" class="@(SelectedTheme == "Dark" ? "is-selected" : null)" aria-pressed="@(SelectedTheme == "Dark")" @onclick='() => SelectTheme("Dark")'>Dark</button>
+                            <button type="button" class="@(SelectedTheme == "High Contrast" ? "is-selected" : null)" aria-pressed="@(SelectedTheme == "High Contrast")" @onclick='() => SelectTheme("High Contrast")'>High Contrast</button>
+                        </div>
                     </div>
                 </div>
-                <div class="theme-previews">
-                    <div class="theme-preview preview-light" aria-label="Light theme preview">
-                        <button type="button">Button</button><label class="visually-hidden" for="light-preview-input">Light theme sample text field</label><input id="light-preview-input" type="text" value="Text field" readonly />
-                    </div>
-                    <div class="theme-preview preview-dark" aria-label="Dark theme preview">
-                        <button type="button">Button</button><label class="visually-hidden" for="dark-preview-input">Dark theme sample text field</label><input id="dark-preview-input" type="text" value="Text field" readonly />
-                    </div>
-                    <div class="theme-preview preview-contrast" aria-label="High contrast theme preview">
-                        <button type="button">Button</button><label class="visually-hidden" for="contrast-preview-input">High contrast theme sample text field</label><input id="contrast-preview-input" type="text" value="Text field" readonly />
-                    </div>
+                <div class="theme-previews" aria-live="polite">
+                    @if (SelectedTheme == "Light")
+                    {
+                        <div class="theme-preview preview-light" aria-label="Light theme preview">
+                            <div class="preview-window"><div class="preview-window-heading"><span class="preview-window-mark" aria-hidden="true">S</span><span><strong>Welcome back</strong><small>Your workspace is ready.</small></span></div><div class="preview-controls"><label class="visually-hidden" for="light-preview-input">Light theme sample text field</label><input id="light-preview-input" type="text" value="Search settings" readonly /><button type="button">Continue</button></div></div>
+                        </div>
+                    }
+                    else if (SelectedTheme == "Dark")
+                    {
+                        <div class="theme-preview preview-dark" aria-label="Dark theme preview">
+                            <div class="preview-window"><div class="preview-window-heading"><span class="preview-window-mark" aria-hidden="true">S</span><span><strong>Welcome back</strong><small>Your workspace is ready.</small></span></div><div class="preview-controls"><label class="visually-hidden" for="dark-preview-input">Dark theme sample text field</label><input id="dark-preview-input" type="text" value="Search settings" readonly /><button type="button">Continue</button></div></div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="theme-preview preview-contrast" aria-label="High contrast theme preview">
+                            <div class="preview-window"><div class="preview-window-heading"><span class="preview-window-mark" aria-hidden="true">S</span><span><strong>Welcome back</strong><small>Your workspace is ready.</small></span></div><div class="preview-controls"><label class="visually-hidden" for="contrast-preview-input">High contrast theme sample text field</label><input id="contrast-preview-input" type="text" value="Search settings" readonly /><button type="button">Continue</button></div></div>
+                        </div>
+                    }
                 </div>
             </section>
         </div>
@@ -142,6 +155,10 @@
     ];
 
     private static readonly string[] VerifiedItems = ["WCAG 2.2", "ARIA Support", "Keyboard Navigation", "Screen Readers", "High Contrast", "Focus Management"];
+
+    private string SelectedTheme { get; set; } = "Light";
+
+    private void SelectTheme(string theme) => SelectedTheme = theme;
 
     private static readonly IReadOnlyList<RightToc.TocItem> TocItemsList =
     [
