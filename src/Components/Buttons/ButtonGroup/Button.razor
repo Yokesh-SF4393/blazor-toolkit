@@ -36,7 +36,7 @@ else
            @onchange="HandleInputChangeAsync"
            @attributes="HtmlAttributes">
 
-    <label for="@InputId" class="@GetSelectionCssClass()" @onclick="ClickHandlerAsync" title="@title">
+    <label for="@InputId" class="@GetSelectionCssClass()" title="@title">
         @if (!string.IsNullOrEmpty(IconCss) && (IconPosition == IconPosition.Left || IconPosition == IconPosition.Top))
         {
             <span class="@IconCss e-btn-icon"></span>
