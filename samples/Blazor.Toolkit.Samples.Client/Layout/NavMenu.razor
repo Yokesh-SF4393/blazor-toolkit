@@ -45,6 +45,12 @@
                 ============================================================ *@
                 <li class="sf-sidebar-group-label" aria-hidden="true">Common</li>
 
+                <li class="sf-nav-item sf-sub-item @(IsActive("common/accessibility") ? "is-active" : "")">
+                    <NavLink class="sf-nav-link" href="common/accessibility" Match="NavLinkMatch.All">
+                        <span class="e-toolkit-icons e-accessibility sf-menu-icon" aria-hidden="true"></span>
+                        <span>Accessibility</span>
+                    </NavLink>
+                </li>
                 <li class="sf-nav-item sf-sub-item @(IsActive("common/right-to-left") ? "is-active" : "")">
                     <NavLink class="sf-nav-link" href="common/right-to-left" Match="NavLinkMatch.All">
                         <span class="e-toolkit-icons e-right-left sf-menu-icon" aria-hidden="true"></span>
