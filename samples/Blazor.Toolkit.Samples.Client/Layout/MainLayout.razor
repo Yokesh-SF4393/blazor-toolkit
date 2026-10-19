@@ -159,7 +159,10 @@
                     @* Cascade the TOC holder to @Body so the rendered page can publish its section list
                        into the same instance the right sidebar reads from. *@
                     <CascadingValue Value="@_tocHolder">
-                        <SfBreadcrumb />
+                        @if (!IsAccessibilityPage)
+                        {
+                            <SfBreadcrumb />
+                        }
                         @Body
                         <PageFooter />
                     </CascadingValue>
