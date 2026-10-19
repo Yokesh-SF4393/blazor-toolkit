@@ -1,5 +1,4 @@
 @page "/common/accessibility"
-@inherits TocPublishingComponentBase
 
 <PageTitle>Accessibility | Syncfusion Blazor Toolkit</PageTitle>
 
@@ -159,18 +158,6 @@
     private string SelectedTheme { get; set; } = "Light";
 
     private void SelectTheme(string theme) => SelectedTheme = theme;
-
-    private static readonly IReadOnlyList<RightToc.TocItem> TocItemsList =
-    [
-        new("overview", "Overview"),
-        new("why-accessibility", "Why Accessibility Matters"),
-        new("standards", "Standards Compliance"),
-        new("screen-readers", "Screen Reader Compatibility"),
-        new("keyboard-shortcuts", "Keyboard Shortcuts"),
-        new("theme-preview", "Theme Preview")
-    ];
-
-    protected override IReadOnlyList<RightToc.TocItem> TocItems => TocItemsList;
 
     private sealed record FeatureItem(string Title, string Description, string IconClass, string Icon);
 }

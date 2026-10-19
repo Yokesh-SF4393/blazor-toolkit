@@ -65,7 +65,6 @@
     .accessibility-layout { display: block; }
     .hero-art { width: 220px; right: -239px; transform: scale(.88); transform-origin: top right; }
     .verified-panel { width: 225px; }
-    .theme-showcase { width: calc(100% + 239px); }
     .feature-badge { padding-inline: 8px; gap: 6px; }.feature-badge strong { font-size: 10px; }.feature-badge small { font-size: 9px; }
     .verified-panel { padding-inline: 14px; }
     .theme-showcase { grid-template-columns: 255px minmax(0,1fr); gap: 12px; }
