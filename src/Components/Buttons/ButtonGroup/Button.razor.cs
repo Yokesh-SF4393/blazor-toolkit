@@ -87,18 +87,22 @@ namespace Syncfusion.Blazor.Toolkit
                 return;
             }
 
-            // Arrow keys in radio groups: browser moves focus + selects. Suppress the
-            // following change so only focus moves; user must press Space/Enter to select.
+            // Single: arrow keys move focus only — ignore the following native change
             if (ButtonGroup?.Mode == SelectionMode.Single && IsArrowKey(args))
             {
                 ButtonGroup._suppressChangeFromArrowKey = true;
                 return;
             }
 
-            // Space → native toggle + @onchange (do not also call ClickHandlerAsync)
-            // Enter → no native toggle on checkbox/radio; handle selection ourselves
-            if (args.Key == "Enter" || args.Code == "Enter")
+            // Space / Enter for both Single and Multiple
+            // (bUnit only fires keydown; browser would also fire change — suppress that)
+            if (args.Code == "Space" || args.Key == " " || args.Key == "Enter" || args.Code == "Enter")
             {
+                if (ButtonGroup is not null)
+                {
+                    ButtonGroup._suppressChangeFromArrowKey = true;
+                }
+
                 await ClickHandlerAsync().ConfigureAwait(false);
             }
         }
@@ -122,12 +126,19 @@ namespace Syncfusion.Blazor.Toolkit
                 return;
             }
 
-            // Arrow navigation: change often fires on a different Button than keydown.
-            // Shared group flag + refresh all so DOM checked matches Selected.
-            if (ButtonGroup.Mode == SelectionMode.Single && ButtonGroup._suppressChangeFromArrowKey)
+            // Arrow navigation in Single mode (flag is on the group — change may be on another Button)
+            // Ignore change after arrow (Single) or Space/Enter (already handled in keydown).
+            // Prevents double-toggle in the browser; bUnit never fires change on KeyDown.
+            if (ButtonGroup._suppressChangeFromArrowKey)
             {
                 ButtonGroup._suppressChangeFromArrowKey = false;
                 ButtonGroup.RefreshButtonsUi();
+                return;
+            }
+
+            // Click / Space already handled this interaction
+            if (ButtonGroup._isClicked)
+            {
                 return;
             }
 
@@ -177,7 +188,14 @@ namespace Syncfusion.Blazor.Toolkit
                 return;
             }
 
+            // Another handler already processed this interaction
+            if (ButtonGroup._isClicked)
+            {
+                return;
+            }
+
             ButtonGroup._isClicked = true;
+
             if (ButtonGroup.Mode == SelectionMode.Multiple)
             {
                 await UpdateButtonStateAsync(!Selected).ConfigureAwait(false);
@@ -202,7 +220,15 @@ namespace Syncfusion.Blazor.Toolkit
         /// <param name="state">The new selection state to apply.</param>
         internal async Task UpdateButtonStateAsync(bool state)
         {
-            Selected = _selected = _buttonSelected = await SfBaseUtils.UpdatePropertyAsync(state, _selected, SelectedChanged).ConfigureAwait(false);
+            bool previous = _selected;
+
+            // Synchronous update first — prevents race with @onchange during await
+            _selected = state;
+            _buttonSelected = state;
+            Selected = state;
+
+            Selected = _selected = _buttonSelected =
+                await SfBaseUtils.UpdatePropertyAsync(state, previous, SelectedChanged).ConfigureAwait(false);
         }
 
         /// <exclude />
