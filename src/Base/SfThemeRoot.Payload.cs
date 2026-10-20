@@ -1499,13 +1499,6 @@ font-family: ""e-toolkit-icons"";
     z-index: 1;
   }
 
-  .e-btn-group input:hover + label.e-btn,
-  .e-btn-group input:focus + label.e-btn,
-  .e-btn-group label.e-btn.e-active {
-    border-color: Highlight !important;
-    color: Highlight !important;
-  }
-
   .e-btn-group input[aria-pressed] + label.e-btn {
     border-color: Highlight !important;
     color: Highlight !important;
@@ -1529,6 +1522,13 @@ font-family: ""e-toolkit-icons"";
     forced-color-adjust: none;
   }
 
+  .e-btn-group input:checked + label.e-btn:not(.e-active):not(.e-disabled):not(.e-outline) {
+    background-color: ButtonFace !important;
+    border-color: ButtonText !important;
+    color: ButtonText !important;
+    forced-color-adjust: none;
+  }
+
   .e-btn-group input + label:hover {
     border-color: Highlight !important;
     color: Highlight !important;
@@ -1537,18 +1537,11 @@ font-family: ""e-toolkit-icons"";
     forced-color-adjust: none;
   }
 
-  .e-btn-group input:hover + label.e-btn:not(.e-disabled):not(.e-outline) {
+  .e-btn-group input:hover + label.e-btn:not(.e-disabled):not(.e-outline),
+  .e-btn-group input:hover:checked + label.e-btn:not(.e-active):not(.e-disabled):not(.e-outline)  {
     background-color: HighlightText !important;
     border-color: Highlight !important;
     color: Highlight !important;
-    box-shadow: none !important;
-    forced-color-adjust: none;
-  }
-
-  .e-btn-group input:checked + label.e-btn:not(.e-disabled):not(.e-outline) {
-    background-color: Highlight !important;
-    border-color: Highlight !important;
-    color: HighlightText !important;
     box-shadow: none !important;
     forced-color-adjust: none;
   }
