@@ -5722,8 +5722,11 @@ ejs-calendar {
   border-radius: calc(var(--e-radius) * 1);
 }
 .e-input-group-icon.e-timeline-today:focus,
-*.e-control-wrapper .e-input-group-icon.e-timeline-today:focus {
-  background: var(--color-sf-secondary-text-color-hover);
+.e-input-group-icon.e-timeline-today:focus-visible,
+*.e-control-wrapper .e-input-group-icon.e-timeline-today:focus,
+*.e-control-wrapper .e-input-group-icon.e-timeline-today:focus-visible {
+  background: var(--color-sf-secondary-bg-color-hover);
+  color: var(--color-sf-secondary-text-color-hover);
   border-radius: 999px;
 }
 

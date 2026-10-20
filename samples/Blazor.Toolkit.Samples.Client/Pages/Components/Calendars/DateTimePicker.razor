@@ -111,7 +111,7 @@
             This sample demonstrates the list of events of the DateTimePicker component which will be triggered for appropriate DateTimePicker actions.
         </p>
         <p>
-            <table class="table table-bordered">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Event Name</th>
@@ -221,7 +221,7 @@
         <p>
             The DateTimePicker provides the <code><a href="https://help.syncfusion.com/cr/blazor-toolkit/Syncfusion.Blazor.Toolkit.CalendarBase-1.html#Syncfusion_Blazor_Toolkit_Calendars_CalendarBase_1_WeekNumber" target="_blank" rel="noreferrer noopener">WeekNumber</a></code> and <code><a href="https://help.syncfusion.com/cr/blazor-toolkit/Syncfusion.Blazor.Toolkit.CalendarBase-1.html#Syncfusion_Blazor_Toolkit_Calendars_CalendarBase_1_WeekRule" target="_blank" rel="noreferrer noopener">WeekRule</a></code> properties to specify the rule for defining the first week of the year with options: <code>FirstDay</code>, <code>FirstFullWeek</code>, and <code>FirstFourDayWeek</code>.
         </p>
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Types</th>
@@ -314,5 +314,51 @@
     .e-calendar .e-content td.e-selected.e-focused-date.e-cell.personal-appointment span.e-day,
     .e-calendar .e-content td.e-selected.e-focused-date.e-cell.official-appointment span.e-day {
         background-color: rgb(255 255 0 / 90%);
+    }
+
+    :root {
+        --table-bg: var(--panel-bg);
+        --table-border: rgba(0,0,0,0.06);
+        --table-border-radius: 6px;
+        --table-header-bg: rgba(0,0,0,0.02);
+        --table-header-color: var(--top-text);
+        --table-row-bg: #ffffff;
+        --table-row-border: rgba(0,0,0,0.04);
+    }
+
+    .dark {
+        --table-bg: var(--panel-bg);
+        --table-border: rgba(255,255,255,0.10);
+        --table-header-bg: rgba(255,255,255,0.04);
+        --table-header-color: var(--top-text);
+        --table-row-bg: rgba(255,255,255,0.01);
+        --table-row-border: rgba(255,255,255,0.04);
+    }
+
+    .table {
+        background-color: var(--table-bg, #ffffff);
+        color: var(--text-color, #111827);
+        border: 1px solid var(--table-border, rgba(0,0,0,0.06));
+        border-radius: var(--table-border-radius, 6px);
+        overflow: hidden;
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    .table thead th {
+        background-color: var(--table-header-bg, rgba(0,0,0,0.02));
+        color: var(--table-header-color, var(--top-text, #111827));
+        padding: 0.75rem 1rem;
+        text-align: left;
+        font-weight: 600;
+        border-bottom: 1px solid var(--table-row-border, rgba(0,0,0,0.04));
+    }
+
+    .table tbody td {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid var(--table-row-border, rgba(0,0,0,0.04));
+        background-color: var(--table-row-bg, #ffffff);
+        color: var(--text-color, #111827);
     }
 </style>

@@ -98,11 +98,14 @@ namespace Syncfusion.Blazor.Toolkit
             // (bUnit only fires keydown; browser would also fire change — suppress that)
             if (args.Code == "Space" || args.Key == " " || args.Key == "Enter" || args.Code == "Enter")
             {
+#if NET10_0_OR_GREATER
+                ButtonGroup?._suppressChangeFromArrowKey = true;
+#else
                 if (ButtonGroup is not null)
                 {
                     ButtonGroup._suppressChangeFromArrowKey = true;
                 }
-
+#endif
                 await ClickHandlerAsync().ConfigureAwait(false);
             }
         }

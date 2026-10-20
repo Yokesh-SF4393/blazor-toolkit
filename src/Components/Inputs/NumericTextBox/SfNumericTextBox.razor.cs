@@ -1434,6 +1434,50 @@ namespace Syncfusion.Blazor.Toolkit
         }
 
         /// <summary>
+        /// Activates a spin button (increment or decrement) when the user clicks it or activates it with the keyboard.
+        /// </summary>
+        /// <param name="action">
+        /// The action to perform. Use <c>"increment"</c> to increase the value or <c>"decrement"</c> to decrease the value.
+        /// </param>
+        /// <returns>A <see cref="Task"/> that represents the asynchronous operation.</returns>
+        /// <remarks>
+        /// This method is shared by both mouse click and keyboard (Enter / Space) activation of the spin buttons.
+        /// It reuses the existing <see cref="ServerActionAsync"/> path so that value changes, validation,
+        /// formatting, and change events behave consistently with the mouse and arrow-key paths.
+        /// The method does nothing when the component is in a read-only or disabled state.
+        /// </remarks>
+        private async Task OnSpinButtonActivateAsync(string action)
+        {
+            if (Readonly || Disabled)
+            {
+                return;
+            }
+
+            string currentValue = Value is not null ? Value.ToString()! : string.Empty;
+            await ServerActionAsync(action, null, currentValue).ConfigureAwait(true);
+        }
+
+        /// <summary>
+        /// Handles keyboard activation of the spin buttons.
+        /// </summary>
+        /// <param name="e">The <see cref="KeyboardEventArgs"/> that contains information about the key that was pressed.</param>
+        /// <param name="action">
+        /// The action to perform. Use <c>"increment"</c> for the up button or <c>"decrement"</c> for the down button.
+        /// </param>
+        /// <returns>A <see cref="Task"/> that represents the asynchronous operation.</returns>
+        /// <remarks>
+        /// Responds to the <c>Enter</c> and <c>Space</c> keys so that focusable spin buttons are fully operable
+        /// with the keyboard, matching the behavior of a standard button control.
+        /// </remarks>
+        private async Task OnSpinButtonKeyDownAsync(KeyboardEventArgs e, string action)
+        {
+            if (e.Key is "Enter" or " ")
+            {
+                await OnSpinButtonActivateAsync(action).ConfigureAwait(true);
+            }
+        }
+
+        /// <summary>
         /// Performs increment or decrement actions on the numeric value using the specified step value.
         /// </summary>
         /// <param name="action">The action to perform - typically "increment" or "decrement".</param>
