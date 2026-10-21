@@ -7,7 +7,9 @@
     </ChartPrimaryYAxis>
 
     <!-- Stack Labels -->
-    <ChartStackLabelSettings Visible="true" Format="{value}TWh" />
+    <ChartStackLabelSettings Visible="true" Format="{value}TWh">
+        <ChartStackLabelFont Color="@TextColor" />
+    </ChartStackLabelSettings>
     <!-- Tooltip -->
     <ChartTooltipSettings Enable="true" />
 
@@ -55,6 +57,9 @@
         base.OnParametersSet();
         _currentTheme = CurrentTheme;
     }
+
+    private bool IsDarkTheme => _currentTheme.ToString().Contains("Dark") || _currentTheme.ToString().Contains("HighContrast");
+    private string TextColor => IsDarkTheme ? "#FFFFFF" : "#000000";
 
     public class AnnualEnergyDataLabel
     {

@@ -28,7 +28,9 @@
                  Fill="#FF7F50"
                  Type="ChartSeriesType.Spline">
         <ChartMarker Visible="true" IsFilled="true">
-            <ChartDataLabel Visible="true" />
+            <ChartDataLabel Visible="true">
+                <ChartDataLabelFont Color="@TextColor" />
+            </ChartDataLabel>
         </ChartMarker>
     </ChartSeries>
 
@@ -40,7 +42,9 @@
                  Fill="#19DA00"
                  Type="ChartSeriesType.Spline">
         <ChartMarker Visible="true" IsFilled="true">
-            <ChartDataLabel Visible="true" />
+            <ChartDataLabel Visible="true">
+                <ChartDataLabelFont Color="@TextColor" />
+            </ChartDataLabel>
         </ChartMarker>
     </ChartSeries>
 </SfChart>
@@ -56,6 +60,9 @@
         base.OnParametersSet();
         _currentTheme = CurrentTheme;
     }
+
+    private bool IsDarkTheme => _currentTheme.ToString().Contains("Dark") || _currentTheme.ToString().Contains("HighContrast");
+    private string TextColor => IsDarkTheme ? "#FFFFFF" : "#000000";
 
     public class SplinePoint
     {
