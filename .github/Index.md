@@ -50,6 +50,7 @@ The documents referenced below contain project information related to licensing,
 
 - [README.md](../README.md) — Product overview and getting started.
 - [CHANGELOG.md](../CHANGELOG.md) — In-repo release history.
+- [ROADMAP.md](../ROADMAP.md) — Chart-first priorities, exploratory component direction, and evidence gaps. Not a delivery commitment.
 
 ---
 
@@ -110,6 +111,8 @@ The documents referenced below contain project information related to licensing,
   - Product overview, repository structure, and consumer getting started.
 - [CHANGELOG.md](../CHANGELOG.md)
   - In-repo release history and migration notes.
+- [ROADMAP.md](../ROADMAP.md)
+  - Chart-first priorities and exploratory direction. Not a delivery commitment.
 
 ## API and compliance (`docs/`)
 

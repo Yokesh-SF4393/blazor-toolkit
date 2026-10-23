@@ -389,6 +389,10 @@ Known limitations are tracked as GitHub issues labelled `accessibility`.
 
 Release history for the Syncfusion® Blazor Toolkit is maintained in [CHANGELOG.md](CHANGELOG.md). That file documents version-specific changes, improvements, bug fixes, and breaking changes for each release. Refer to it when upgrading or reviewing what changed between versions.
 
+## Roadmap
+
+Direction and priorities are in [ROADMAP.md](ROADMAP.md). Chart remains the flagship, quality gates come before breadth, and **no Data Grid is planned**. Items listed there are exploration only — not a release schedule or compatibility guarantee.
+
 ## Migration (2.0)
 
 For namespace, API, and theme migration in 2.0, see:
