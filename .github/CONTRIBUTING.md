@@ -12,7 +12,7 @@ Please see our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 The Syncfusion Toolkit for Blazor is an open-source, MIT-licensed package
 on a **2.x** release line. We welcome contributions of all sizes—bug fixes,
-tests, docs, accessibility, and new capabilities that fit the roadmap.
+tests, docs, accessibility, and new capabilities that fit the [roadmap](../ROADMAP.md).
 
 Have a look at our [Development Guide](DEVELOPMENT.md) to learn about setting up your development environment.
 
