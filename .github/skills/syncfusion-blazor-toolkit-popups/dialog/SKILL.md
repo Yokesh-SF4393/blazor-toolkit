@@ -1,6 +1,6 @@
 ---
 license: MIT
-name: syncfusion-blazor-toolkit-dialog
+name: dialog
 description: >
   Implement Syncfusion Blazor Toolkit SfDialog — modal and modeless windows with
   buttons, drag, resize, focus trap, ARIA semantics, and animation.
@@ -87,12 +87,12 @@ Need a dialog?
 
 | Need | Read |
 |---|---|
-| First modal / project setup | [references/dialog-basics.md](references/dialog-basics.md) |
-| Properties, events, methods, animation surface (this skill's table-of-truth) | [references/dialog-properties.md](references/dialog-properties.md) |
-| Service-pattern, dynamic creator, wizard, cascading integration | [references/dialog-advanced.md](references/dialog-advanced.md) |
+| First modal / project setup | [references/dialog-basics.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/references/dialog-basics.md) |
+| Properties, events, methods, animation surface (this skill's table-of-truth) | [references/dialog-properties.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/references/dialog-properties.md) |
+| Service-pattern, dynamic creator, wizard, cascading integration | [references/dialog-advanced.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/references/dialog-advanced.md) |
 
 For cross-component decision matrix (dialog vs tooltip vs popover), see
-[../router/dialog-vs-tooltip-decision-matrix.md](../router/dialog-vs-tooltip-decision-matrix.md).
+[../router/dialog-vs-tooltip-decision-matrix.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/router/dialog-vs-tooltip-decision-matrix.md).
 
 ## Top 5 Properties You'll Use
 
@@ -104,7 +104,7 @@ For cross-component decision matrix (dialog vs tooltip vs popover), see
 | `ShowCloseIcon` | Mouse-only users have no other dismiss affordance; pair with `CloseOnEscape="true"` |
 | `DialogAnimationSettings` / `Animation` | `DialogEffect` enum — pick exactly one (`Fade`/`Zoom`/`Slide*`/`None`) |
 
-Full property/event/method/animation reference: [references/dialog-properties.md](references/dialog-properties.md).
+Full property/event/method/animation reference: [references/dialog-properties.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/references/dialog-properties.md).
 
 ## Common Patterns
 
@@ -299,8 +299,8 @@ dialog still being open afterwards.
 
 ## Next Steps
 
-1. **First modal:** [references/dialog-basics.md](references/dialog-basics.md)
-2. **Service pattern / dynamic creator / wizard:** [references/dialog-advanced.md](references/dialog-advanced.md)
-3. **Cross-skill decision matrix:** [../router/dialog-vs-tooltip-decision-matrix.md](../router/dialog-vs-tooltip-decision-matrix.md)
+1. **First modal:** [references/dialog-basics.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/references/dialog-basics.md)
+2. **Service pattern / dynamic creator / wizard:** [references/dialog-advanced.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/references/dialog-advanced.md)
+3. **Cross-skill decision matrix:** [../router/dialog-vs-tooltip-decision-matrix.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/router/dialog-vs-tooltip-decision-matrix.md)
 
 **Demo:** https://blazor.syncfusion.com/demos/toolkit/dialogs
