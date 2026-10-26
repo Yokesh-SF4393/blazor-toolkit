@@ -28,13 +28,13 @@ that is not yet satisfied, and the planned remediation.
 
 - Accessibility Insights FastPass / Assessment reports for major
   components are checked in under
-  [`.github/accessibility/insights-summary.md`](accessibility/insights-summary.md).
+  [`.github/accessibility/insights-summary.md`](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/accessibility/insights-summary.md).
 - Manual screen reader smoke notes for NVDA / JAWS / Narrator against
   the major components live next to it at
-  [`.github/accessibility/screen-reader-smoke.md`](accessibility/screen-reader-smoke.md).
+  [`.github/accessibility/screen-reader-smoke.md`](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/accessibility/screen-reader-smoke.md).
 - Conformance claims are regenerated before each major release and
   filed in the release ticket.
-- Formal VPAT: [`docs/VPAT-2.5-INT.md`](../docs/VPAT-2.5-INT.md).
+- Formal VPAT: [`docs/VPAT-2.5-INT.md`](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/VPAT-2.5-INT.md).
 
 ## Reporting issues
 
@@ -44,4 +44,4 @@ reader pairing, the component affected, and the WCAG success criterion
 that is failing.
 
 For private disclosure, contact security@syncfusion.com following
-[SECURITY.md](SECURITY.md).
+[SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/SECURITY.md).

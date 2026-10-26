@@ -36,7 +36,7 @@ Quick coverage summary for the Syncfusion Blazor Toolkit CI matrix.
   stored with that project or produced by the Playwright run—not under
   a separate `tests/playwright-baselines/` folder.
 - Accessibility Insights runs nightly, not on PR — see
-  [`.github/accessibility/insights-summary.md`](accessibility/insights-summary.md).
+  [`.github/accessibility/insights-summary.md`](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/accessibility/insights-summary.md).
 
 ## Test-evidence list (where to find the latest numbers)
 

@@ -80,11 +80,11 @@ The threat model and security posture are reviewed on a structured schedule:
 
 | Trigger | Activity |
 |---|---|
-| Every **major release** (`x.0.0`) | Full review of [THREAT-MODEL.md](THREAT-MODEL.md): reassess all threats, verify mitigations, update or re-ratify the accepted-risks table. |
+| Every **major release** (`x.0.0`) | Full review of [THREAT-MODEL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/THREAT-MODEL.md): reassess all threats, verify mitigations, update or re-ratify the accepted-risks table. |
 | Every **minor release** (`x.y.0`) | Review the accepted-risks table; escalate any entry whose circumstances have changed. |
-| **Monthly servicing** | Dependency review and CVE triage per [SECURITY.md §3.3](SECURITY.md). |
+| **Monthly servicing** | Dependency review and CVE triage per [SECURITY.md §3.3](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/SECURITY.md). |
 
-The outcome of each structured review is recorded by updating the "Security Self-Attestation" date in [SECURITY.md](SECURITY.md) and the accepted-risks table in [THREAT-MODEL.md](THREAT-MODEL.md).
+The outcome of each structured review is recorded by updating the "Security Self-Attestation" date in [SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/SECURITY.md) and the accepted-risks table in [THREAT-MODEL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/THREAT-MODEL.md).
 
 ## Versioning and API stability
 
@@ -93,7 +93,7 @@ The project follows [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 Release history:
 
 - **GitHub Releases:** <https://github.com/syncfusion/blazor-toolkit/releases>
-- **In-repo changelog:** [CHANGELOG.md](../CHANGELOG.md)
+- **In-repo changelog:** [CHANGELOG.md](https://github.com/syncfusion/blazor-toolkit/blob/main/CHANGELOG.md)
 
 Every published tag has a release page on that URL that enumerates
 the added, changed, deprecated, and removed APIs for that version.
@@ -113,9 +113,9 @@ The package version is declared in `src/Syncfusion.Blazor.Toolkit.csproj`
 
 The pre-1.0 SemVer exception no longer applies. On **2.x**, breaking changes
 require a new major version. **2.0.0** was a breaking re-baseline; see
-[CHANGELOG.md](../CHANGELOG.md),
-[docs/API-COMPATIBILITY.md](../docs/API-COMPATIBILITY.md), and
-[docs/API-BREAK-INVENTORY.md](../docs/API-BREAK-INVENTORY.md).
+[CHANGELOG.md](https://github.com/syncfusion/blazor-toolkit/blob/main/CHANGELOG.md),
+[docs/API-COMPATIBILITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-COMPATIBILITY.md), and
+[docs/API-BREAK-INVENTORY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-BREAK-INVENTORY.md).
 
 APIs marked `[Obsolete]` are retained for at least **two minor
 releases** before removal. APIs marked `[Experimental]` are not
@@ -258,7 +258,7 @@ existing isolated selectors and the theme payload rather than a permanent
 checked-in `src/wwwroot/styles/` tree. `src/wwwroot/` primarily holds
 JavaScript interop scripts.
 
-See [CHANGELOG.md](../CHANGELOG.md) section `[2.0.0]` (theme delivery model and
+See [CHANGELOG.md](https://github.com/syncfusion/blazor-toolkit/blob/main/CHANGELOG.md) section `[2.0.0]` (theme delivery model and
 CSS isolation) for migration details.
 
 ### D6 / PI-06 — SBOM (manual)
@@ -447,7 +447,7 @@ that are documented as static or server-only. The render mode is
 declared per sample, not per component. The render-mode contract for
 each component is documented in its XML doc-comment `Remarks`
 section. Security implications are summarised in
-[RENDER-MODE-SECURITY.md](RENDER-MODE-SECURITY.md).
+[RENDER-MODE-SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/RENDER-MODE-SECURITY.md).
 
 ### Performance notes
 
@@ -485,7 +485,7 @@ This means:
 .NET matrix (8.0.x, 9.0.x, 10.0.x). Playwright validation runs on the
 same triple. The unpacked WebAssembly sample smoke runs on .NET 10
 only. Documented coverage and gaps are kept up to date in
-[TEST-MATRIX.md](TEST-MATRIX.md).
+[TEST-MATRIX.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/TEST-MATRIX.md).
 
 ### Known analyzer / trim / AOT findings
 

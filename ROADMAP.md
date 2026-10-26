@@ -6,7 +6,7 @@ Chart is the flagship component. The MIT toolkit remains independently useful. *
 
 This document represents the major investments maintainers intend to pursue. It is **not** approval of a release schedule, a compatibility guarantee, or a funded support commitment. Component selection, scope, and timing remain subject to maintainer review and community feedback. Many items require investigation and design; plans may change, items may be cut or deferred, and this document will be updated to reflect progress and learnings.
 
-[README](README.md) · [Changelog](CHANGELOG.md) · [Documentation index](.github/Index.md) · [Test evidence matrix](.github/TEST-MATRIX.md)
+[README](https://github.com/syncfusion/blazor-toolkit/blob/main/README.md) · [Changelog](https://github.com/syncfusion/blazor-toolkit/blob/main/CHANGELOG.md) · [Documentation index](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/Index.md) · [Test evidence matrix](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/TEST-MATRIX.md)
 
 Community input is welcome. Prefer issues and discussions that include a concrete scenario, render-mode matrix, expected behavior, and measurements. Support for specific proposals is best expressed by reactions and detailed scenario comments on the original issue.
 
@@ -34,7 +34,7 @@ This roadmap deliberately does **not** adopt competitor shipping cadence, compon
 | CSS-variable theming and opt-in alternate themes | Suitable, scoped | `SfThemeRoot` already emits tokens + dark / high-contrast / forced-colors. Material 3, Fluent 2, Bootstrap-aligned themes = evaluation only, must stay opt-in. |
 | Localization and RTL | Suitable after quality gates | Culture-aware date/number formatting exists. First-class RTL surface is not in the public API → evaluation track. |
 | Layout primitives for chart dashboards and forms | Suitable if gated | Tab, list, menu, dropdown/autocomplete planned for evaluation. Sidebar and Card are not yet public components. |
-| Supply-chain and dependency triage | Suitable | Standing gate via [SECURITY.md](.github/SECURITY.md) and committed SBOM. |
+| Supply-chain and dependency triage | Suitable | Standing gate via [SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/SECURITY.md) and committed SBOM. |
 | Community influence via issues/discussions | Suitable | Unchanged. Proposals need scenario, render mode, behavior, measurements. |
 | AI chat, tool calling, smart paste, MCP helpers | Not suitable now | No AI surface in-repo. Deferred until Chart + a11y evidence is solid. |
 | Data Grid, TreeGrid, Pivot, Spreadsheet, Gantt, Scheduler | Not suitable | Explicit non-goals. |
@@ -55,7 +55,7 @@ Checked against package **2.0.1**. Public types live under `Syncfusion.Blazor.To
 | **Inputs** | TextBox, TextArea, NumericTextBox, Uploader |
 | **Popups & notification** | Dialog, Tooltip, Spinner. `Popups/Popup` is a model only — not a shipped `SfPopup`. |
 | **Theme** | `SfThemeRoot`: one shared CSS-variable layer (default, dark, high-contrast, forced-colors). Component CSS isolated. No alternate design-system themes shipped. |
-| **Targets** | .NET 8 / 9 / 10. Render-mode requirements vary; TFMs and sample hosts do not prove equivalent behavior in every mode. See [component guidance](README.md#skills-and-component-guidance) and [render-mode guidance](.github/RENDER-MODE-SECURITY.md). |
+| **Targets** | .NET 8 / 9 / 10. Render-mode requirements vary; TFMs and sample hosts do not prove equivalent behavior in every mode. See [component guidance](https://github.com/syncfusion/blazor-toolkit/blob/main/README.md#skills-and-component-guidance) and [render-mode guidance](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/RENDER-MODE-SECURITY.md). |
 
 **Already present (not future work):** Chart annotations, trendlines, striplines.
 
@@ -138,7 +138,7 @@ Continue improving culture and date-boundary evidence for calendars and numeric 
 Declarations and analyzers are already enabled. Follow-up: supported-host publish logs and runtime checks. Analyzer-clean builds are not deployment certification.
 
 ### Supply chain
-Continue monthly dependency triage, SBOM checksum review, and shipped-script coverage described in [SECURITY.md](.github/SECURITY.md) and [artifacts/sbom/README.md](artifacts/sbom/README.md). This is a standing release gate.
+Continue monthly dependency triage, SBOM checksum review, and shipped-script coverage described in [SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/SECURITY.md) and [artifacts/sbom/README.md](https://github.com/syncfusion/blazor-toolkit/blob/main/artifacts/sbom/README.md). This is a standing release gate.
 
 ### AI-assisted experiences
 **Not in scope at this time.** Optional prompt surfaces, tool calling, or documentation helpers will not be evaluated until Chart reliability and accessibility evidence are solid. Any future surface would need to stay optional and provider-agnostic. This is a deferral, not a roadmap item.
@@ -163,15 +163,15 @@ This direction does **not** commit to Data Grid, TreeGrid, Pivot, or feature par
 
 ## Current evidence vs planned validation
 
-Figures below are retained evidence already recorded in this repository. They are **not** a new test run, remote CI results, or release guarantees. Re-count after meaningful test changes using the command in [TEST-MATRIX.md](.github/TEST-MATRIX.md). Historical releases: [CHANGELOG.md](CHANGELOG.md).
+Figures below are retained evidence already recorded in this repository. They are **not** a new test run, remote CI results, or release guarantees. Re-count after meaningful test changes using the command in [TEST-MATRIX.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/TEST-MATRIX.md). Historical releases: [CHANGELOG.md](https://github.com/syncfusion/blazor-toolkit/blob/main/CHANGELOG.md).
 
 | Area | Evidence available now | Follow-up needed |
 |---|---|---|
-| **Build & unit tests** | [TEST-MATRIX.md](.github/TEST-MATRIX.md): bUnit **2,735** tests passed (0 failed, 0 skipped) on .NET 8 as of 2026-10-03 verification note. CI declared for bUnit on .NET 8/9/10. Library **2.0.1**. | Re-count after test changes. Broader runtime evidence and released-package checks remain open. |
+| **Build & unit tests** | [TEST-MATRIX.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/TEST-MATRIX.md): bUnit **2,735** tests passed (0 failed, 0 skipped) on .NET 8 as of 2026-10-03 verification note. CI declared for bUnit on .NET 8/9/10. Library **2.0.1**. | Re-count after test changes. Broader runtime evidence and released-package checks remain open. |
 | **Browser coverage** | Playwright projects for visual regression and accessibility smoke; CI lists them for .NET 8/9/10. | Interaction coverage, additional hosts/browsers, full required matrix. See TEST-MATRIX.md. |
-| **Accessibility** | Source mechanisms, [ACCESSIBILITY.md](.github/ACCESSIBILITY.md), screen-reader smoke notes, [docs/VPAT-2.5-INT.md](docs/VPAT-2.5-INT.md). WCAG 2.2 AA goal, last reviewed for 2.0.1. | Measured application-level evaluations. In-repo VPAT is not by itself an approved ACR for every composed app. |
+| **Accessibility** | Source mechanisms, [ACCESSIBILITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/ACCESSIBILITY.md), screen-reader smoke notes, [docs/VPAT-2.5-INT.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/VPAT-2.5-INT.md). WCAG 2.2 AA goal, last reviewed for 2.0.1. | Measured application-level evaluations. In-repo VPAT is not by itself an approved ACR for every composed app. |
 | **Trimming / AOT** | `IsTrimmable`, `IsAotCompatible`, trim/AOT analyzers set. | Supported-host publish logs and runtime checks. |
-| **Security / supply chain** | [SECURITY.md](.github/SECURITY.md) (self-attestation 2026-10-19), [THREAT-MODEL.md](.github/THREAT-MODEL.md), monthly `dotnet list package --vulnerable`, NuGet audit, CycloneDX SBOM under [artifacts/sbom/](artifacts/sbom/README.md). | Ongoing dependency triage, shipped-script coverage, final-package checks. |
-| **API compatibility** | [CHANGELOG.md](CHANGELOG.md), [API-COMPATIBILITY.md](docs/API-COMPATIBILITY.md), [API-BREAK-INVENTORY.md](docs/API-BREAK-INVENTORY.md) document the 2.0 contract. | Maintainer review for any further breaks. |
+| **Security / supply chain** | [SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/SECURITY.md) (self-attestation 2026-10-19), [THREAT-MODEL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/THREAT-MODEL.md), monthly `dotnet list package --vulnerable`, NuGet audit, CycloneDX SBOM under [artifacts/sbom/](https://github.com/syncfusion/blazor-toolkit/blob/main/artifacts/sbom/README.md). | Ongoing dependency triage, shipped-script coverage, final-package checks. |
+| **API compatibility** | [CHANGELOG.md](https://github.com/syncfusion/blazor-toolkit/blob/main/CHANGELOG.md), [API-COMPATIBILITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-COMPATIBILITY.md), [API-BREAK-INVENTORY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-BREAK-INVENTORY.md) document the 2.0 contract. | Maintainer review for any further breaks. |
 
 _Last evidence review: 2026-10-19, aligned to package 2.0.1 and in-repo evidence. This date does not approve a delivery schedule._
