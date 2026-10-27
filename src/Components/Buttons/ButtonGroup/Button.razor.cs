@@ -71,11 +71,13 @@ namespace Syncfusion.Blazor.Toolkit
 
         /// <exclude />
         /// <summary>
-        /// Handles keyboard interactions on the input element, specifically Space key activation.
+        /// Handles keyboard interactions on the input element.
         /// </summary>
         /// <remarks>
-        /// Space key activation is necessary because native radio/checkbox inputs respond to Enter,
-        /// not Space. This handler ensures the button activates when Space is pressed while focused.
+        /// In single-selection (radio) mode, arrow keys natively move focus and change
+        /// the checked radio. We mark that interaction so <see cref="HandleInputChangeAsync"/>
+        /// can ignore it — selection should only change on Space, Enter, or mouse click.
+        /// Space is handled natively (raises <c>change</c>). Enter is handled here.
         /// </remarks>
         /// <param name="args">The keyboard event arguments.</param>
         private async Task HandleInputKeyDownAsync(KeyboardEventArgs args)
@@ -85,19 +87,39 @@ namespace Syncfusion.Blazor.Toolkit
                 return;
             }
 
-            // Native radio/checkbox inputs respond to Space (toggle) and Enter (default click on a
-            // wrapping label). Both should trigger the same selection flow.
-            if (args.Code == "Space" || args.Key == " " || args.Key == "Enter")
+            // Single: arrow keys move focus only — ignore the following native change
+            if (ButtonGroup?.Mode == SelectionMode.Single && IsArrowKey(args))
             {
+                ButtonGroup._suppressChangeFromArrowKey = true;
+                return;
+            }
+
+            // Space / Enter for both Single and Multiple
+            // (bUnit only fires keydown; browser would also fire change — suppress that)
+            if (args.Code == "Space" || args.Key == " " || args.Key == "Enter" || args.Code == "Enter")
+            {
+#if NET10_0_OR_GREATER
+                ButtonGroup?._suppressChangeFromArrowKey = true;
+#else
+                if (ButtonGroup is not null)
+                {
+                    ButtonGroup._suppressChangeFromArrowKey = true;
+                }
+#endif
                 await ClickHandlerAsync().ConfigureAwait(false);
             }
         }
 
+        private static bool IsArrowKey(KeyboardEventArgs args)
+        {
+            return args.Key is "ArrowLeft" or "ArrowRight" or "ArrowUp" or "ArrowDown"
+                || args.Code is "ArrowLeft" or "ArrowRight" or "ArrowUp" or "ArrowDown";
+        }
+
         /// <exclude />
         /// <summary>
-        /// Handles native <c>change</c> events from the underlying input element so the selection state
-        /// is kept in sync with the DOM in scenarios where the browser changes the input state without
-        /// going through <see cref="ClickHandlerAsync"/> (e.g., assistive technology interactions).
+        /// Handles native <c>change</c> events from the underlying input element.
+        /// This is the primary selection path for mouse clicks (via label[for]) and Space key.
         /// </summary>
         /// <param name="args">The change event arguments from the input.</param>
         private async Task HandleInputChangeAsync(ChangeEventArgs args)
@@ -107,39 +129,54 @@ namespace Syncfusion.Blazor.Toolkit
                 return;
             }
 
-            if (args?.Value is null)
+            // Arrow navigation in Single mode (flag is on the group — change may be on another Button)
+            // Ignore change after arrow (Single) or Space/Enter (already handled in keydown).
+            // Prevents double-toggle in the browser; bUnit never fires change on KeyDown.
+            if (ButtonGroup._suppressChangeFromArrowKey)
+            {
+                ButtonGroup._suppressChangeFromArrowKey = false;
+                ButtonGroup.RefreshButtonsUi();
+                return;
+            }
+
+            // Click / Space already handled this interaction
+            if (ButtonGroup._isClicked)
             {
                 return;
             }
 
-            bool newValue;
-            try
-            {
-                newValue = Convert.ToBoolean(args.Value, System.Globalization.CultureInfo.InvariantCulture);
-            }
-            catch (InvalidCastException)
-            {
-                return;
-            }
-            catch (FormatException)
-            {
-                return;
-            }
+            ButtonGroup._isClicked = true;
 
-            // Only update the state when the DOM-driven value diverges from the current value.
-            // This avoids re-entering the click flow and keeps two-way binding stable.
-            if (newValue != Selected)
+            if (ButtonGroup.Mode == SelectionMode.Multiple)
             {
-                ButtonGroup._isClicked = true;
-                if (ButtonGroup.Mode == SelectionMode.Multiple)
+                if (args?.Value is null)
+                {
+                    return;
+                }
+
+                bool newValue;
+                try
+                {
+                    newValue = Convert.ToBoolean(args.Value, System.Globalization.CultureInfo.InvariantCulture);
+                }
+                catch (InvalidCastException)
+                {
+                    return;
+                }
+                catch (FormatException)
+                {
+                    return;
+                }
+
+                if (newValue != Selected)
                 {
                     await UpdateButtonStateAsync(newValue).ConfigureAwait(false);
                 }
-                else if (ButtonGroup.Mode == SelectionMode.Single && newValue)
-                {
-                    await ButtonGroup.ClearSiblingsAsync(this).ConfigureAwait(false);
-                    await UpdateButtonStateAsync(true).ConfigureAwait(false);
-                }
+            }
+            else if (ButtonGroup.Mode == SelectionMode.Single)
+            {
+                await ButtonGroup.ClearSiblingsAsync(this).ConfigureAwait(false);
+                await UpdateButtonStateAsync(true).ConfigureAwait(false);
             }
         }
 
@@ -154,7 +191,14 @@ namespace Syncfusion.Blazor.Toolkit
                 return;
             }
 
+            // Another handler already processed this interaction
+            if (ButtonGroup._isClicked)
+            {
+                return;
+            }
+
             ButtonGroup._isClicked = true;
+
             if (ButtonGroup.Mode == SelectionMode.Multiple)
             {
                 await UpdateButtonStateAsync(!Selected).ConfigureAwait(false);
@@ -179,7 +223,24 @@ namespace Syncfusion.Blazor.Toolkit
         /// <param name="state">The new selection state to apply.</param>
         internal async Task UpdateButtonStateAsync(bool state)
         {
-            Selected = _selected = _buttonSelected = await SfBaseUtils.UpdatePropertyAsync(state, _selected, SelectedChanged).ConfigureAwait(false);
+            bool previous = _selected;
+
+            // Synchronous update first — prevents race with @onchange during await
+            _selected = state;
+            _buttonSelected = state;
+            Selected = state;
+
+            Selected = _selected = _buttonSelected =
+                await SfBaseUtils.UpdatePropertyAsync(state, previous, SelectedChanged).ConfigureAwait(false);
+        }
+
+        /// <exclude />
+        /// <summary>
+        /// Triggers a re-render so <c>checked="@_selected"</c> is applied to the DOM.
+        /// </summary>
+        internal void NotifyStateChanged()
+        {
+            StateHasChanged();
         }
 
         #endregion

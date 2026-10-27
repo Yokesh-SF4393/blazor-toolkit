@@ -18,7 +18,9 @@
                  Fill="#8AA624"
                  ColumnSpacing="0.3">
         <ChartMarker>
-            <ChartDataLabel Visible="true" Format="{value}M" />
+            <ChartDataLabel Visible="true" Format="{value}M">
+                <ChartDataLabelFont Color="@TextColor" />
+            </ChartDataLabel>
         </ChartMarker>
         <ChartCornerRadius BottomRight="8" TopRight="8" />
     </ChartSeries>
@@ -32,7 +34,9 @@
                  Fill="#D25D5D"
                  ColumnSpacing="0.3">
         <ChartMarker>
-            <ChartDataLabel Visible="true" Format="{value}M" />
+            <ChartDataLabel Visible="true" Format="{value}M">
+                <ChartDataLabelFont Color="@TextColor" />
+            </ChartDataLabel>
         </ChartMarker>
         <ChartCornerRadius BottomRight="8" TopRight="8" />
     </ChartSeries>
@@ -46,7 +50,9 @@
                  Fill="#239BA7"
                  ColumnSpacing="0.3">
         <ChartMarker>
-            <ChartDataLabel Visible="true" Format="{value}M" />
+            <ChartDataLabel Visible="true" Format="{value}M">
+                <ChartDataLabelFont Color="@TextColor" />
+            </ChartDataLabel>
         </ChartMarker>
         <ChartCornerRadius BottomRight="8" TopRight="8" />
     </ChartSeries>
@@ -68,6 +74,9 @@
         base.OnParametersSet();
         _currentTheme = CurrentTheme;
     }
+
+    private bool IsDarkTheme => _currentTheme.ToString().Contains("Dark") || _currentTheme.ToString().Contains("HighContrast");
+    private string TextColor => IsDarkTheme ? "#FFFFFF" : "#000000";
 
     public class PhonePalette
     {

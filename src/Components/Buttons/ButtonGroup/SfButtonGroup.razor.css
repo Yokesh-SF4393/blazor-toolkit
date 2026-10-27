@@ -235,6 +235,19 @@
     border-top-right-radius: 0;
 }
 
+/* Keep focus/hover border visible in stacked (vertical) and horizontal groups */
+.e-btn-group ::deep .e-btn:hover,
+.e-btn-group ::deep .e-btn:focus,
+.e-btn-group ::deep .e-btn:focus-visible,
+.e-btn-group ::deep .e-btn:active,
+.e-btn-group ::deep input:hover + label.e-btn,
+.e-btn-group ::deep input:focus + label.e-btn,
+.e-btn-group ::deep input:focus-visible + label.e-btn,
+.e-btn-group ::deep input:checked + label.e-btn {
+    position: relative;
+    z-index: 1;
+}
+
 /* Rounded corner (LTR) */
 .e-btn-group.e-round-corner:not(.e-vertical):not(.e-rtl) {
     border-radius: 20px;
@@ -986,4 +999,34 @@
     background: var(--color-sf-danger-bg-color-hover) !important;
     border-color: var(--color-sf-danger-border-color-hover) !important;
     color: var(--color-sf-danger-text-hover) !important;
+}
+
+@media (forced-colors: active) {
+    .e-btn-group ::deep label.e-btn.e-primary.e-active,
+    .e-btn-group ::deep input:hover + label.e-btn.e-primary.e-active {
+        background: Highlight !important;
+        border-color: Highlight !important;
+        color:  HighlightText !important;
+        forced-color-adjust: none;
+    }
+
+    .e-btn-group ::deep .e-btn:focus-visible,
+    .e-btn-group ::deep input:focus-visible + label.e-btn {
+        outline: 2px solid CanvasText !important;
+        outline-offset: 2px !important;
+        z-index: 1;
+   }
+    .e-btn-group ::deep .e-btn:hover,
+    .e-btn-group ::deep .e-btn:focus,
+    .e-btn-group ::deep .e-btn:focus-visible,
+    .e-btn-group ::deep input:hover + label.e-btn,
+    .e-btn-group ::deep input:focus + label.e-btn,
+    .e-btn-group ::deep input:focus-visible + label.e-btn {
+        position: relative;
+        z-index: 1;
+    }
+
+    .e-btn-group.e-vertical ::deep .e-btn:not(.e-outline) {
+        margin-top: -1px;
+    }
 }

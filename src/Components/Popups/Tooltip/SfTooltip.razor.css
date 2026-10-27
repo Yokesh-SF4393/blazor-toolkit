@@ -293,3 +293,21 @@
 ::deep .e-tooltip-wrap .e-arrow-tip-inner {
     display: block !important;
 }
+
+@media (forced-colors: active) {
+
+    .e-tooltip-wrap .e-arrow-tip,
+    ::deep .e-tooltip-wrap .e-arrow-tip {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    .e-tooltip-wrap .e-arrow-tip-outer,
+    .e-tooltip-wrap .e-arrow-tip-inner,
+    ::deep .e-tooltip-wrap .e-arrow-tip-outer,
+    ::deep .e-tooltip-wrap .e-arrow-tip-inner {
+        forced-color-adjust: none;
+    }
+}

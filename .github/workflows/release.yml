@@ -33,7 +33,7 @@ jobs:
       # 1. Checkout (full history for SourceLink)
       # -------------------------------------------------
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -41,7 +41,7 @@ jobs:
       # 2. Setup .NET
       # -------------------------------------------------
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: |
             8.0.x
@@ -76,7 +76,7 @@ jobs:
 
       - name: Upload vulnerability report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: vulnerability-report
           path: vuln-report.md
@@ -195,7 +195,7 @@ jobs:
       # 10. SLSA Build Provenance attestation
       # -------------------------------------------------
       - name: Generate SLSA provenance
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@v4
         with:
           subject-path: ${{ env.NUGET_PACKAGES_DIR }}/*.nupkg
 
@@ -222,7 +222,7 @@ jobs:
       # 12. Upload signed package + both SBOMs to the Release
       # -------------------------------------------------
       - name: Upload assets to GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             ${{ env.NUGET_PACKAGES_DIR }}/*.nupkg

@@ -4,7 +4,7 @@ var globalTimeOut = {};
 var DEFAULT_FLUENT_WIDTH = 30;
 var CLS_SHOWSPIN = 'e-spin-show';
 var CLS_HIDESPIN = 'e-spin-hide';
-var CLS_FLUENTSPIN = 'e-spin-fabric';
+var CLS_FLUENTSPIN = 'e-spin-fluent';
 var CLS_SPINWRAP = 'e-spinner-pane';
 var CLS_SPINNER_INNER_WRAP = 'e-spinner-inner';
 var CLS_SPINCIRCLE = 'e-path-circle';
@@ -172,10 +172,21 @@ function createFluentElement(innerCon, uniqueID, themeClass, makeElement) {
     var svgFabric = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svgFabric.setAttribute('id', uniqueID);
     svgFabric.setAttribute('class', themeClass);
+
     var fabricCirclePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     fabricCirclePath.setAttribute('class', CLS_SPINCIRCLE);
+    // Prevent default black fill — track only
+    fabricCirclePath.setAttribute('fill', 'none');
+    fabricCirclePath.setAttribute('stroke', 'var(--color-sf-primary-lighter, #c7e0f4)');
+    fabricCirclePath.setAttribute('stroke-width', '1.5');
+
     var fabricCircleArc = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     fabricCircleArc.setAttribute('class', CLS_SPINARC);
+    // Prevent default black fill — animated arc
+    fabricCircleArc.setAttribute('fill', 'none');
+    fabricCircleArc.setAttribute('stroke', 'var(--color-sf-primary, #0078d4)');
+    fabricCircleArc.setAttribute('stroke-width', '1.5');
+
     innerCon.insertBefore(svgFabric, innerCon.firstChild);
     svgFabric.appendChild(fabricCirclePath);
     svgFabric.appendChild(fabricCircleArc);

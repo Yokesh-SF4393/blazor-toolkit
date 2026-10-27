@@ -40,6 +40,13 @@ namespace Syncfusion.Blazor.Toolkit
         /// </summary>
         internal bool _isClicked;
 
+        /// <exclude />
+        /// <summary>
+        /// When true, the next input <c>change</c> in single-selection mode is ignored.
+        /// Set on arrow keydown (focused button) and read on change (may be a different button).
+        /// </summary>
+        internal bool _suppressChangeFromArrowKey;
+
         #endregion
 
         #region Helper Methods
@@ -114,6 +121,24 @@ namespace Syncfusion.Blazor.Toolkit
                 {
                     await item.UpdateButtonStateAsync(false).ConfigureAwait(false);
                 }
+            }
+        }
+
+        /// <exclude />
+        /// <summary>
+        /// Re-renders all child buttons so <c>checked</c> is restored from bound selection
+        /// after the browser natively moves the radio selection (e.g. arrow keys).
+        /// </summary>
+        internal void RefreshButtonsUi()
+        {
+            if (_buttonItems is null)
+            {
+                return;
+            }
+
+            foreach (Button item in _buttonItems)
+            {
+                item.NotifyStateChanged();
             }
         }
 

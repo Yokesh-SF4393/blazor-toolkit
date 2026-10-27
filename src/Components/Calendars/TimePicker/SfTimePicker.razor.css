@@ -2598,9 +2598,8 @@
 .e-input-base-wrapper .e-float-input.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error):not(.e-input-group) textarea:focus,
 .e-input-base-wrapper .e-float-input:not(.e-success):not(.e-warning):not(.e-error):not(.e-input-group).e-input-focus input,
 .e-input-base-wrapper .e-float-input.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error):not(.e-input-group).e-input-focus input {
-  border-bottom-color: var(--color-sf-primary);
   padding-bottom: 2px;
-  border-bottom-width: calc(var(--e-border) * 0.125);
+  border-bottom-width: 0px;
 }
 .e-input-base-wrapper textarea.e-input:focus:not(.e-success):not(.e-warning):not(.e-error) {
   border-bottom-color: var(--color-sf-primary);

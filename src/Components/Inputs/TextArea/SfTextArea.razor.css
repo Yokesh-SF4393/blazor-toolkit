@@ -264,9 +264,8 @@
 }
 .e-input-base-wrapper .e-input:focus {
   border-width: 1px;
-  padding-bottom: 4px;
 }
-.e-input-base-wrapper .e-input:focus {
+.e-input-base-wrapper input.e-input:focus {
   padding-bottom: 5px;
 }
 .e-input-base-wrapper .e-input-group input.e-input:focus,
@@ -277,8 +276,8 @@
 .e-input-base-wrapper .e-input-group.e-control-wrapper.e-input-focus input.e-input {
   padding: 4px 12px 4px 12px;
 }
-.e-input-base-wrapper .e-input-group textarea.e-input:focus,
-.e-input-base-wrapper .e-input-group.e-control-wrapper textarea.e-input:focus {
+.e-input-base-wrapper .e-input-group:not(.e-filled) textarea.e-input:focus,
+.e-input-base-wrapper .e-input-group.e-control-wrapper:not(.e-filled) textarea.e-input:focus {
   padding: 4px 8px 4px 12px;
 }
 .e-input-base-wrapper .e-input-group .e-input-group-icon,
@@ -2496,8 +2495,12 @@
 }
 .e-input-base-wrapper textarea.e-input:focus:not(.e-success):not(.e-warning):not(.e-error) {
   border-bottom-color: var(--color-sf-primary);
-  padding-bottom: 4px;
   border-bottom-width: calc(var(--e-border) * 0);
+}
+.e-input-base-wrapper :not(.e-filled) > textarea.e-input:focus:not(.e-success):not(.e-warning):not(.e-error),
+.e-input-base-wrapper .e-input-group:not(.e-filled) textarea.e-input:focus:not(.e-success):not(.e-warning):not(.e-error),
+.e-input-base-wrapper .e-input-group.e-control-wrapper:not(.e-filled) textarea.e-input:focus:not(.e-success):not(.e-warning):not(.e-error) {
+  padding-bottom: 4px;
 }
 .e-input-base-wrapper .e-input-group:not(.e-success):not(.e-warning):not(.e-error) input.e-input:focus,
 .e-input-base-wrapper .e-input-group.e-control-wrapper:not(.e-success):not(.e-warning):not(.e-error) input.e-input:focus,

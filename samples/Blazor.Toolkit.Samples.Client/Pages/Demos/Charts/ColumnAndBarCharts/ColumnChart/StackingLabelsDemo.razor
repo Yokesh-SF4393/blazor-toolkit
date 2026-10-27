@@ -2,9 +2,10 @@
     <ChartTooltipSettings Enable="true" Header="" />
     <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Toolkit.ValueType.Category" Interval="1"></ChartPrimaryXAxis>
     <ChartPrimaryYAxis Interval="20"><ChartAxisLineStyle Width="0" /></ChartPrimaryYAxis>
-    <ChartStackLabelSettings Visible="true"></ChartStackLabelSettings>
 
-    <ChartStackLabelSettings Visible="true"></ChartStackLabelSettings>
+    <ChartStackLabelSettings Visible="true">
+        <ChartStackLabelFont Color="@TextColor" />
+    </ChartStackLabelSettings>
     <ChartSeries DataSource="@Data" XName="X" YName="Y1" Name="India" Type="ChartSeriesType.StackingColumn" Fill="#5C6BC0" ColumnWidth="0.4"></ChartSeries>
     <ChartSeries DataSource="@Data" XName="X" YName="Y2" Name="China" Type="ChartSeriesType.StackingColumn" Fill="#00796B" ColumnWidth="0.4"></ChartSeries>
     <ChartSeries DataSource="@Data" XName="X" YName="Y3" Name="United States" Type="ChartSeriesType.StackingColumn" Fill="#B71C1C" ColumnWidth="0.4">
@@ -23,6 +24,9 @@
         base.OnParametersSet();
         _currentTheme = CurrentTheme;
     }
+
+    private bool IsDarkTheme => _currentTheme.ToString().Contains("Dark") || _currentTheme.ToString().Contains("HighContrast");
+    private string TextColor => IsDarkTheme ? "#FFFFFF" : "#000000";
 
     public class StackingColumnData
     {

@@ -30,12 +30,12 @@
         var CurrentMonth = CurrentDate.Value.Month;
         if (args.Value.Value.Month == CurrentMonth && (args.Value.Value.Day == 7 || args.Value.Value.Day == 14 || args.Value.Value.Day == 24 || args.Value.Value.Day == 29))
         {
-            this.SelectedValue = this.SelectedDate?.ToString("M / d / yyyy") + "(Personal appointment)";
+            this.SelectedValue = this.SelectedDate?.ToString("M / d / yyyy") + " (Personal appointment)";
             Count++;
         }
         if (args.Value.Value.Month == CurrentMonth && (args.Value.Value.Day == 3 || args.Value.Value.Day == 11 || args.Value.Value.Day == 17 || args.Value.Value.Day == 22))
         {
-            this.SelectedValue = this.SelectedDate?.ToString("M / d / yyyy") + "(Official appointment)";
+            this.SelectedValue = this.SelectedDate?.ToString("M / d / yyyy") + " (Official appointment)";
             Count++;
         }
         if (Count == 0)

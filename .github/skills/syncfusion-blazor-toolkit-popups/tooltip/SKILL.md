@@ -14,7 +14,7 @@ description: >
   overlays (use syncfusion-blazor-toolkit-notifications / SfSpinner).
 metadata:
   author: "Syncfusion Inc"
-  version: "1.0.0"
+  version: "1.0.0"   # skill document revision only — not the NuGet package version (package is 2.x)
 ---
 
 # Syncfusion Blazor Toolkit: Tooltip (SfTooltip)
@@ -68,13 +68,13 @@ see the **Common Patterns** section below.
 ## When to Use Tooltip vs Dialog
 
 If you're unsure, read the cross-skill decision matrix first:
-[router/dialog-vs-tooltip-decision-matrix.md](../router/dialog-vs-tooltip-decision-matrix.md).
+[router/dialog-vs-tooltip-decision-matrix.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/router/dialog-vs-tooltip-decision-matrix.md).
 
 ## Documentation and Navigation Guide
 
 | Need | Read |
 |---|---|
-| Setup, properties, all triggers, RTL, full examples | [references/tooltip-implementation.md](references/tooltip-implementation.md) |
+| Setup, properties, all triggers, RTL, full examples | [references/tooltip-implementation.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/tooltip/references/tooltip-implementation.md) |
 
 ## Common Patterns
 
@@ -155,7 +155,7 @@ If you're unsure, read the cross-skill decision matrix first:
 | Esc dismiss | Default |
 | Disabled buttons | Wrap in focusable `<span tabindex="0">` — see Pattern 3 |
 
-> ⚠️ Tooltips are **static** (`role="tooltip"`, not `role="alert"`). Don't rely on them for async announcements — use [SfSpinner](../syncfusion-blazor-toolkit-notifications/SKILL.md) for that.
+> ⚠️ Tooltips are **static** (`role="tooltip"`, not `role="alert"`). Don't rely on them for async announcements — use [SfSpinner](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/SKILL.md) for that.
 
 ## Decision Tree
 
@@ -321,11 +321,11 @@ the trigger DOM automatically.)
 ## Next Steps
 
 1. **First tooltip:** read
-   [tooltip-implementation.md](references/tooltip-implementation.md).
+   [tooltip-implementation.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/tooltip/references/tooltip-implementation.md).
 2. **Modal confirm / block UI:** exit this skill and load
-   [syncfusion-blazor-toolkit-dialog](../dialog/SKILL.md).
+   [syncfusion-blazor-toolkit-dialog](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/SKILL.md).
 3. **In doubt:** read
-   [router/dialog-vs-tooltip-decision-matrix.md](../router/dialog-vs-tooltip-decision-matrix.md).
+   [router/dialog-vs-tooltip-decision-matrix.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/router/dialog-vs-tooltip-decision-matrix.md).
 
 **Demo:** Syncfusion Blazor Toolkit official demo at
 https://blazor.syncfusion.com/demos/toolkit/tooltip

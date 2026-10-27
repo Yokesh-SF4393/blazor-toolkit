@@ -517,6 +517,9 @@ namespace Syncfusion.Blazor.Toolkit
 
         /// <summary>
         /// Disposes JavaScript module references used for interop, handling both asynchronous and in-process module instances in a safe and unified manner.
+        /// Safely disposes JS module references.
+        /// Ignores JSDisconnectedException when the Blazor circuit is already disconnected
+        /// (page refresh, tab close, navigation away). This does not affect chart UI behavior.
         /// </summary>
         /// <param name="asyncModule">
         /// The asynchronous JavaScript module reference (<see cref="IJSObjectReference"/>) to dispose.
@@ -524,13 +527,38 @@ namespace Syncfusion.Blazor.Toolkit
         /// <param name="inProcessModule">
         /// The in-process JavaScript module reference (<see cref="IJSInProcessObjectReference"/>) to dispose.
         /// </param>
-        private static async ValueTask DisposeJsModuleAsync(IJSObjectReference? asyncModule, IJSInProcessObjectReference? inProcessModule)
+        private static async ValueTask DisposeJsModuleAsync(
+            IJSObjectReference? asyncModule,
+            IJSInProcessObjectReference? inProcessModule)
         {
-            if (asyncModule is not null)
+            try
             {
-                await asyncModule.DisposeAsync().ConfigureAwait(true);
+                if (asyncModule is not null)
+                {
+                    await asyncModule.DisposeAsync().ConfigureAwait(true);
+                }
             }
-            inProcessModule?.Dispose();
+            catch (JSDisconnectedException)
+            {
+                // Expected on circuit teardown. Browser context is already gone.
+            }
+            catch (ObjectDisposedException)
+            {
+                // Module/runtime already disposed.
+            }
+            catch (TaskCanceledException)
+            {
+                // Disposal cancelled during circuit shutdown.
+            }
+
+            try
+            {
+                inProcessModule?.Dispose();
+            }
+            catch (ObjectDisposedException)
+            {
+                // Ignore.
+            }
         }
 
         #endregion

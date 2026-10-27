@@ -18,7 +18,7 @@ description: >
 compatibility: ".NET 8+, render-modes: Server, WebAssembly, Auto"
 metadata:
   author: "Syncfusion Inc"
-  version: "1.0.0"
+  version: "1.0.0"   # skill document revision only — not the NuGet package version (package is 2.x)
 ---
 
 # Syncfusion Blazor Toolkit: Notifications & Loading Indicators
@@ -119,7 +119,7 @@ private async Task Submit()
 will click away.
 
 **Fix:** use a modal dialog (load
-[syncfusion-blazor-toolkit-dialog](../syncfusion-blazor-toolkit-popups/dialog/SKILL.md)).
+[syncfusion-blazor-toolkit-dialog](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/SKILL.md)).
 
 ```razor
 <SfDialog @bind-Visible="_confirm" IsModal="true" Header="Confirm Save">
@@ -176,12 +176,12 @@ on the button area conflict with the inner spinner's wrapper.
 ```
 
 **Fix #2 — external spinner overlay around the whole form:**
-see [references/spinner-overlay.md §2.5](references/spinner-overlay.md#25-form-submission-spinner-editform--sfspinner)
+see [references/spinner-overlay.md §2.5](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-overlay.md#25-form-submission-spinner-editform--sfspinner)
 for the canonical EditForm + form-overlay composition pattern.
 
-> See also: [references/spinner-template.md](references/spinner-template.md)
+> See also: [references/spinner-template.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-template.md)
 > (custom visuals + composition) and
-> [references/spinner-overlay.md](references/spinner-overlay.md)
+> [references/spinner-overlay.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-overlay.md)
 > (full-page, region, modal overlays).
 
 ## Minimal Example
@@ -200,7 +200,7 @@ for the canonical EditForm + form-overlay composition pattern.
 ```
 
 For installation, services, visibility control, labels, CSS classes, and
-size/positioning see [references/spinner-implementation.md](references/spinner-implementation.md).
+size/positioning see [references/spinner-implementation.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-implementation.md).
 
 ---
 
@@ -208,17 +208,17 @@ size/positioning see [references/spinner-implementation.md](references/spinner-i
 
 | Need | Read |
 |---|---|
-| Setup, services, theme, visibility, labels, CSS, sizing | [references/spinner-implementation.md](references/spinner-implementation.md) |
-| `OnOpen` / `OnClose` / `Created` / `Destroyed`, cancellation, templates | [references/spinner-events-customization.md](references/spinner-events-customization.md) |
-| WCAG / keyboard / screen reader | [references/accessibility-best-practices.md](references/accessibility-best-practices.md) |
-| Branded visuals, `SpinType`, CSS variables | [references/spinner-template.md](references/spinner-template.md) |
-| Overlay patterns (page / region / modal / scroll-lock) | [references/spinner-overlay.md](references/spinner-overlay.md) |
+| Setup, services, theme, visibility, labels, CSS, sizing | [references/spinner-implementation.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-implementation.md) |
+| `OnOpen` / `OnClose` / `Created` / `Destroyed`, cancellation, templates | [references/spinner-events-customization.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-events-customization.md) |
+| WCAG / keyboard / screen reader | [references/accessibility-best-practices.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/accessibility-best-practices.md) |
+| Branded visuals, `SpinType`, CSS variables | [references/spinner-template.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-template.md) |
+| Overlay patterns (page / region / modal / scroll-lock) | [references/spinner-overlay.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-overlay.md) |
 
 ---
 
 ## Next Steps
 
-1. **Setup:** [references/spinner-implementation.md](references/spinner-implementation.md)
-2. **Overlay patterns:** [references/spinner-overlay.md](references/spinner-overlay.md)
+1. **Setup:** [references/spinner-implementation.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-implementation.md)
+2. **Overlay patterns:** [references/spinner-overlay.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/references/spinner-overlay.md)
 
 **Demo:** https://blazor.syncfusion.com/demos/toolkit/spinner

@@ -11,7 +11,9 @@
 
     <ChartSeries DataSource="@ScatterLabelData" Name="18-20 Years" LegendShape="LegendShape.Circle" Fill="#807BFF" EnableTooltip="true" Opacity="0.5" XName="Height" YName="Weight" Type="ChartSeriesType.Scatter">
         <ChartMarker Visible="true" Shape="ChartShape.Diamond" Height="15" Width="15">
-            <ChartDataLabel Name="Name" Visible="true" />
+            <ChartDataLabel Name="Name" Visible="true">
+                <ChartDataLabelFont Color="@TextColor" />
+            </ChartDataLabel>
         </ChartMarker>
     </ChartSeries>
 </SfChart>

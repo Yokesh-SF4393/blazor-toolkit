@@ -3533,4 +3533,11 @@ span.e-input-group.e-append-wrapper.e-rtl.e-multi-line-input.e-outline textarea.
   padding-right: 1px;
 }
 
+.e-input-base-wrapper .e-input-group.e-float-input.e-prepend > .e-input-group-icon,
+.e-input-base-wrapper .e-input-group.e-control-wrapper.e-float-input.e-prepend > .e-input-group-icon,
+.e-input-base-wrapper .e-input-group.e-float-input.e-append > .e-input-group-icon,
+.e-input-base-wrapper .e-input-group.e-control-wrapper.e-float-input.e-append > .e-input-group-icon {
+    padding-bottom: 7px;
+}
+
 /* stylelint-disable-line no-empty-source */

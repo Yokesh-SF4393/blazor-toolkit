@@ -14,7 +14,7 @@ description: >
   syncfusion-blazor-toolkit-notifications).
 metadata:
   author: "Syncfusion Inc"
-  version: "1.0.0"
+  version: "1.0.0"   # skill document revision only — not the NuGet package version (package is 2.x)
 ---
 
 # Syncfusion Blazor Toolkit: Popups (Router)
@@ -28,18 +28,18 @@ read the link below.
 
 | Requirement | Component | Load |
 |---|---|---|
-| Confirmation modal (Yes/No) | `SfDialog` | [dialog/SKILL.md](dialog/SKILL.md) |
-| Form-in-modal (login, register, settings) | `SfDialog` | [dialog/SKILL.md](dialog/SKILL.md) |
-| Alert dialog ("Saved", "Error", "Confirm delete") | `SfDialog` | [dialog/SKILL.md](dialog/SKILL.md) |
-| Modal driven by a service from many call sites | `SfDialog` + `DialogService` | [dialog/SKILL.md](dialog/SKILL.md) |
+| Confirmation modal (Yes/No) | `SfDialog` | [dialog/SKILL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/SKILL.md) |
+| Form-in-modal (login, register, settings) | `SfDialog` | [dialog/SKILL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/SKILL.md) |
+| Alert dialog ("Saved", "Error", "Confirm delete") | `SfDialog` | [dialog/SKILL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/SKILL.md) |
+| Modal driven by a service from many call sites | `SfDialog` + `DialogService` | [dialog/SKILL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/SKILL.md) |
 | Help text on an icon button | `SfTooltip` | [tooltip/SKILL.md](tooltip/SKILL.md) |
-| Keyboard-shortcut hint ("Ctrl+S") | `SfTooltip` | [tooltip/SKILL.md](tooltip/SKILL.md) |
-| Brief status / validation copy on hover | `SfTooltip` | [tooltip/SKILL.md](tooltip/SKILL.md) |
-| HTML / rich content shown on hover | `SfTooltip` + `ContentTemplate` | [tooltip/SKILL.md](tooltip/SKILL.md) |
+| Keyboard-shortcut hint ("Ctrl+S") | `SfTooltip` | [tooltip/SKILL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/tooltip/SKILL.md) |
+| Brief status / validation copy on hover | `SfTooltip` | [tooltip/SKILL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/tooltip/SKILL.md) |
+| HTML / rich content shown on hover | `SfTooltip` + `ContentTemplate` | [tooltip/SKILL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/tooltip/SKILL.md) |
 
 ## Cross-Component Decision Matrix
 
-📄 **Read:** [router/dialog-vs-tooltip-decision-matrix.md](router/dialog-vs-tooltip-decision-matrix.md)
+📄 **Read:** [router/dialog-vs-tooltip-decision-matrix.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/router/dialog-vs-tooltip-decision-matrix.md)
 
 **Read this when:**
 - You're not sure which component to use
@@ -52,8 +52,8 @@ decision cheat-sheet.
 
 ## Sub-Skills
 
-- [syncfusion-blazor-toolkit-dialog](dialog/SKILL.md) — `SfDialog`
-- [syncfusion-blazor-toolkit-tooltip](tooltip/SKILL.md) — `SfTooltip`
+- [syncfusion-blazor-toolkit-dialog](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/SKILL.md) — `SfDialog`
+- [syncfusion-blazor-toolkit-tooltip](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/tooltip/SKILL.md) — `SfTooltip`
 
 ## Cross-References to Other Toolkit Skills
 
@@ -74,5 +74,5 @@ decision cheat-sheet.
 ## Next Steps
 
 After reading the decision matrix:
-- Building a modal? Open [dialog/SKILL.md](dialog/SKILL.md).
-- Building hover help? Open [tooltip/SKILL.md](tooltip/SKILL.md).
+- Building a modal? Open [dialog/SKILL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/dialog/SKILL.md).
+- Building hover help? Open [tooltip/SKILL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/tooltip/SKILL.md).
