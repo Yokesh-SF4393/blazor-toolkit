@@ -45,9 +45,15 @@
                 ============================================================ *@
                 <li class="sf-sidebar-group-label" aria-hidden="true">Common</li>
 
+                <li class="sf-nav-item sf-sub-item @(IsActive("common/security") ? "is-active" : "")">
+                    <NavLink class="sf-nav-link" href="common/security" Match="NavLinkMatch.All">
+                        <span class="e-toolkit-icons e-security sf-menu-icon" aria-hidden="true"></span>
+                        <span>Security</span>
+                    </NavLink>
+                </li>
                 <li class="sf-nav-item sf-sub-item @(IsActive("common/accessibility") ? "is-active" : "")">
                     <NavLink class="sf-nav-link" href="common/accessibility" Match="NavLinkMatch.All">
-                        <span class="sf-menu-icon" aria-hidden="true"><svg class="accessibility-menu-icon" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="4" r="2" fill="currentColor"/><path d="M5 8.5A1.5 1.5 0 0 1 6.5 7h11a1.5 1.5 0 0 1 0 3h-3l1.2 4.2 2.2 4a1.5 1.5 0 0 1-2.6 1.5L12 15.5l-3.3 4.2a1.5 1.5 0 1 1-2.4-1.8l3.1-4L10.5 10h-4A1.5 1.5 0 0 1 5 8.5Z" fill="currentColor"/></svg></span>
+                        <span class="e-toolkit-icons e-accessibility sf-menu-icon" aria-hidden="true"></span>
                         <span>Accessibility</span>
                     </NavLink>
                 </li>
@@ -268,7 +274,7 @@
 
                     <li class="sf-nav-item sf-nav-item-tight @(IsActive("contribution-guide") ? "is-active" : "")">
                         <NavLink class="sf-nav-link" href="contribution-guide" Match="NavLinkMatch.All">
-                            <span class="e-toolkit-icons e-contribute sf-menu-icon" aria-hidden="true"></span>
+                            <span class="e-toolkit-icons e-contribution-guide sf-menu-icon" aria-hidden="true"></span>
                             <span>Contribution Guide</span>
                         </NavLink>
                     </li>
