@@ -19,7 +19,7 @@ metadata:
 
 # Syncfusion Blazor Toolkit Buttons
 
-> ✅ **Render mode:** Works in **all** render modes — `SfButton` is usable in Static SSR; only event handlers (`OnClick`) require interactivity. Confirm the app’s interactive render mode (Server, WebAssembly, or Auto) in the host project (`Program.cs` / launch profile) before wiring event handlers. See [DEVELOPMENT.md](../../DEVELOPMENT.md) and [RENDER-MODE-SECURITY.md](../../RENDER-MODE-SECURITY.md) for repo guidance.
+> ✅ **Render mode:** Works in **all** render modes — `SfButton` is usable in Static SSR; only event handlers (`OnClick`) require interactivity. Confirm the app’s interactive render mode (Server, WebAssembly, or Auto) in the host project (`Program.cs` / launch profile) before wiring event handlers. See [DEVELOPMENT.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/DEVELOPMENT.md) and [RENDER-MODE-SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/RENDER-MODE-SECURITY.md) for repo guidance.
 
 ## Core Rules
 
@@ -188,7 +188,7 @@ flag itself.
 
 **Or:** simpler, rely on the framework's `IsBusy`/`ButtonState` pattern or
 a wrapping `<SfSpinner>` overlay (see
-[syncfusion-blazor-toolkit-notifications](../syncfusion-blazor-toolkit-notifications/SKILL.md)).
+[syncfusion-blazor-toolkit-notifications](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/SKILL.md)).
 
 ## Minimal Example
 
@@ -213,11 +213,11 @@ a wrapping `<SfSpinner>` overlay (see
 
 | Need | Read |
 |---|---|
-| First button / project setup | [references/getting-started.md](references/getting-started.md) |
-| Styling, `Disabled`, `CssClass` | [references/button-fundamentals.md](references/button-fundamentals.md) |
-| Icons, `Content` vs `ChildContent` | [references/icons-and-content.md](references/icons-and-content.md) |
-| Events, `EventCallback`, async patterns | [references/events-and-callbacks.md](references/events-and-callbacks.md) |
-| `SfButtonGroup`, selection modes | [references/button-group.md](references/button-group.md) |
+| First button / project setup | [references/getting-started.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/references/getting-started.md) |
+| Styling, `Disabled`, `CssClass` | [references/button-fundamentals.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/references/button-fundamentals.md) |
+| Icons, `Content` vs `ChildContent` | [references/icons-and-content.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/references/icons-and-content.md) |
+| Events, `EventCallback`, async patterns | [references/events-and-callbacks.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/references/events-and-callbacks.md) |
+| `SfButtonGroup`, selection modes | [references/button-group.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/references/button-group.md) |
 
 > Full property reference for `SfButton`, `SfButtonGroup`, and inner `Button` lives in `references/button-fundamentals.md` and `references/button-group.md`.
 
@@ -225,9 +225,9 @@ a wrapping `<SfSpinner>` overlay (see
 
 ## Next Steps
 
-1. **Start Simple:** Read [references/getting-started.md](references/getting-started.md)
-2. **Style and Configure:** Explore [references/button-fundamentals.md](references/button-fundamentals.md)
-3. **Add Interactivity:** Learn [references/events-and-callbacks.md](references/events-and-callbacks.md)
-4. **Expand:** Grouping in [references/button-group.md](references/button-group.md)
+1. **Start Simple:** Read [references/getting-started.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/references/getting-started.md)
+2. **Style and Configure:** Explore [references/button-fundamentals.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/references/button-fundamentals.md)
+3. **Add Interactivity:** Learn [references/events-and-callbacks.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/references/events-and-callbacks.md)
+4. **Expand:** Grouping in [references/button-group.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/references/button-group.md)
 
 **Demo:** https://blazor.syncfusion.com/demos/toolkit/buttons/button

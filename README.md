@@ -144,13 +144,13 @@ For full details on commit style, PR requirements, and review criteria, see the 
 
 Explore interactive component showcases on the [Syncfusion® Blazor Toolkit Demo](https://blazor.syncfusion.com/demos/toolkit/) site. The demos illustrate usage patterns, features, and theming for the toolkit controls in a live Blazor environment.
 
-The same sample browser application is maintained in this repository under the [`samples/`](samples/) folder:
+The same sample browser application is maintained in this repository under the [samples/](https://github.com/syncfusion/blazor-toolkit/tree/main/samples) folder:
 
 | Path | Purpose |
 |------|---------|
-| [`samples/Blazor.Toolkit.Samples`](samples/Blazor.Toolkit.Samples) | Host sample application |
-| [`samples/Blazor.Toolkit.Samples.Client`](samples/Blazor.Toolkit.Samples.Client) | Client (WebAssembly) sample project |
-| [`samples/Blazor.Toolkit.Samples.slnx`](samples/Blazor.Toolkit.Samples.slnx) | Solution file for the sample apps |
+| [samples/](https://github.com/syncfusion/blazor-toolkit/tree/main/samples) | Host sample application |
+| [`samples/Blazor.Toolkit.Samples.Client`](https://github.com/syncfusion/blazor-toolkit/tree/main/samples/Blazor.Toolkit.Samples.Client) | Client (WebAssembly) sample project |
+| [`samples/Blazor.Toolkit.Samples.slnx`](https://github.com/syncfusion/blazor-toolkit/blob/main/samples/Blazor.Toolkit.Samples.slnx) | Solution file for the sample apps |
 
 To run the demos locally, open `samples/Blazor.Toolkit.Samples.slnx` in Visual Studio, set the desired sample project as the startup project, and run. See [Quick Contributor Start](#quick-contributor-start) for clone and build steps.
 
@@ -158,12 +158,12 @@ To run the demos locally, open `samples/Blazor.Toolkit.Samples.slnx` in Visual S
 
 The repository includes specialized skill files that document component usage patterns and implementation guidance for the major toolkit areas:
 
-- [Buttons skill](.github/skills/syncfusion-blazor-toolkit-buttons/SKILL.md)
-- [Calendars skill](.github/skills/syncfusion-blazor-toolkit-calendars/SKILL.md)
-- [Charts skill](.github/skills/syncfusion-blazor-toolkit-charts/SKILL.md)
-- [Inputs skill](.github/skills/syncfusion-blazor-toolkit-inputs/SKILL.md)
-- [Notifications skill](.github/skills/syncfusion-blazor-toolkit-notifications/SKILL.md)
-- [Popups skill](.github/skills/syncfusion-blazor-toolkit-popups/SKILL.md)
+- [Buttons skill](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-buttons/SKILL.md)
+- [Calendars skill](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/SKILL.md)
+- [Charts skill](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/SKILL.md)
+- [Inputs skill](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-inputs/SKILL.md)
+- [Notifications skill](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-notifications/SKILL.md)
+- [Popups skill](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-popups/SKILL.md)
 
 These skill files are intended to help contributors and maintainers understand the supported patterns, accessibility expectations, and implementation conventions for each toolkit area.
 
@@ -381,13 +381,13 @@ The toolkit aims to conform to **WCAG 2.2 Level AA**. See:
 
 - [`.github/ACCESSIBILITY.md`](https://github.com/syncfusion/blazor-toolkit/tree/main/.github/ACCESSIBILITY.md) — conformance statement
 - [`.github/accessibility/screen-reader-smoke.md`](https://github.com/syncfusion/blazor-toolkit/tree/main/.github/accessibility/screen-reader-smoke.md) — screen-reader smoke matrix
-- [`docs/VPAT-2.5-INT.md`](docs/VPAT-2.5-INT.md) — formal VPAT 2.5
+- [`docs/VPAT-2.5-INT.md`](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/VPAT-2.5-INT.md) — formal VPAT 2.5
 
 Known limitations are tracked as GitHub issues labelled `accessibility`.
 
 ## Changelog
 
-Release history for the Syncfusion® Blazor Toolkit is maintained in [CHANGELOG.md](CHANGELOG.md). That file documents version-specific changes, improvements, bug fixes, and breaking changes for each release. Refer to it when upgrading or reviewing what changed between versions.
+Release history for the Syncfusion® Blazor Toolkit is maintained in [CHANGELOG.md](https://github.com/syncfusion/blazor-toolkit/blob/main/CHANGELOG.md). That file documents version-specific changes, improvements, bug fixes, and breaking changes for each release. Refer to it when upgrading or reviewing what changed between versions.
 
 ## Roadmap
 
@@ -397,10 +397,10 @@ Planned phases, target dates, and guiding principles for 2027 and early 2028 are
 
 For namespace, API, and theme migration in 2.0, see:
 
-- [docs/API-COMPATIBILITY.md](docs/API-COMPATIBILITY.md)
-- [docs/API-BREAK-INVENTORY.md](docs/API-BREAK-INVENTORY.md)
+- [docs/API-COMPATIBILITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-COMPATIBILITY.md)
+- [docs/API-BREAK-INVENTORY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-BREAK-INVENTORY.md)
 
-Also review [CHANGELOG.md](CHANGELOG.md) under `[2.0.0]`.
+Also review [CHANGELOG.md](https://github.com/syncfusion/blazor-toolkit/blob/main/CHANGELOG.md) under `[2.0.0]`.
 
 ## About Syncfusion®
 

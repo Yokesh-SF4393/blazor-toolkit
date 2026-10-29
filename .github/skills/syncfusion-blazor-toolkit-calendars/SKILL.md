@@ -25,7 +25,7 @@ metadata:
 ## Core Rules
 
 The four rules below are the highest-impact; the rest (5–8) live in
-[references/critical-gotchas.md](references/critical-gotchas.md) — read it
+[references/critical-gotchas.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/critical-gotchas.md) — read it
 first if you have any time/format/validation question. These top 4 together
 prevent ~95% of calendar bug reports.
 
@@ -43,12 +43,12 @@ prevent ~95% of calendar bug reports.
 
 Rules 5–8 — `DayCellRendering` mutation discipline, `aria-label` opt-in,
 `@bind-Value` + `ValueChanged` double-fire, and midnight re-render — live in
-[references/critical-gotchas.md](references/critical-gotchas.md).
+[references/critical-gotchas.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/critical-gotchas.md).
 
 ## Don'ts
 
 > **Cross-reference with critical-gotchas.md:** rules below mirror the 8-rule
-> reference at [references/critical-gotchas.md](references/critical-gotchas.md);
+> reference at [references/critical-gotchas.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/critical-gotchas.md);
 > the rules duplicated here (rows 1, 3, 5, 7, 8) are surfaced inline because
 > they're the most common agent mistakes. When in doubt on timezones,
 > values, or rendering — read the full gotchas reference.
@@ -200,7 +200,7 @@ date on click instead of keeping a timer running.
 ```
 
 > For the full 8-rule reference, see
-> [references/critical-gotchas.md](references/critical-gotchas.md).
+> [references/critical-gotchas.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/critical-gotchas.md).
 
 ## Minimal Example
 
@@ -222,21 +222,21 @@ date on click instead of keeping a timer running.
 
 | Need | Read |
 |---|---|
-| First component / installation | [references/getting-started.md](references/getting-started.md) |
-| Core features (selection, formatting, validation) | [references/features.md](references/features.md) |
-| Per-component reference (`SfCalendar`, `DatePicker`, `DateTimePicker`, `TimePicker`) | [references/calendar.md](references/calendar.md), [references/datepicker.md](references/datepicker.md), [references/datetimepicker.md](references/datetimepicker.md), [references/timepicker.md](references/timepicker.md) |
-| Events and two-way binding | [references/events-binding.md](references/events-binding.md) |
-| API reference (properties, events, methods, enums) | [references/api-reference.md](references/api-reference.md) |
-| Troubleshooting | [references/troubleshooting.md](references/troubleshooting.md) |
+| First component / installation | [references/getting-started.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/getting-started.md) |
+| Core features (selection, formatting, validation) | [references/features.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/features.md) |
+| Per-component reference (`SfCalendar`, `DatePicker`, `DateTimePicker`, `TimePicker`) | [references/calendar.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/calendar.md), [references/datepicker.md](references/datepicker.md), [references/datetimepicker.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/datetimepicker.md), [references/timepicker.md](references/timepicker.md) |
+| Events and two-way binding | [references/events-binding.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/events-binding.md) |
+| API reference (properties, events, methods, enums) | [references/api-reference.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/api-reference.md) |
+| Troubleshooting | [references/troubleshooting.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/troubleshooting.md) |
 
-> ⚠️ Read [references/critical-gotchas.md](references/critical-gotchas.md) **first** — UTC vs local time, `TValue` selection, `Format` mixing, `Min`/`Max` inclusivity, `DayCellRendering` mutation rules, accessibility labelling, `@bind-Value` + `ValueChanged` interaction, `DateTime.Now` snapshot.
+> ⚠️ Read [references/critical-gotchas.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/critical-gotchas.md) **first** — UTC vs local time, `TValue` selection, `Format` mixing, `Min`/`Max` inclusivity, `DayCellRendering` mutation rules, accessibility labelling, `@bind-Value` + `ValueChanged` interaction, `DateTime.Now` snapshot.
 
 ---
 
 ## Next Steps
 
-1. **Read first:** [references/critical-gotchas.md](references/critical-gotchas.md)
-2. **Setup:** [references/getting-started.md](references/getting-started.md)
+1. **Read first:** [references/critical-gotchas.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/critical-gotchas.md)
+2. **Setup:** [references/getting-started.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-calendars/references/getting-started.md)
 3. **Per-component reference:** the relevant `references/*.md`
 
 **Demo:** https://blazor.syncfusion.com/demos/toolkit/calendar

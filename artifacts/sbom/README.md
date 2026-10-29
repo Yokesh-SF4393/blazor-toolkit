@@ -34,7 +34,7 @@ and matches the value in `sbom.cdx.json.sha256`.
 
 ## Cross-reference
 
-[`.github/THIRD-PARTY-NOTICES.md`](../../.github/THIRD-PARTY-NOTICES.md)
+[`.github/THIRD-PARTY-NOTICES.md`](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/THIRD-PARTY-NOTICES.md)
 is the human-readable counterpart of this SBOM. Tooling (CycloneDX CLI,
 in-toto-golang, `dotnet list package --vulnerable`) consumes this
 directory's contents.

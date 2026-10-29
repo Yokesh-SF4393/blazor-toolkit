@@ -41,7 +41,7 @@ The Syncfusion Blazor Chart component is a powerful data visualization tool that
 
 ### Complete API Reference
 
-📄 **Read:** [references/api-reference.md](references/api-reference.md)
+📄 **Read:** [references/api-reference.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/api-reference.md)
 
 **CRITICAL: Use this reference FIRST for all API-related questions**
 
@@ -69,7 +69,7 @@ Topics covered:
 
 ### Getting Started
 
-📄 **Read:** [references/getting-started.md](references/getting-started.md)
+📄 **Read:** [references/getting-started.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/getting-started.md)
 
 Use this when:
 - Setting up a new Blazor Chart project
@@ -92,7 +92,7 @@ Topics covered:
 
 #### Common Chart Types
 
-📄 **Read:** [references/chart-types-common.md](references/chart-types-common.md)
+📄 **Read:** [references/chart-types-common.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/chart-types-common.md)
 
 Use this for frequently-used chart types:
 - Line charts for trend visualization
@@ -112,7 +112,7 @@ Topics covered:
 
 #### Specialized Chart Types
 
-📄 **Read:** [references/chart-types-specialized.md](references/chart-types-specialized.md)
+📄 **Read:** [references/chart-types-specialized.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/chart-types-specialized.md)
 
 Use this for specialized visualization needs:
 - Stacked charts (Stack Area/Bar/Column/Line, 100% variants)
@@ -133,7 +133,7 @@ Topics covered:
 
 ### Axes and Data Configuration
 
-📄 **Read:** [references/axes-and-scales.md](references/axes-and-scales.md)
+📄 **Read:** [references/axes-and-scales.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/axes-and-scales.md)
 
 Use this when:
 - Configuring axis types (category, numeric, datetime, logarithmic)
@@ -152,7 +152,7 @@ Topics covered:
 - Multiple axis configuration
 - Inverse and opposed axes
 
-📄 **Read:** [references/data-handling.md](references/data-handling.md)
+📄 **Read:** [references/data-handling.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/data-handling.md)
 
 Use this when:
 - Binding data sources to charts
@@ -173,7 +173,7 @@ Topics covered:
 
 ### Visual Elements
 
-📄 **Read:** [references/visual-elements.md](references/visual-elements.md)
+📄 **Read:** [references/visual-elements.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/visual-elements.md)
 
 Use this when:
 - Adding data markers to chart points
@@ -191,7 +191,7 @@ Topics covered:
 - Chart annotations (text, shapes, images)
 - Gradient color fills
 
-📄 **Read:** [references/legend.md](references/legend.md)
+📄 **Read:** [references/legend.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/legend.md)
 
 Use this when:
 - Enabling and configuring chart legend
@@ -212,7 +212,7 @@ Topics covered:
 
 ### Interactive Features
 
-📄 **Read:** [references/interactive-features.md](references/interactive-features.md)
+📄 **Read:** [references/interactive-features.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/interactive-features.md)
 
 Use this when:
 - Enabling tooltips with custom formatting
@@ -234,7 +234,7 @@ Topics covered:
 
 ### Customization and Appearance
 
-📄 **Read:** [references/appearance-styling.md](references/appearance-styling.md)
+📄 **Read:** [references/appearance-styling.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/appearance-styling.md)
 
 Use this when:
 - Customizing chart appearance and themes
@@ -253,7 +253,7 @@ Topics covered:
 - Background and border styling
 - Gradient customization
 
-📄 **Read:** [references/advanced-features.md](references/advanced-features.md)
+📄 **Read:** [references/advanced-features.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/advanced-features.md)
 
 Use this when:
 - Adding technical indicators (EMA, SMA, RSI, etc.)
@@ -274,7 +274,7 @@ Topics covered:
 
 ### Accessibility and Internationalization
 
-📄 **Read:** [references/accessibility-internationalization.md](references/accessibility-internationalization.md)
+📄 **Read:** [references/accessibility-internationalization.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/accessibility-internationalization.md)
 
 Use this when:
 - Implementing accessible charts (ARIA, keyboard nav)
@@ -296,7 +296,7 @@ Topics covered:
 
 ### Events
 
-📄 **Read:** [references/events.md](references/events.md)
+📄 **Read:** [references/events.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/events.md)
 
 Use this when:
 - Handling chart lifecycle events
@@ -319,7 +319,7 @@ Topics covered:
 
 ### Practical Examples and How-To Guides
 
-📄 **Read:** [references/practical-examples.md](references/practical-examples.md)
+📄 **Read:** [references/practical-examples.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/practical-examples.md)
 
 Use this for common implementation scenarios:
 - Adding/removing series dynamically
@@ -387,7 +387,7 @@ The `SfChart` component provides several public methods for programmatic control
 }
 ```
 
-**See [references/api-reference.md](references/api-reference.md) for complete method documentation.**
+**See [references/api-reference.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-charts/references/api-reference.md) for complete method documentation.**
 
 ---
 

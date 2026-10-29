@@ -8,40 +8,40 @@ The documents referenced below contain project information related to licensing,
 
 ## Licensing and Dependencies
 
-- [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md)
+- [THIRD-PARTY-NOTICES.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/THIRD-PARTY-NOTICES.md)
   - Third-party dependency inventory and license information.
 
 ---
 
 ## Security Documentation
 
-- [SECURITY.md](./SECURITY.md)
+- [SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/SECURITY.md)
   - Security reporting process and vulnerability management.
 
-- [THREAT-MODEL.md](./THREAT-MODEL.md)
+- [THREAT-MODEL.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/THREAT-MODEL.md)
   - Security threats, mitigations, and accepted risks.
 
-- [RENDER-MODE-SECURITY.md](./RENDER-MODE-SECURITY.md)
+- [RENDER-MODE-SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/RENDER-MODE-SECURITY.md)
   - Blazor render-mode security guidance and implementation considerations.
 
 ---
 
 ## Accessibility Documentation
 
-- [ACCESSIBILITY.md](./ACCESSIBILITY.md)
+- [ACCESSIBILITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/ACCESSIBILITY.md)
   - Accessibility commitments and compliance guidance.
 
-- [accessibility/insights-summary.md](./accessibility/insights-summary.md)
+- [accessibility/insights-summary.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/accessibility/insights-summary.md)
   - Accessibility Insights assessment summary.
 
-- [accessibility/screen-reader-smoke.md](./accessibility/screen-reader-smoke.md)
+- [accessibility/screen-reader-smoke.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/accessibility/screen-reader-smoke.md)
   - Screen-reader validation and testing results.
 
 ---
 
 ## Development and Release Guidance
 
-- [DEVELOPMENT.md](./DEVELOPMENT.md)
+- [DEVELOPMENT.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/DEVELOPMENT.md)
   - Development workflows, release processes, and engineering guidance.
 
 ---
@@ -56,45 +56,45 @@ The documents referenced below contain project information related to licensing,
 
 ## API and compliance (`docs/`)
 
-- [API-COMPATIBILITY.md](../docs/API-COMPATIBILITY.md) — 2.0 compatibility contract (upgraders from 1.0.2).
-- [API-BREAK-INVENTORY.md](../docs/API-BREAK-INVENTORY.md) — Inventory of accepted 2.0 API breaks.
-- [VPAT-2.5-INT.md](../docs/VPAT-2.5-INT.md) — Formal VPAT 2.5 report.
+- [API-COMPATIBILITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-COMPATIBILITY.md) — 2.0 compatibility contract (upgraders from 1.0.2).
+- [API-BREAK-INVENTORY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-BREAK-INVENTORY.md) — Inventory of accepted 2.0 API breaks.
+- [VPAT-2.5-INT.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/VPAT-2.5-INT.md) — Formal VPAT 2.5 report.
 
 ---
 
 ## Performance Documentation
 
-- [evidences/performance/virtualization-strategy.md](./evidences/performance/virtualization-strategy.md)
+- [evidences/performance/virtualization-strategy.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/evidences/performance/virtualization-strategy.md)
   - Virtualization approach and rationale.
 
-- [evidences/performance/render-tree-efficiency.md](./evidences/performance/render-tree-efficiency.md)
+- [evidences/performance/render-tree-efficiency.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/evidences/performance/render-tree-efficiency.md)
   - Rendering performance analysis.
 
-- [evidences/performance/shouldRender-optimization.md](./evidences/performance/shouldRender-optimization.md)
+- [evidences/performance/shouldRender-optimization.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/evidences/performance/shouldRender-optimization.md)
   - Component rendering optimization guidance.
 
-- [evidences/performance/key-usage.md](./evidences/performance/key-usage.md)
+- [evidences/performance/key-usage.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/evidences/performance/key-usage.md)
   - Usage of @key and component lifecycle optimizations.
 
 ---
 
 ## Software Bill of Materials (SBOM)
 
-- [artifacts/sbom/](../artifacts/sbom/README.md)
+- [artifacts/sbom/](https://github.com/syncfusion/blazor-toolkit/blob/main/artifacts/sbom/README.md)
   - Generated SBOM artifacts and related package metadata.
 
 ---
 
 ## Support and Lifecycle
 
-- [SUPPORT.md](./SUPPORT.md)
+- [SUPPORT.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/SUPPORT.md)
   - Support process, service expectations, and lifecycle commitments.
 
 ---
 
 ## Samples and external links
 
-- [samples/](../samples/)
+- [samples/](https://github.com/syncfusion/blazor-toolkit/blob/main/samples/)
   - In-repo sample browser (host and client projects).
 
 - **Demos:** https://blazor.syncfusion.com/demos/toolkit/
@@ -107,29 +107,29 @@ The documents referenced below contain project information related to licensing,
 
 ## Getting started and changelog
 
-- [README.md](../README.md)
+- [README.md](https://github.com/syncfusion/blazor-toolkit/blob/main/README.md)
   - Product overview, repository structure, and consumer getting started.
-- [CHANGELOG.md](../CHANGELOG.md)
+- [CHANGELOG.md](https://github.com/syncfusion/blazor-toolkit/blob/main/CHANGELOG.md)
   - In-repo release history and migration notes.
-- [ROADMAP.md](../ROADMAP.md)
+- [ROADMAP.md](https://github.com/syncfusion/blazor-toolkit/blob/main/ROADMAP.md)
   - Chart-first priorities and exploratory direction. Not a delivery commitment.
 
 ## API and compliance (`docs/`)
 
-- [API-COMPATIBILITY.md](../docs/API-COMPATIBILITY.md)
+- [API-COMPATIBILITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-COMPATIBILITY.md)
   - 2.0 compatibility and migration contract.
-- [API-BREAK-INVENTORY.md](../docs/API-BREAK-INVENTORY.md)
+- [API-BREAK-INVENTORY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/API-BREAK-INVENTORY.md)
   - Inventory of accepted 2.0 API breaks.
-- [VPAT-2.5-INT.md](../docs/VPAT-2.5-INT.md)
+- [VPAT-2.5-INT.md](https://github.com/syncfusion/blazor-toolkit/blob/main/docs/VPAT-2.5-INT.md)
   - Accessibility VPAT.
 
 ## Contributing and tests
 
-- [CONTRIBUTING.md](./CONTRIBUTING.md)
+- [CONTRIBUTING.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/CONTRIBUTING.md)
   - Contribution process and PR expectations.
-- [TEST-MATRIX.md](./TEST-MATRIX.md)
+- [TEST-MATRIX.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/TEST-MATRIX.md)
   - Test coverage matrix and gaps.
-- [skills/](./skills/)
+- [skills/](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/)
   - Component skill guidance (`SKILL.md` per area).
 
 ## Purpose

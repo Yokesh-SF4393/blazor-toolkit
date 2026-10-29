@@ -215,19 +215,19 @@ or hard-code the culture in `Format`:
 
 | Component family | Read |
 |---|---|
-| Setup, CSS imports, theming | [references/getting-started-inputs.md](references/getting-started-inputs.md) |
-| `SfTextBox`, `SfTextArea`, floating labels, focus/blur, validation states | [references/textbox-textarea.md](references/textbox-textarea.md) |
-| `SfNumericTextBox<T>`, currency, percentage, Min/Max/Step, decimals, spin buttons | [references/numeric-currency.md](references/numeric-currency.md) |
-| `SfUploader` (auto upload, multi-file, size/type validation, progress, drag-drop, errors) | [references/uploader.md](references/uploader.md) |
-| `SfCheckBox<T>`, `SfRadioButton<T>`, `SfSwitch<T>`, grouped/conditional patterns | [references/checkbox-radio-switch.md](references/checkbox-radio-switch.md) |
-| WCAG / keyboard / ARIA / labels / error announcement | [references/input-accessibility.md](references/input-accessibility.md) |
+| Setup, CSS imports, theming | [references/getting-started-inputs.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-inputs/references/getting-started-inputs.md) |
+| `SfTextBox`, `SfTextArea`, floating labels, focus/blur, validation states | [references/textbox-textarea.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-inputs/references/textbox-textarea.md) |
+| `SfNumericTextBox<T>`, currency, percentage, Min/Max/Step, decimals, spin buttons | [references/numeric-currency.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-inputs/references/numeric-currency.md) |
+| `SfUploader` (auto upload, multi-file, size/type validation, progress, drag-drop, errors) | [references/uploader.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-inputs/references/uploader.md) |
+| `SfCheckBox<T>`, `SfRadioButton<T>`, `SfSwitch<T>`, grouped/conditional patterns | [references/checkbox-radio-switch.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-inputs/references/checkbox-radio-switch.md) |
+| WCAG / keyboard / ARIA / labels / error announcement | [references/input-accessibility.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-inputs/references/input-accessibility.md) |
 
 ---
 
 ## Next Steps
 
-1. **Setup:** [references/getting-started-inputs.md](references/getting-started-inputs.md)
+1. **Setup:** [references/getting-started-inputs.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-inputs/references/getting-started-inputs.md)
 2. **Component you're using:** one of the per-component references above
-3. **Accessibility audit:** [references/input-accessibility.md](references/input-accessibility.md)
+3. **Accessibility audit:** [references/input-accessibility.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/skills/syncfusion-blazor-toolkit-inputs/references/input-accessibility.md)
 
 **Demo:** https://blazor.syncfusion.com/demos/toolkit/inputs

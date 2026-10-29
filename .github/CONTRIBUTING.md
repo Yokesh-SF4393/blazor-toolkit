@@ -6,15 +6,15 @@ First and foremost: if you are thinking about contributing a bigger change or fe
 
 ## Code of Conduct
 
-Please see our [Code of Conduct](CODE_OF_CONDUCT.md).
+Please see our [Code of Conduct](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/CODE_OF_CONDUCT.md).
 
 ## Contributing Code
 
 The Syncfusion Toolkit for Blazor is an open-source, MIT-licensed package
 on a **2.x** release line. We welcome contributions of all sizes—bug fixes,
-tests, docs, accessibility, and new capabilities that fit the [roadmap](../ROADMAP.md).
+tests, docs, accessibility, and new capabilities that fit the [roadmap](https://github.com/syncfusion/blazor-toolkit/blob/main/ROADMAP.md).
 
-Have a look at our [Development Guide](DEVELOPMENT.md) to learn about setting up your development environment.
+Have a look at our [Development Guide](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/DEVELOPMENT.md) to learn about setting up your development environment.
 
 ### Repo map (quick)
 
@@ -22,7 +22,7 @@ Have a look at our [Development Guide](DEVELOPMENT.md) to learn about setting up
   (`Blazor.Toolkit.Samples` host, `Blazor.Toolkit.Samples.Client` WASM).
 - Unit tests: `tests/Syncfusion.Blazor.Toolkit.BUnitTest/`
 - Browser tests: `tests/Syncfusion.Blazor.Playwright.Test/`
-- Prefer paths in [DEVELOPMENT.md](DEVELOPMENT.md) and the root
+- Prefer paths in [DEVELOPMENT.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/DEVELOPMENT.md) and the root
   [README.md](../README.md) over short/legacy folder names.
 
 ### What to Work On
@@ -34,11 +34,11 @@ Follow the style used by the [.NET Foundation](https://github.com/dotnet/runtime
 - We do not use the `private` keyword, as it is the default accessibility level in C#.
 - We use hard tabs over spaces.
 
-Read and follow our [pull request template](PULL_REQUEST_TEMPLATE.md).
+Read and follow our [pull request template](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/PULL_REQUEST_TEMPLATE.md).
 
 ### Pull Request Requirements
 
-Please refer to our [pull request template](PULL_REQUEST_TEMPLATE.md).
+Please refer to our [pull request template](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/PULL_REQUEST_TEMPLATE.md).
 
 Please check the "Allow edits from maintainers" checkbox on your pull request. This allows us to make minor fixes and resolve conflicts for you quickly.
 

@@ -22,12 +22,12 @@ request, use GitHub Discussions at
 ## Security disclosures
 
 Use the contact and procedure in
-[SECURITY.md](SECURITY.md). Do **not** file security issues publicly
+[SECURITY.md](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/SECURITY.md). Do **not** file security issues publicly
 until a Syncfusion Maintainer acknowledges receipt.
 
 ## Code of conduct
 
 The project enforces the
-[Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). Unwelcome
+[Contributor Covenant Code of Conduct](https://github.com/syncfusion/blazor-toolkit/blob/main/.github/CODE_OF_CONDUCT.md). Unwelcome
 behaviour can be reported to conduct@syncfusion.com — private
 reports only.
