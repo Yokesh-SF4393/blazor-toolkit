@@ -50,7 +50,7 @@ The documents referenced below contain project information related to licensing,
 
 - [README.md](../README.md) — Product overview and getting started.
 - [CHANGELOG.md](../CHANGELOG.md) — In-repo release history.
-- [ROADMAP.md](../ROADMAP.md) — Chart-first priorities, exploratory component direction, and evidence gaps. Not a delivery commitment.
+- [ROADMAP.md](../ROADMAP.md) — Planned phases, target dates, and guiding principles.
 
 ---
 
