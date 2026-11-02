@@ -391,7 +391,7 @@ Release history for the Syncfusion® Blazor Toolkit is maintained in [CHANGELOG.
 
 ## Roadmap
 
-Planned phases, target dates, and guiding principles for 2027 and early 2028 are in [ROADMAP.md](ROADMAP.md). It is reviewed quarterly and priorities evolve with community feedback from GitHub issues and discussions.
+Planned phases, target dates, and guiding principles for 2027 and early 2028 are in [ROADMAP.md](https://github.com/syncfusion/blazor-toolkit/blob/main/ROADMAP.md). It is reviewed quarterly and priorities evolve with community feedback from GitHub issues and discussions.
 
 ## Migration (2.0)
 
