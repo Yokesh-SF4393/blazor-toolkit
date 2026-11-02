@@ -16,157 +16,52 @@ Our focus is to expand application-building capabilities while keeping the Toolk
 
 # 2027 Roadmap
 
-## Phase 1 – Core Application Building Blocks
-**Target: February 2027**
-
-Deliver the most requested components required for modern business applications.
-
-### Planned Components
-
-- Select / DropDownList
-- AutoComplete / ComboBox
-- Snackbar / Toast
-- Alert
-- Tabs
-- Card
-- Accordion / Expansion Panel
-- List
-- Popup
-- ToolBar
-- Navigation Drawer / Sidebar
-
-### Outcome
-
-Developers can build complete forms, dashboards, navigation layouts, and common business application experiences using the Toolkit.
-
----
-
-## Phase 2 – Navigation & Application Shell
-**Target: May 2027**
-
-Provide the foundation for advanced application layouts and workflow experiences.
-
-### Planned Components
-
+## Phase 1
+- Toolbar
+- Sidebar
 - AppBar
-- Breadcrumbs
+- Breadcrumb
 - Menu
-- NavMenu
-- Stepper / Wizard
-- Link
-- Toggle / ToggleGroup
-- IconButton
-- Floating Action Button (FAB)
-- Enhanced Button Group
+- Accordion
+- Card
+- Tabs
+- ListView
+- AutoComplete
+- ComboBox
+- MultiSelect
+- Chips
+- DateRangePicker
+- ColorPicker
+- DropDown Button
+- Split Button
+- Floating Action Button
+- Toggle Switch Button
 
-### Outcome
-
-Support advanced navigation, workflows, and application shell scenarios.
-
----
-
-## Phase 3 – Forms & Layout
-**Target: August 2027**
-
-Expand form controls and layout capabilities.
-
-### Planned Components
-
-- Badge
-- Chip / ChipSet
-- Avatar
-- Progress Indicators
-- Slider
-- Rating
-- Mask Input
-- Date Range Picker
-- Color Picker
-- Enhanced Form Support
-- Divider
-- Paper
-- Stack
-- Container
-- Spacer
-- Hidden
-
-### Outcome
-
-Enable creation of complete data-entry and dashboard applications.
-
----
-
-## Phase 4 – Advanced UI & Productivity
-**Target: December 2027**
-
-Expand component coverage for common business application requirements.
-
-### Planned Components
-
+## Phase 2
+- Toast
 - Skeleton
-- MessageBox
-- Overlay
-- ExitPrompt
+- ProgressBar
+- Progress Button
+- Stepper
+- InputMask
+- OTP Input
+- Rating
+- Range Slider
+- Speed Dial
+
+## Phase 3
 - Carousel
-- Timeline
-- TreeView
-- Pagination
-- Popover
-- Table
-- Image
-- Icon
-- Highlighter
-- DropZone
-- ScrollToTop
-- Hotkey
-- Virtualize
-- SwipeArea
-- Collapse
-- SplitPanel / Splitter
-- Element
-- Render
-- FocusTrap
-
-### Outcome
-
-Deliver broader application coverage comparable to leading open-source Blazor toolkits.
-
----
-
-## Phase 5 – Platform & Visualization Enhancements
-**Target: Early 2028**
-
-Focus on theming, platform services, and advanced visualization.
-
-### Planned Components
-
-- ThemeProvider
-- RTL Support
-- Breakpoint Provider
-- Typography
-- Layout Framework
-- Main
-- Banner
-- Tile Manager
-- Chat
-- QR Code
-- Additional Chart Types
-- Advanced Chart Features
-
-### Outcome
-
-Provide a complete toolkit platform for modern Blazor applications.
-
----
+- Signature
+- Splitter
+- Dock Layout
 
 # Delivery Timeline
 
 | Phase | Goal | Target Completion |
 |---------|---------|---------|
-| Phase 1 | Core Application Building Blocks | February 2027 |
-| Phase 2 | Navigation & Application Shell | May 2027 |
-| Phase 3 | Forms & Layout | August 2027 |
-| Phase 4 | Advanced UI & Productivity | December 2027 |
-| Phase 5 | Platform & Visualization Enhancements | Early 2028 |
+| Phase 1 | Core Application Foundation | November 2026 |
+| Phase 2 | Application Experience Components | December 2026|
+| Phase 3 | Advanced Interaction Components | December 2026 |
 
 ---
 
